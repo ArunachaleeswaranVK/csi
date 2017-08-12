@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812041259) do
+ActiveRecord::Schema.define(version: 20170812091024) do
 
   create_table "institutes", force: :cascade do |t|
     t.string   "imno",       null: false
@@ -26,5 +26,40 @@ ActiveRecord::Schema.define(version: 20170812041259) do
   end
 
   add_index "institutes", ["imno"], name: "index_institutes_on_imno", unique: true
+
+  create_table "nominated_members", force: :cascade do |t|
+    t.string   "ncode"
+    t.string   "nm_name"
+    t.string   "nm_phone"
+    t.string   "nm_email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "imno"
+  end
+
+  add_index "nominated_members", ["imno"], name: "index_nominated_members_on_imno"
+
+  create_table "nominating_authorities", force: :cascade do |t|
+    t.string   "na_name"
+    t.string   "na_phone"
+    t.string   "na_email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "imno"
+  end
+
+  add_index "nominating_authorities", ["imno"], name: "index_nominating_authorities_on_imno"
+
+  create_table "sbcs", force: :cascade do |t|
+    t.string   "sbc_membership_no"
+    t.string   "sbc_name",          null: false
+    t.string   "sbc_phone"
+    t.string   "sbc_email"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "imno"
+  end
+
+  add_index "sbcs", ["imno"], name: "index_sbcs_on_imno"
 
 end

@@ -1,4 +1,4 @@
-class Sbc < ActiveRecord::Base
+class NominatingAuthority < ActiveRecord::Base
     
     belongs_to :institute , foreign_key: "imno"
     
@@ -9,5 +9,4 @@ class Sbc < ActiveRecord::Base
        imno.parameterize 
     end  
     
-     
 end

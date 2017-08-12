@@ -6,7 +6,7 @@ class CreateSbcs < ActiveRecord::Migration
       t.string :sbc_membership_no
       t.string :sbc_name , null: false
       t.string :sbc_phone
-      t.string :sbc.email
+      t.string :sbc_email
       
       
       t.timestamps null: false

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   resources :institutes , param: :imno
   resources :sbcs , param: :imno
+  resources :nominating_authorities , param: :imno
+  resources :nominated_members , param: :imno
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
