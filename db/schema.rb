@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812091024) do
+ActiveRecord::Schema.define(version: 20170813103041) do
+
+  create_table "eventdetailsbystudentactivists", force: :cascade do |t|
+    t.string   "event_name"
+    t.string   "event_place"
+    t.string   "role_played"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "insideindiapaperpresentations", force: :cascade do |t|
+    t.string   "name_of_conference"
+    t.date     "date_of_conference"
+    t.string   "organised_by"
+    t.string   "name_and_place_of_conference"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
   create_table "institutes", force: :cascade do |t|
     t.string   "imno",       null: false
@@ -26,6 +43,14 @@ ActiveRecord::Schema.define(version: 20170812091024) do
   end
 
   add_index "institutes", ["imno"], name: "index_institutes_on_imno", unique: true
+
+  create_table "internationalevents", force: :cascade do |t|
+    t.string   "competetion_name"
+    t.date     "date_of_event"
+    t.string   "no_of_students_from_abroad_with_country_name"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+  end
 
   create_table "nominated_members", force: :cascade do |t|
     t.string   "ncode"
@@ -50,6 +75,41 @@ ActiveRecord::Schema.define(version: 20170812091024) do
 
   add_index "nominating_authorities", ["imno"], name: "index_nominating_authorities_on_imno"
 
+  create_table "outsideindiapaperpresentations", force: :cascade do |t|
+    t.string   "name_of_conference"
+    t.date     "date_of_conference"
+    t.string   "organised_by"
+    t.string   "name_and_place_of_conference"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "publishingdetailbyfaculties", force: :cascade do |t|
+    t.string   "article_title"
+    t.string   "published_in"
+    t.date     "date_of_publishing"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "publishingdetailbystudents", force: :cascade do |t|
+    t.integer  "no_of_articles_published"
+    t.string   "article_title"
+    t.string   "published_in"
+    t.date     "date_of_publishing"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "recordforthesisawards", force: :cascade do |t|
+    t.string   "conference_or_journal"
+    t.string   "name"
+    t.date     "date"
+    t.text     "citation"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "sbcs", force: :cascade do |t|
     t.string   "sbc_membership_no"
     t.string   "sbc_name",          null: false
@@ -61,5 +121,15 @@ ActiveRecord::Schema.define(version: 20170812091024) do
   end
 
   add_index "sbcs", ["imno"], name: "index_sbcs_on_imno"
+
+  create_table "supportforcsievents", force: :cascade do |t|
+    t.date     "date_of_event"
+    t.string   "name_of_event"
+    t.string   "organised_by"
+    t.text     "support_details"
+    t.string   "monetary_value"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
 end
