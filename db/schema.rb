@@ -13,12 +13,46 @@
 
 ActiveRecord::Schema.define(version: 20170813103041) do
 
+  create_table "bestaccreditedstudentbranches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bestcsiinternationalstudentseventhosts", force: :cascade do |t|
+    t.integer  "volunteers"
+    t.integer  "volunteers_added"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "bestthesisawards", force: :cascade do |t|
+    t.string   "candidate_csi_membership_no"
+    t.date     "valid_till"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
   create_table "eventdetailsbystudentactivists", force: :cascade do |t|
     t.string   "event_name"
     t.string   "event_place"
     t.string   "role_played"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "facmaxpublishings", force: :cascade do |t|
+    t.string   "candidate_csi_membership_no"
+    t.date     "valid_till"
+    t.boolean  "has_student_branch"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "highestsponsorshipofcsievents", force: :cascade do |t|
+    t.integer  "volunteers"
+    t.integer  "volunteers_added"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "insideindiapaperpresentations", force: :cascade do |t|
@@ -52,6 +86,18 @@ ActiveRecord::Schema.define(version: 20170813103041) do
     t.datetime "updated_at",                                   null: false
   end
 
+  create_table "largeststudentbranches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "longestcontinuoussbcs", force: :cascade do |t|
+    t.integer  "volunteers"
+    t.integer  "volunteers_added"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "nominated_members", force: :cascade do |t|
     t.string   "ncode"
     t.string   "nm_name"
@@ -82,6 +128,14 @@ ActiveRecord::Schema.define(version: 20170813103041) do
     t.string   "name_and_place_of_conference"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "paperpresenterintconferences", force: :cascade do |t|
+    t.string   "candidate_csi_membership_no"
+    t.date     "valid_till"
+    t.boolean  "has_student_branch"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "publishingdetailbyfaculties", force: :cascade do |t|
@@ -121,6 +175,16 @@ ActiveRecord::Schema.define(version: 20170813103041) do
   end
 
   add_index "sbcs", ["imno"], name: "index_sbcs_on_imno"
+
+  create_table "studentbranchactivists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "studentmaxpublishings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "supportforcsievents", force: :cascade do |t|
     t.date     "date_of_event"
