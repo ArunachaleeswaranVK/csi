@@ -47,10 +47,10 @@ class BestcsiinternationalstudentseventhostsController < ApplicationController
     private
     
     def bestcsiinternationalstudentseventhost_params
-       params.require(:bestcsiinternationalstudentseventhost).permit(:volunteers,:volunteers_added)
+       params.require(:bestcsiinternationalstudentseventhost).permit(:volunteers,:volunteers_added,:imno)
     end
     
     def set_award
-       @bestcsiinternationalstudentseventhost = bestcsiinternationalstudentseventhost.find(params[:id]) 
+       @bestcsiinternationalstudentseventhost = Bestcsiinternationalstudentseventhost.find(params[:id])
     end
 end

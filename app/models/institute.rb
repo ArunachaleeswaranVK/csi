@@ -3,7 +3,9 @@ class Institute < ActiveRecord::Base
     has_many :sbcs, foreign_key: "imno" , dependent: :destroy
     has_many :nominating_authorities, foreign_key: "imno" , dependent: :destroy
     has_many :nominated_members, foreign_key: "imno" , dependent: :destroy
-    belongs_to :bestcsiinternationalstudentseventhosts
+    has_many :bestcsiinternationalstudentseventhosts, foreign_key: "imno" , dependent: :destroy
+    has_many :highestsponsorshipofcsievents, foreign_key: "imno" , dependent: :destroy
+    
     
     
     self.primary_key = 'imno'

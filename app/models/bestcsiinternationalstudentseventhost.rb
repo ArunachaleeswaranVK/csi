@@ -1,3 +1,5 @@
 class Bestcsiinternationalstudentseventhost < ActiveRecord::Base
-    has_many :institutes
+    belongs_to :institute, foreign_key: "imno" 
+    
+    
 end

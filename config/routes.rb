@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  resources :bestcsiinternationalstudentseventhosts
+  resources :bestcsiinternationalstudentseventhosts 
+  resources :highestsponsorshipofcsievents
   
   resources :institutes , param: :imno
   resources :sbcs , param: :imno
