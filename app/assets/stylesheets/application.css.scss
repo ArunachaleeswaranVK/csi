@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+ 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+.submitted-details{
+    font-family: Lato;
+    font-size: 1.5em;
+    margin: 1em;
+    border: 0px solid rgba(10, 10, 10, 0.12);
+    border-radius: 5px;
+    padding: 0.5em;
+    background-color: #f6f7ff;
+}
+.showpage-links{
+    font-size: 1.7em;
+    text-align: center;
+}
+.form-horizontal .form-group{
+    margin-right: 15px;
+}
