@@ -1,0 +1,20 @@
+$('#imno').val('<%= @bestcsiinternationalstudentseventhost.imno %>');
+$('#address').val('<%= @bestcsiinternationalstudentseventhost.address %>');
+<% unless @bestcsiinternationalstudentseventhost.district.empty? %>
+  $('#district').val('<%= @bestcsiinternationalstudentseventhost.district %>');
+<% else %>  
+  $('#district').val('Not Available');   
+<% end %>    
+$('#city').val('<%= @bestcsiinternationalstudentseventhost.city %>');
+$('#state').val('<%= @bestcsiinternationalstudentseventhost.state %>');
+$('#pin').val('<%= @bestcsiinternationalstudentseventhost.pincode %>');
+$('#sbc-name').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_name %>');
+<% unless @bestcsiinternationalstudentseventhost.district.empty? %>
+  $('#sbc-imno').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_membership_no %>');
+<% else %>  
+  $('#sbc-imno').val('Not Available');   
+<% end %>  
+
+$('#sbc-email').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_email %>');
+$('#sbc-phone').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_phone %>');
+

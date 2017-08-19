@@ -5,6 +5,7 @@ class Institute < ActiveRecord::Base
     has_many :nominated_members, foreign_key: "imno" , dependent: :destroy
     has_many :bestcsiinternationalstudentseventhosts, foreign_key: "imno" , dependent: :destroy
     has_many :highestsponsorshipofcsievents, foreign_key: "imno" , dependent: :destroy
+    has_many :longestcontinuoussbcs , foreign_key: "imno" , dependent: :destroy
     
     
     

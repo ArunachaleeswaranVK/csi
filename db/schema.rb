@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815071932) do
+ActiveRecord::Schema.define(version: 20170819040114) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -102,7 +102,10 @@ ActiveRecord::Schema.define(version: 20170815071932) do
     t.integer  "volunteers_added"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "imno"
   end
+
+  add_index "longestcontinuoussbcs", ["imno"], name: "index_longestcontinuoussbcs_on_imno"
 
   create_table "nominated_members", force: :cascade do |t|
     t.string   "ncode"

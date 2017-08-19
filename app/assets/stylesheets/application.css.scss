@@ -17,8 +17,27 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.award-area{
+    font-family: "Lato";
+    
+}
 
+.award-title{
+    background-color: #f5f8fd;
+    border: 0px solid #dbdbe8;
+    border-radius: 5px;
+    padding: 1em;
+    margin-bottom: 1em;
+    text-align: left;
+    
+}
 
+#award-banner{
+    
+    padding: 0.25em;
+    font-weight: bold;
+    color: rgb(80, 116, 177);
+}
 .submitted-details{
     font-family: Lato;
     font-size: 1.5em;

@@ -3,6 +3,10 @@ class BestcsiinternationalstudentseventhostsController < ApplicationController
     before_action :set_award , only: [:edit,:update,:show,:destroy]
     # before_action :authenticate_user!, except: [:index,:show]
     
+    def getname
+        @name = params[:name]
+        @bestcsiinternationalstudentseventhost = Institute.where("name like ?", "%#{@name}%").first
+    end
     
     def index
         @bestcsiinternationalstudentseventhosts = Bestcsiinternationalstudentseventhost.all
@@ -20,7 +24,7 @@ class BestcsiinternationalstudentseventhostsController < ApplicationController
         @bestcsiinternationalstudentseventhost = Bestcsiinternationalstudentseventhost.new(bestcsiinternationalstudentseventhost_params)
         
         if @bestcsiinternationalstudentseventhost.save
-            redirect_to @bestcsiinternationalstudentseventhost
+            redirect_to root_path
         else
             render "new"
         end    

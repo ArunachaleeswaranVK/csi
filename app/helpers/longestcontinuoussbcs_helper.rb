@@ -1,0 +1,2 @@
+module LongestcontinuoussbcsHelper
+end

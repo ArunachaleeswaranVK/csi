@@ -1,0 +1,19 @@
+$('#imno').val('<%= @highestsponsorshipofcsievent.imno %>');
+$('#address').val('<%= @highestsponsorshipofcsievent.address %>');
+<% unless @highestsponsorshipofcsievent.district.empty? %>
+  $('#district').val('<%= @highestsponsorshipofcsievent.district %>');
+<% else %>  
+  $('#district').val('Not Available');   
+<% end %>    
+$('#city').val('<%= @highestsponsorshipofcsievent.city %>');
+$('#state').val('<%= @highestsponsorshipofcsievent.state %>');
+$('#pin').val('<%= @highestsponsorshipofcsievent.pincode %>');
+$('#sbc-name').val('<%= @highestsponsorshipofcsievent.sbcs.first.sbc_name %>');
+<% unless @highestsponsorshipofcsievent.district.empty? %>
+  $('#sbc-imno').val('<%= @highestsponsorshipofcsievent.sbcs.first.sbc_membership_no %>');
+<% else %>  
+  $('#sbc-imno').val('Not Available');   
+<% end %>  
+
+$('#sbc-email').val('<%= @highestsponsorshipofcsievent.sbcs.first.sbc_email %>');
+$('#sbc-phone').val('<%= @highestsponsorshipofcsievent.sbcs.first.sbc_phone %>');

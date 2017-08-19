@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
+  
+
+  root 'welcome#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   resources :bestcsiinternationalstudentseventhosts 
+  get '/bestcsiinternationalstudentseventhosts/getname/:name' => 'bestcsiinternationalstudentseventhosts#getname'
+  
   resources :highestsponsorshipofcsievents
+  get '/highestsponsorshipofcsievents/getname/:name' => 'highestsponsorshipofcsievents#getname'
+  
+  resources :longestcontinuoussbcs
+  get '/longestcontinuoussbcs/getname/:name' => 'longestcontinuoussbcs#getname'
   
   resources :institutes , param: :imno
   resources :sbcs , param: :imno
