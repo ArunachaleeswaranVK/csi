@@ -6,7 +6,7 @@ $ ->
   $(document).ready ->
     $('#name').on 'change', ->
       $.ajax
-        url: '/highestsponsorshipofcsievents/getname/' + $(this).val()
+        url: '/facmaxpublishings/getname/' + $(this).val()
         type: 'get'
       return
       

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819040114) do
+ActiveRecord::Schema.define(version: 20170819082049) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -49,7 +49,12 @@ ActiveRecord::Schema.define(version: 20170819040114) do
     t.boolean  "has_student_branch"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "faculty_name"
+    t.string   "faculty_email"
+    t.string   "imno"
   end
+
+  add_index "facmaxpublishings", ["imno"], name: "index_facmaxpublishings_on_imno"
 
   create_table "highestsponsorshipofcsievents", force: :cascade do |t|
     t.integer  "volunteers"
@@ -71,15 +76,18 @@ ActiveRecord::Schema.define(version: 20170819040114) do
   end
 
   create_table "institutes", force: :cascade do |t|
-    t.string   "imno",       null: false
-    t.string   "name",       null: false
-    t.string   "address",    null: false
-    t.string   "city",       null: false
+    t.string   "imno",                 null: false
+    t.string   "name",                 null: false
+    t.string   "address",              null: false
+    t.string   "city",                 null: false
     t.string   "district"
-    t.string   "state",      null: false
-    t.string   "pincode",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "state",                null: false
+    t.string   "pincode",              null: false
+    t.string   "nominating_authority", null: false
+    t.string   "na_phone"
+    t.string   "na_email"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   add_index "institutes", ["imno"], name: "index_institutes_on_imno", unique: true
@@ -118,17 +126,6 @@ ActiveRecord::Schema.define(version: 20170819040114) do
   end
 
   add_index "nominated_members", ["imno"], name: "index_nominated_members_on_imno"
-
-  create_table "nominating_authorities", force: :cascade do |t|
-    t.string   "na_name"
-    t.string   "na_phone"
-    t.string   "na_email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "imno"
-  end
-
-  add_index "nominating_authorities", ["imno"], name: "index_nominating_authorities_on_imno"
 
   create_table "outsideindiapaperpresentations", force: :cascade do |t|
     t.string   "name_of_conference"

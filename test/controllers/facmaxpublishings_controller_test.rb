@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class NominatingAuthorityTest < ActiveSupport::TestCase
+class FacmaxpublishingsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end
