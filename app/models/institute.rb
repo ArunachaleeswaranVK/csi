@@ -15,6 +15,7 @@ class Institute < ActiveRecord::Base
     
     def to_param
        imno.parameterize 
+       name.parameterize
     end
 
 end

@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   resources :bestcsiinternationalstudentseventhosts , only: [:new, :create]
-  get '/bestcsiinternationalstudentseventhosts/getname/:name' => 'bestcsiinternationalstudentseventhosts#getname'
+  get '/bestcsiinternationalstudentseventhosts/getname/:name' => 'bestcsiinternationalstudentseventhosts#getname' , 
+  :constraints => { :name => /[^\/]+/ }
   
   resources :highestsponsorshipofcsievents , only: [:new, :create]
   get '/highestsponsorshipofcsievents/getname/:name' => 'highestsponsorshipofcsievents#getname'

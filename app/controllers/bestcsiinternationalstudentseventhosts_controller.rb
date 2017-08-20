@@ -4,8 +4,8 @@ class BestcsiinternationalstudentseventhostsController < ApplicationController
     # before_action :authenticate_user!, except: [:index,:show]
     
     def getname
-        @name = params[:name]
-        @bestcsiinternationalstudentseventhost = Institute.where("name like ?", "%#{@name}%").first
+        
+        @bestcsiinternationalstudentseventhost = Institute.where("name like ?", "%#{params[:name]}%").first
     end
     
     def index

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170820102355) do
+ActiveRecord::Schema.define(version: 20170820170654) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -78,12 +78,12 @@ ActiveRecord::Schema.define(version: 20170820102355) do
   create_table "institutes", force: :cascade do |t|
     t.string   "imno",                 null: false
     t.string   "name",                 null: false
-    t.string   "address",              null: false
-    t.string   "city",                 null: false
+    t.string   "address"
+    t.string   "city"
     t.string   "district"
-    t.string   "state",                null: false
-    t.string   "pincode",              null: false
-    t.string   "nominating_authority", null: false
+    t.string   "state"
+    t.string   "pincode"
+    t.string   "nominating_authority"
     t.string   "na_phone"
     t.string   "na_email"
     t.datetime "created_at",           null: false
