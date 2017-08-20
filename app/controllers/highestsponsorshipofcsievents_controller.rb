@@ -18,6 +18,7 @@ class HighestsponsorshipofcsieventsController < ApplicationController
     
     def new
         @highestsponsorshipofcsievent = Highestsponsorshipofcsievent.new
+        3.times { @highestsponsorshipofcsievent.supportforcsievents.build}
     end
     
     def create
@@ -51,7 +52,9 @@ class HighestsponsorshipofcsieventsController < ApplicationController
     private
     
     def highestsponsorshipofcsievent_params
-       params.require(:highestsponsorshipofcsievent).permit(:volunteers,:volunteers_added,:imno)
+       params.require(:highestsponsorshipofcsievent).permit(:volunteers,:volunteers_added,:imno, 
+       supportforcsievents_attributes: [:date_of_event,
+       :name_of_event,:organised_by,:support_details,:monetary_value,:_destroy])
     end
     
     def set_award

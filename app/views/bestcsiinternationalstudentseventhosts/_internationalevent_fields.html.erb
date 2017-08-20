@@ -1,0 +1,23 @@
+<div class="nested-fields">
+    
+<div class="row">
+<div class="form-group col-md-4">
+        <%= f.label :competetion_name %>
+        <%= f.text_field :competetion_name %>
+</div>
+<div class="form-group col-md-4">
+        <%= f.label :date_of_event %>
+        <%= f.date_field :date_of_event %>
+</div>
+<div class="form-group col-md-4">
+        <%= f.label :no_of_students_from_abroad_with_country_name %>
+        <%= f.text_field :no_of_students_from_abroad_with_country_name %>
+</div>
+
+</div>
+<div>
+   <%= link_to_remove_association "Remove", f, class: "form-button btn btn-default" %> 
+</div>
+
+
+</div>

@@ -17,6 +17,7 @@ class LongestcontinuoussbcsController < ApplicationController
     
     def new
         @longestcontinuoussbc = Longestcontinuoussbc.new
+        3.times { @longestcontinuoussbc.sbc_tenure_details.build}
     end
     
     def create
@@ -50,7 +51,9 @@ class LongestcontinuoussbcsController < ApplicationController
     private
     
     def longestcontinuoussbc_params
-       params.require(:longestcontinuoussbc).permit(:volunteers,:volunteers_added,:imno)
+       params.require(:longestcontinuoussbc).permit(:volunteers,:volunteers_added,
+       :imno,sbc_tenure_details_attributes: [:year,
+       :institution_name,:imno_of_institution,:volunteers,:_destroy])
     end
     
     def set_award

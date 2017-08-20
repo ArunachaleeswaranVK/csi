@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170820062211) do
+ActiveRecord::Schema.define(version: 20170820102355) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20170820062211) do
     t.string   "no_of_students_from_abroad_with_country_name"
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
+    t.integer  "bestcsiinternationalstudentseventhost_id"
   end
 
   create_table "largeststudentbranches", force: :cascade do |t|
@@ -175,6 +176,16 @@ ActiveRecord::Schema.define(version: 20170820062211) do
     t.datetime "updated_at",            null: false
   end
 
+  create_table "sbc_tenure_details", force: :cascade do |t|
+    t.string   "year"
+    t.string   "institution_name"
+    t.string   "imno_of_institution"
+    t.integer  "volunteers"
+    t.integer  "longestcontinuoussbc_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "sbcs", force: :cascade do |t|
     t.string   "sbc_membership_no"
     t.string   "sbc_name",          null: false
@@ -219,8 +230,9 @@ ActiveRecord::Schema.define(version: 20170820062211) do
     t.string   "organised_by"
     t.text     "support_details"
     t.string   "monetary_value"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "highestsponsorshipofcsievent_id"
   end
 
 end

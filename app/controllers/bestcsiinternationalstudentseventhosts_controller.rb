@@ -18,6 +18,7 @@ class BestcsiinternationalstudentseventhostsController < ApplicationController
     
     def new
         @bestcsiinternationalstudentseventhost = Bestcsiinternationalstudentseventhost.new
+        3.times { @bestcsiinternationalstudentseventhost.internationalevents.build}
     end
     
     def create
@@ -51,7 +52,9 @@ class BestcsiinternationalstudentseventhostsController < ApplicationController
     private
     
     def bestcsiinternationalstudentseventhost_params
-       params.require(:bestcsiinternationalstudentseventhost).permit(:volunteers,:volunteers_added,:imno)
+       params.require(:bestcsiinternationalstudentseventhost).permit(:volunteers,
+       :volunteers_added,:imno,internationalevents_attributes: [:competetion_name,
+       :date_of_event,:no_of_students_from_abroad_with_country_name,:_destroy])
     end
     
     def set_award

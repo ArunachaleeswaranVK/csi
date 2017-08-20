@@ -65,6 +65,19 @@
     </div>
     </div>
     
+    <div>
+    <p><strong>Supportforcsievent:</strong></p>
+
+    <%= f.fields_for :supportforcsievents do |i| %>
+      <%= render 'supportforcsievent_fields', f: i %>
+      
+    <% end %>
+    
+    <div class="links">
+        <%= link_to_add_association 'Add Details', f, :supportforcsievents %>
+    </div>
+   </div>
+    
     
     <div class="form-group">
         <div class="col-md-offset-5 col-md-2">
