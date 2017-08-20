@@ -1,0 +1,2 @@
+module StudentmaxpublishingsHelper
+end

@@ -1,0 +1,89 @@
+<%= form_for @paperpresenterintconference, :html => {:class => "form-horizontal"} do |f| %>
+    <!--institute details-->
+    <div class="form-group">
+     <label>Institution Name</label>
+     <input type="text" class="form-control" id="name">   
+    </div>
+    <div class="form-group">
+      <%= f.label :imno , "Institution Membership Number" %>
+      <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
+    </div>
+    
+    
+    <div class="row">
+    <div class="form-group col-md-3">
+      <label>Postal Address</label>
+      <input type="text" class="form-control" id="address"> 
+    </div>
+    <div class="form-group col-md-3">
+      <label>District</label>
+      <input type="text" class="form-control" id="district"> 
+    </div>
+    <div class="form-group col-md-2">
+      <label>City</label>
+      <input type="text" class="form-control" id="city"> 
+    </div>
+    <div class="form-group col-md-2">
+      <label>Pin</label>
+      <input type="text" class="form-control" id="pin"> 
+    </div>
+    <div class="form-group col-md-2">
+      <label>State</label>
+      <input type="text" class="form-control" id="state"> 
+    </div>
+    </div>
+    
+    
+    
+    
+    <div class="row">
+    <div class="form-group col-md-3">
+      <label>Name of the Head of the Institution</label>
+      <input type="text" class="form-control" id="na"> 
+    </div>
+    
+    <div class="form-group col-md-3">
+      <label>NA Phone number</label>
+      <input type="text" class="form-control" id="na-phone"> 
+    </div>
+    <div class="form-group col-md-3">
+      <label>NA Email</label>
+      <input type="email" class="form-control" id="na-email"> 
+    </div>
+    </div>
+    
+    
+    <!--form specific details-->
+    
+    <div class="row">
+      
+    <div class="form-group col-md-3">
+      <%= f.label :faculty_name %>
+      <%= f.text_field :faculty_name , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :candidate_csi_membership_no %>
+      <%= f.text_field :candidate_csi_membership_no , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-2">
+      <%= f.label :faculty_email %>
+      <%= f.email_field :faculty_email , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-2">
+      <%= f.label :valid_till %>
+      <%= f.date_field :valid_till , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-2">
+      <%= f.label :has_student_branch %>
+      <%= f.check_box :has_student_branch , class: "form-control" %>
+    </div>
+    </div>
+    
+    
+    <div class="form-group">
+        <div class="col-md-offset-5 col-md-2">
+            <%= f.submit "Submit" , class: "btn btn-primary btn-lg" %>
+        </div>
+    </div>
+    
+<% end %>   

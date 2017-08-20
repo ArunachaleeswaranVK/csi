@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819082049) do
+ActiveRecord::Schema.define(version: 20170820062211) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -142,7 +142,12 @@ ActiveRecord::Schema.define(version: 20170819082049) do
     t.boolean  "has_student_branch"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "faculty_name"
+    t.string   "faculty_email"
+    t.string   "imno"
   end
+
+  add_index "paperpresenterintconferences", ["imno"], name: "index_paperpresenterintconferences_on_imno"
 
   create_table "publishingdetailbyfaculties", force: :cascade do |t|
     t.string   "article_title"
@@ -183,14 +188,30 @@ ActiveRecord::Schema.define(version: 20170819082049) do
   add_index "sbcs", ["imno"], name: "index_sbcs_on_imno"
 
   create_table "studentbranchactivists", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "csi_volunteer_name"
+    t.string   "csi_volunteer_email"
+    t.string   "csi_volunteer_id"
+    t.date     "valid_till"
+    t.integer  "volunteers"
+    t.integer  "volunteers_added"
+    t.string   "imno"
   end
 
+  add_index "studentbranchactivists", ["imno"], name: "index_studentbranchactivists_on_imno"
+
   create_table "studentmaxpublishings", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "csi_volunteer_name"
+    t.string   "csi_volunteer_email"
+    t.string   "csi_volunteer_id"
+    t.date     "valid_till"
+    t.string   "imno"
   end
+
+  add_index "studentmaxpublishings", ["imno"], name: "index_studentmaxpublishings_on_imno"
 
   create_table "supportforcsievents", force: :cascade do |t|
     t.date     "date_of_event"

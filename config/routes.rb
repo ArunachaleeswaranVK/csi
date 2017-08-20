@@ -18,7 +18,13 @@ Rails.application.routes.draw do
   get '/longestcontinuoussbcs/getname/:name' => 'longestcontinuoussbcs#getname'
   
   resources :facmaxpublishings
-  get '/facmaxpublishings/getnamef/:name' => 'facmaxpublishings#getname'
+  get '/facmaxpublishings/getname/:name' => 'facmaxpublishings#getname'
+  
+  resources :paperpresenterintconferences
+  
+  resources :studentmaxpublishings
+  
+  resources :studentbranchactivists
   
   resources :institutes , param: :imno
   resources :sbcs , param: :imno
