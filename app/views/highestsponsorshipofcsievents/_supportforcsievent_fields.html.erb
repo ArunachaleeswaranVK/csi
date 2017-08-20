@@ -1,29 +1,31 @@
+<div class="row">
 <div class="nested-fields">
     
-<div class="row">
-<div class="form-group col-md-3">
+
+<div class="form-group col-md-4">
         <%= f.label :name_of_event %>
-        <%= f.text_field :name_of_event %>
+        <%= f.text_field :name_of_event , class: "form-control" %>
+</div>
+<div class="form-group col-md-4">
+        <%= f.label :date_of_event %>
+        <%= f.date_field :date_of_event , class: "form-control" %>
+</div>
+<div class="form-group col-md-4">
+        <%= f.label :organised_by %>
+        <%= f.text_field :organised_by, class: "form-control" %>
+</div>
+<div class="form-group col-md-8">
+        <%= f.label :support_details %>
+        <%= f.text_area :support_details , class: "form-control"%>
 </div>
 <div class="form-group col-md-3">
-        <%= f.label :date_of_event %>
-        <%= f.date_field :date_of_event %>
-</div>
-<div class="form-group col-md-2">
-        <%= f.label :organised_by %>
-        <%= f.text_field :organised_by %>
-</div>
-<div class="form-group col-md-2">
-        <%= f.label :support_details %>
-        <%= f.text_field :support_details %>
-</div>
-<div class="form-group col-md-2">
         <%= f.label :monetary_value %>
-        <%= f.text_field :monetary_value %>
+        <%= f.text_field :monetary_value , class: "form-control"%>
 </div>
-<div>
-   <%= link_to_remove_association "Remove", f, class: "form-button btn btn-default" %> 
+<div class="form-group col-md-1 remove-sub-form-button">
+   <%= link_to_remove_association "Remove", f, class: "form-button btn btn-danger" %> 
 </div>
+
 </div>
 
 

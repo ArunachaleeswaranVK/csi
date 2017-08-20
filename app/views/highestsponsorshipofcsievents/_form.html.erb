@@ -65,23 +65,24 @@
     </div>
     </div>
     
-    <div>
-    <p><strong>Supportforcsievent:</strong></p>
+    <hr>
+    <p class="sub-form-title">Details of support extended for CSI event
+    organised by CSI Chapters / Divisions / SIGs (Do not include College organised events): :</p>
 
     <%= f.fields_for :supportforcsievents do |i| %>
       <%= render 'supportforcsievent_fields', f: i %>
       
     <% end %>
     
-    <div class="links">
-        <%= link_to_add_association 'Add Details', f, :supportforcsievents %>
+    <div class="links col-md-12">
+        <%= link_to_add_association 'Add Event', f, :supportforcsievents , class: "form-button btn btn-primary" %>
     </div>
-   </div>
+   
     
     
     <div class="form-group">
         <div class="col-md-offset-5 col-md-2">
-            <%= f.submit "Submit" , class: "btn btn-primary btn-lg" %>
+            <%= f.submit "Submit" , class: "btn btn-success btn-lg" %>
         </div>
     </div>
     

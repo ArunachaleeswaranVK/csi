@@ -8,27 +8,27 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  resources :bestcsiinternationalstudentseventhosts 
+  resources :bestcsiinternationalstudentseventhosts , only: [:new, :create]
   get '/bestcsiinternationalstudentseventhosts/getname/:name' => 'bestcsiinternationalstudentseventhosts#getname'
   
-  resources :highestsponsorshipofcsievents
+  resources :highestsponsorshipofcsievents , only: [:new, :create]
   get '/highestsponsorshipofcsievents/getname/:name' => 'highestsponsorshipofcsievents#getname'
   
-  resources :longestcontinuoussbcs
+  resources :longestcontinuoussbcs , only: [:new, :create]
   get '/longestcontinuoussbcs/getname/:name' => 'longestcontinuoussbcs#getname'
   
-  resources :facmaxpublishings
+  resources :facmaxpublishings , only: [:new, :create]
   get '/facmaxpublishings/getname/:name' => 'facmaxpublishings#getname'
   
-  resources :paperpresenterintconferences
+  resources :paperpresenterintconferences , only: [:new, :create]
   
-  resources :studentmaxpublishings
+  resources :studentmaxpublishings , only: [:new, :create]
   
-  resources :studentbranchactivists
+  resources :studentbranchactivists , only: [:new, :create]
   
   resources :institutes , param: :imno
   resources :sbcs , param: :imno
-  resources :nominating_authorities , param: :imno
+  
   resources :nominated_members , param: :imno
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

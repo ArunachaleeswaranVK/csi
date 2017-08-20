@@ -65,23 +65,23 @@
     </div>
     </div>
     
-    <div>
-    <p><strong>SBC Tenure Details:</strong></p>
+    <hr>
+    <p class="sub-form-title">SBC tenure details: :</p>
 
     <%= f.fields_for :sbc_tenure_details do |i| %>
       <%= render 'sbc_tenure_detail_fields', f: i %>
       
     <% end %>
     
-    <div class="links">
-        <%= link_to_add_association 'Add Details', f, :sbc_tenure_details %>
+    <div class="links col-md-12">
+        <%= link_to_add_association 'Add Event', f, :sbc_tenure_details , class: "form-button btn btn-primary" %>
     </div>
-   </div>
+   
     
     
     <div class="form-group">
         <div class="col-md-offset-5 col-md-2">
-            <%= f.submit "Submit" , class: "btn btn-primary btn-lg" %>
+            <%= f.submit "Submit" , class: "btn btn-success btn-lg" %>
         </div>
     </div>
     
