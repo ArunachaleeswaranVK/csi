@@ -1,0 +1,28 @@
+
+
+<% if object.errors.any? %>
+
+    <div class="row">
+        <div class="col-md-8 col-xs-offset-2">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h2 class="panel-title">
+                        <%= pluralize(object.errors.count, "error") %>
+                        prohibited this Award from being saved !
+                    </h2>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                    <% object.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<% end %>

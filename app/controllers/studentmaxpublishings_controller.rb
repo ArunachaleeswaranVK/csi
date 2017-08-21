@@ -23,6 +23,7 @@ class StudentmaxpublishingsController < ApplicationController
         @studentmaxpublishing = Studentmaxpublishing.new(studentmaxpublishing_params)
         
         if @studentmaxpublishing.save
+            flash[:notice] = " Your response has been recorded"
             redirect_to root_path
         else
             render "new"

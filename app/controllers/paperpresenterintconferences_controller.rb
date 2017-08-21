@@ -23,6 +23,7 @@ class PaperpresenterintconferencesController < ApplicationController
         @paperpresenterintconference = Paperpresenterintconference.new(paperpresenterintconference_params)
         
         if @paperpresenterintconference.save
+            flash[:notice] = " Your response has been recorded"
             redirect_to root_path
         else
             render "new"

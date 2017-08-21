@@ -1,21 +1,25 @@
+
+<%= render 'shared/errors', object: @longestcontinuoussbc %>
+
 <%= form_for @longestcontinuoussbc, :html => {:class => "form-horizontal"} do |f| %>
     
-    <div class="form-group">
+    <div class="row">
+    <div class="form-group col-md-4">
      <label>Institution Name</label>
      <input type="text" class="form-control" id="name">   
     </div>
-    <div class="form-group">
+    <div class="form-group col-md-4">
       <%= f.label :imno , "Institution Membership Number" %>
       <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
     </div>
     
     
-    <div class="row">
-    <div class="form-group col-md-3">
+    
+    <div class="form-group col-md-4">
       <label>Postal Address</label>
       <input type="text" class="form-control" id="address"> 
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-2">
       <label>District</label>
       <input type="text" class="form-control" id="district"> 
     </div>
@@ -31,42 +35,42 @@
       <label>State</label>
       <input type="text" class="form-control" id="state"> 
     </div>
-    </div>
+   
     
-    <div class="row">
-    <div class="form-group col-md-3">
+    
+    <div class="form-group col-md-4">
       <label>SBC Name</label>
       <input type="text" class="form-control" id="sbc-name"> 
     </div>
     
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-2">
       <label>SBC CSI Imno</label>
       <input type="text" class="form-control" id="sbc-imno"> 
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-4">
       <label>SBC Email</label>
       <input type="email" class="form-control" id="sbc-email"> 
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-2">
       <label>SBC Phonenumber</label>
       <input type="text" class="form-control" id="sbc-phone"> 
     </div>
-    </div>
     
-    <div class="row">
+    
+    
       
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-2">
       <%= f.label :volunteers %>
       <%= f.text_field :volunteers , class: "form-control" %>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-2">
       <%= f.label :volunteers_added %>
       <%= f.text_field :volunteers_added , class: "form-control" %>
     </div>
     </div>
     
-    <hr>
-    <p class="sub-form-title">SBC tenure details: :</p>
+    
+    <p class="sub-form-title">SBC tenure details:</p>
 
     <%= f.fields_for :sbc_tenure_details do |i| %>
       <%= render 'sbc_tenure_detail_fields', f: i %>

@@ -18,13 +18,14 @@ class HighestsponsorshipofcsieventsController < ApplicationController
     
     def new
         @highestsponsorshipofcsievent = Highestsponsorshipofcsievent.new
-        3.times { @highestsponsorshipofcsievent.supportforcsievents.build}
+        1.times { @highestsponsorshipofcsievent.supportforcsievents.build}
     end
     
     def create
         @highestsponsorshipofcsievent = Highestsponsorshipofcsievent.new(highestsponsorshipofcsievent_params)
         
         if @highestsponsorshipofcsievent.save
+            flash[:notice] = " Your response has been recorded"
             redirect_to root_path
         else
             render "new"

@@ -23,6 +23,7 @@ class FacmaxpublishingsController < ApplicationController
         @facmaxpublishing = Facmaxpublishing.new(facmaxpublishing_params)
         
         if @facmaxpublishing.save
+            flash[:notice] = " Your response has been recorded"
             redirect_to root_path
         else
             render "new"

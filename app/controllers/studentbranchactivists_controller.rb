@@ -23,6 +23,7 @@ class StudentbranchactivistsController < ApplicationController
         @studentbranchactivist = Studentbranchactivist.new(studentbranchactivist_params)
         
         if @studentbranchactivist.save
+            flash[:notice] = " Your response has been recorded"
             redirect_to root_path
         else
             render "new"

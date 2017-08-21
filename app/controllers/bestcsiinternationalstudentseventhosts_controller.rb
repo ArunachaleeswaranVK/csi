@@ -18,13 +18,14 @@ class BestcsiinternationalstudentseventhostsController < ApplicationController
     
     def new
         @bestcsiinternationalstudentseventhost = Bestcsiinternationalstudentseventhost.new
-        3.times { @bestcsiinternationalstudentseventhost.internationalevents.build}
+        2.times { @bestcsiinternationalstudentseventhost.internationalevents.build}
     end
     
     def create
         @bestcsiinternationalstudentseventhost = Bestcsiinternationalstudentseventhost.new(bestcsiinternationalstudentseventhost_params)
         
         if @bestcsiinternationalstudentseventhost.save
+            flash[:notice] = " Your response has been recorded"
             redirect_to root_path
         else
             render "new"

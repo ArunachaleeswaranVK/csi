@@ -17,13 +17,14 @@ class LongestcontinuoussbcsController < ApplicationController
     
     def new
         @longestcontinuoussbc = Longestcontinuoussbc.new
-        3.times { @longestcontinuoussbc.sbc_tenure_details.build}
+        2.times { @longestcontinuoussbc.sbc_tenure_details.build}
     end
     
     def create
         @longestcontinuoussbc = Longestcontinuoussbc.new(longestcontinuoussbc_params)
         
         if @longestcontinuoussbc.save
+            flash[:notice] = " Your response has been recorded"
             redirect_to root_path
         else
             render "new"

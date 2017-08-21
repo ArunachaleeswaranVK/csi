@@ -5,11 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
+  
+  <%= google_webfonts_init({
+    google: ['Roboto Slab', 'Roboto' ,'Josefin Sans','Lato']
+  }) %>
 </head>
 <body>
 
-<div class="container">
 
+<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "alert_wrapper" %>
+<% end %>
+
+<div class="container">
   <%= yield %>
 </div>
 

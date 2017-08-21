@@ -17,29 +17,47 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.alert_wrapper{
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    background: #1d6fda;
+    padding: 2.5rem 0;
+    text-align: center;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
 .award-area{
     font-family: "Lato";
     
 }
 
 .award-title{
-    background-color: #f5f8fd;
-    border: 0px solid #dbdbe8;
-    border-radius: 5px;
+    
+    font-family: "Lato";
     padding: 1em;
     margin-bottom: 1em;
     text-align: left;
     
 }
+.award-title a{
+    font-family: "Lato";
+    color: rgba(11, 33, 70, 0.87);
+    
+    
+}
 
 #award-banner{
     
-    padding: 0.25em;
+    padding: 1em;
     font-weight: bold;
-    color: rgb(80, 116, 177);
+    color: rgba(12, 12, 12, 0.69);
 }
 .submitted-details{
-    font-family: Lato;
+    font-family: "Lato";
     font-size: 1.5em;
     margin: 1em;
     border: 0px solid rgba(10, 10, 10, 0.12);
@@ -68,8 +86,8 @@
 .sub-form-title{
     text-align: center;
     font-size: 1.5em;
-    margin: 1em;
-    letter-spacing: .1em;
+    margin: 0.5em;
+    
 }
 .remove-sub-form-button{
         margin-top: 1.7em;
