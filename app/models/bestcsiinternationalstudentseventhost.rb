@@ -11,5 +11,4 @@ class Bestcsiinternationalstudentseventhost < ActiveRecord::Base
     validates :volunteers_added,  numericality: { only_integer: true }
     validates :imno, presence: true
     
-    
 end

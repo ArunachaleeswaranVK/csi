@@ -17,6 +17,7 @@ class FacmaxpublishingsController < ApplicationController
     
     def new
         @facmaxpublishing = Facmaxpublishing.new
+        2.times { @facmaxpublishing.publishingdetailbyfaculties.build}
     end
     
     def create
@@ -52,7 +53,9 @@ class FacmaxpublishingsController < ApplicationController
     
     def facmaxpublishing_params
        params.require(:facmaxpublishing).permit(:candidate_csi_membership_no,
-       :valid_till,:imno,:has_student_branch,:faculty_name,:faculty_email)
+       :valid_till,:imno,:has_student_branch,:faculty_name,:faculty_email,
+       publishingdetailbyfaculties_attributes: [:article_title,
+       :published_in,:date_of_publishing,:_destroy])
     end
     
     def set_award

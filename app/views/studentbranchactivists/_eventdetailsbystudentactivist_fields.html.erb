@@ -1,0 +1,27 @@
+<div class="row">
+<div class="nested-fields">
+    
+
+<div class="form-group col-md-3">
+        <%= f.label :event_name %>
+        <%= f.text_field :event_name , class: "form-control"%>
+</div>
+<div class="form-group col-md-3">
+        <%= f.label :event_place %>
+        <%= f.text_field :event_place , class: "form-control"%>
+</div>
+<div class="form-group col-md-3">
+        <%= f.label :role_played %>
+        <%= f.text_field :role_played, class: "form-control" %>
+</div>
+
+
+<div class="form-group col-md-1 remove-sub-form-button">
+   <%= link_to_remove_association "Remove", f, class: "form-button btn btn-danger" %> 
+</div>
+
+</div>
+
+
+
+</div>

@@ -17,6 +17,7 @@ class StudentmaxpublishingsController < ApplicationController
     
     def new
         @studentmaxpublishing = Studentmaxpublishing.new
+        2.times { @studentmaxpublishing.publishingdetailbystudents.build}
     end
     
     def create
@@ -51,7 +52,10 @@ class StudentmaxpublishingsController < ApplicationController
     private
     
     def studentmaxpublishing_params
-       params.require(:studentmaxpublishing).permit(:csi_volunteer_name,:csi_volunteer_email,:csi_volunteer_id,:valid_till,:imno)
+       params.require(:studentmaxpublishing).permit(:csi_volunteer_name,
+       :csi_volunteer_email,:csi_volunteer_id,:valid_till,:imno,
+       publishingdetailbystudents_attributes: [:article_title,
+       :published_in,:date_of_publishing,:_destroy])
     end
     
     def set_award

@@ -1,3 +1,5 @@
+<%= render 'shared/errors', object: @studentmaxpublishing %>
+
 <%= form_for @studentmaxpublishing, :html => {:class => "form-horizontal"} do |f| %>
     
     <div class="form-group">
@@ -96,6 +98,18 @@
       <%= f.date_field :valid_till , class: "form-control" %>
     </div>
     
+    </div>
+    
+    
+    <p class="sub-form-title">Details of publishing in CSIC by nominated student:</p>
+
+    <%= f.fields_for :publishingdetailbystudents do |i| %>
+      <%= render 'publishingdetailbystudent_fields', f: i %>
+      
+    <% end %>
+    
+    <div class="links col-md-12">
+        <%= link_to_add_association 'Add Event', f, :publishingdetailbystudents , class: "form-button btn btn-primary" %>
     </div>
     
     

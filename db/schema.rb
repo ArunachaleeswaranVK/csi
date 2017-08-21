@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170820170654) do
+ActiveRecord::Schema.define(version: 20170821155804) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -39,8 +39,9 @@ ActiveRecord::Schema.define(version: 20170820170654) do
     t.string   "event_name"
     t.string   "event_place"
     t.string   "role_played"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "studentbranchactivist_id"
   end
 
   create_table "facmaxpublishings", force: :cascade do |t|
@@ -154,8 +155,9 @@ ActiveRecord::Schema.define(version: 20170820170654) do
     t.string   "article_title"
     t.string   "published_in"
     t.date     "date_of_publishing"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "facmaxpublishing_id"
   end
 
   create_table "publishingdetailbystudents", force: :cascade do |t|
@@ -165,6 +167,7 @@ ActiveRecord::Schema.define(version: 20170820170654) do
     t.date     "date_of_publishing"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "studentmaxpublishing_id"
   end
 
   create_table "recordforthesisawards", force: :cascade do |t|

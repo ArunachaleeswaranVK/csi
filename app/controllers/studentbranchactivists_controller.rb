@@ -17,6 +17,7 @@ class StudentbranchactivistsController < ApplicationController
     
     def new
         @studentbranchactivist = Studentbranchactivist.new
+        2.times { @studentbranchactivist.eventdetailsbystudentactivists.build}
     end
     
     def create
@@ -52,7 +53,9 @@ class StudentbranchactivistsController < ApplicationController
     
     def studentbranchactivist_params
        params.require(:studentbranchactivist).permit(:csi_volunteer_name,:csi_volunteer_email,:csi_volunteer_id,
-       :volunteers,:volunteers_added,:valid_till,:imno)
+       :volunteers,:volunteers_added,:valid_till,:imno,
+       eventdetailsbystudentactivists_attributes: [:event_name,
+       :event_place,:role_played,:_destroy])
     end
     
     def set_award

@@ -1,3 +1,5 @@
+<%= render 'shared/errors', object: @facmaxpublishing %>
+
 <%= form_for @facmaxpublishing, :html => {:class => "form-horizontal"} do |f| %>
     <!--institute details-->
     <div class="form-group">
@@ -77,6 +79,17 @@
       <%= f.label :has_student_branch %>
       <%= f.check_box :has_student_branch , class: "form-control" %>
     </div>
+    </div>
+    
+    <p class="sub-form-title">Details of publishing in CSIC by the nominated Faculty:</p>
+
+    <%= f.fields_for :publishingdetailbyfaculties do |i| %>
+      <%= render 'publishingdetailbyfaculty_fields', f: i %>
+      
+    <% end %>
+    
+    <div class="links col-md-12">
+        <%= link_to_add_association 'Add Event', f, :publishingdetailbyfaculties , class: "form-button btn btn-primary" %>
     </div>
     
     
