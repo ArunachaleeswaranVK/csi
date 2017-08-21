@@ -1,4 +1,4 @@
-imno,name,address,city,district,state ,pincode,nominating_authority,na_phone,na_email
+IM No,Instititution Name,Address,City,District,State ,Pincode,Authority,Phone,Email
 A0200002,Kavikulguru Institute of Technology and Science,"K.K. Nagar, Ramtek, ",Nagpur,,Maharashtra,441106,Dr.Bhaskar Patel,99754 13330,principal@kits.edu
 A0200003,"Aurora's Scientific, Technological and Research Academy","Bandlaguda, Chandrayan Gutta, ",Hyderabad,,Telangana,500005,Dr.C.Srilatha,98666 66695,deepuaurora@yahoo.com
 A0200004,Dr. T. Thimmaiah Institute of Technology,"Oorgaum Post, ",Kolar Gold Fields,,Karnataka,563120,Dr.Syed Ariff,94485 74037,principal@gvet.edu.in
@@ -66,7 +66,7 @@ I00600,CMR College of Engineering and Technology,"Kandlakoya (V), Medchal Road,"
 I00604,Laljibhai Chaturbhai Institute of Technology,"Tal: Visnagar, Dist: Mehsana,",Bhandu,,Gujarat,384120,Dr.Dharesh J.Shah,,principal@lcit.org
 I00609,Karpagam College of Engineering,"S.F.No. 758, 759, 760, Othakkal Mandapam, ",Coimbatore,,Tamilnadu,641032,Dr.P.Vijayakumar,98949 94643,principal@kce.ac.in
 I00612,Ganadipathy Tulsi's Jain Engineering College,"Tiruvannamalai Raod,",Vellore,,Tamilnadu,632102,Dr.R.Varatharajan,80125 70109,principal@gtec.ac.in
- I00615 , APIIT SD India ,"Faridpur Road, G.T. Road, Karnal Side, ",Panipat,,Haryana,132103, Manju Sharma-Chief Librarian ,, info@apiit.edu.in 
+ I00615 , APIIT SD India ,"Faridpur Road, G.T. Road, Karnal Side, ",Panipat,,Haryana,132103,Manju Sharma-Chief Librarian,,info@apiit.edu.in
 I00616,Vel Tech Dr.RR and Dr.SR Technical University,"#42, VelTech-Avadi Road, ",Chennai,,Tamilnadu,600062,Dr.Beela Satyanarayana,87544 16291,vicechancellor@veltechuniv.edu.in
 I00623,Velammal Engineering College,"Velammal Nagar, AmbatturRedhills Road, ",Chennai,,Tamilnadu,600066,Dr.N.Duraipandian,99404 44927,principal@velammal.edu.in
 I00627,Federal Institute of Science and Technology,"Hormis Nagar, Mookkannoor. P.O, ",Angamaly,"Ernakulam Dist, ",Kerala,683577,Dr.George Isasc,94950 46290,principal@fisat.ac.in
@@ -89,7 +89,7 @@ I00707,A.V.C College of Engineering,"Mannampandal, ",Mayiladuthurai,"Nagapattina
 I00708,Smt.Kashibai Navale College of Engineering,"S. No- 44 /1, Vadgaon Budruk off, Sinhgad Road, ",Pune,,Maharashtra,411041,Deshpande Arvind Vinayak,,
 I00710,AISSMS College of Engineering,"(All India Shri Shivaji Memorial Society's College of Engineering), Kennedy Road, Near R.T.O.",Pune,,Maharashtra,411001,Dr.Sanjay P.Danao,95456 48496,"spdanao2yahoo.com, principal@aissmscoe.com"
 I00712,All India Council for Prof. Training and Research,"G6, Mirani Nagar, Opp. Sarvodaya Soc, Kopri, ",Thane,,Maharashtra,400603,Rajan R Ghag ,"97693 30707, 98703 40707",rajan@aicptr.net
-I00716,KSR College of Engineering,"Ksr Kalvi Nagar, Kuchipalayam, Thokkavadi Post, ",Thiruchengode,,Tamilnadu,637209,,, 
+I00716,KSR College of Engineering,"Ksr Kalvi Nagar, Kuchipalayam, Thokkavadi Post, ",Thiruchengode,,Tamilnadu,637209,,,
 I00718,Shri Angalamman College of Engineering and Technology,"Siruganoor, Mannachanallur Taluk, ",Tiruchirappalli,,Tamilnadu,621105,Dr.W.Christ Raj,94431 87952,principal@sacet.edu.in
 I00721,Shri Ramswaroop Memorial College of Engineering and Management,"Tewariganj, Faizabad Road,",Lucknow,,Uttar Pradesh,227105,Er Pankaj Agarwal,,
 I00729,G.H. Raisoni College of Engineering,"CRPF Gate No. 3, Hingna Road, Digdoh Hills, ",Nagpur,,Maharashtra,440016,Dr.Preethi Bajaj,98222 20369,principal@ghrce.edu.in
@@ -429,7 +429,6 @@ I01775,Keshav Memorial Institute of Technology,"3-5-1026, Narayanguda",Hyderabad
 I01781,"The Maharaja Sayajirao University of Baroda (BCA Programme, Faculty of Science)","Sayajigunj, ",Vadodara,,Gujarat,390002,Prof.Yogesh Singh ,98254 06700,vc@ms4baroda.ac.in
 I01783,Guru Kashi University,"Sardulgarh Road, ",Talwandi Sabo,,Punjab,151302,Dr.B.S.Dhaliwal ,94172 34072 ,dhaliwal_bs@rediffmail.com
 I01784,Global Institute of Technology,"ITS-1, IT Park, EPIP Sitapura,",Jaipur,,Rajasthan,302022,Dr.Renu Joshi,91661 17765,principal@gitjaipur.com
-I01784,Global Institute of Technology,"ITS-1, IT Park, EPIP Sitapura,",Jaipur,,Rajasthan,302022,Dr.S.P.Gupta,75689 25577 ,guptasp1942@yahoo.com
 I01785,Sridevi Women's Engineering College,"Vattinagulapally(V), Near Wipro Gopannapally, Gandipet, ",Hyderabad,,Andhra Pradesh,500075,Dr.Y.Rajasree ,98661 53686 ,srideviengg@rediffmail.com
 I01786,Union Christian College,"MCA UC College Post,Aluva, ",Ernakulam,,Kerala,683102,Dr.A.V.Alex,97440 36702,alexav50@gmail.com
 I01787,Al-Habeeb College of Engineering and Technology,,Ranga Reddy District,,Andhra Pradesh,501503,Prof.Shaik Mahaboob Basha,98494 64256 ,principal@alhabeebcollege.ac.in
@@ -698,8 +697,7 @@ I02307,Vadodara Institute of Technology,,Vadodara,,Gujarat,391510,Dr.Jayeshkumar
 I02309,KCG College of Technology,"Rajiv Gandhi Salai,Karapakkam, ",Chennai,,Tamilnadu,600096,Dr.T.Rengaraja,94441 42611,principal@kcgcollege.com
 I02310,Muffakham Jah College of Engineering and Technology,"Mount Pleasant Road No: 3, Banjara Hills, ",Hyderabad,,Telangana,500034,Dr.Basheer Ahmed,98494 55423,principal@mjcollege.ac.in
 I02311,Sathyabama University,"Jeppiaar Nagar, Rajiv Gandhi Salai, ",Chennai,,Tamilnadu,600119,Dr.Mariazeena Johnson,,directors@sathyabamauniversity.ac.in
-I02312,Srinivasa Ramanujan CentreSastra University,,Kumbakonam,,Tamilnadu,612001,Prof.K.G.Raghunathan ,94442 41551 ,raghunathan@src.sastra.edu
-I02312,Srinivasa Ramanujan CentreSastra University,,Kumbakonam,,Tamilnadu,612001,Prof.K.G.Raghunathan ,94442 41551 ,raghunathan@src.sastra.edu
+I02312,"Srinivasa Ramanujan Centre, ",Sastra University,Kumbakonam,,Tamilnadu,612001,Prof.K.G.Raghunathan ,94442 41551 ,raghunathan@src.sastra.edu
 I02313,B.V.V.S. Polytechnic (Autonomous),,Bagalkot,,Karnataka,587101,Dr.G.B.Danashetti,94488 97256,principal.bvvsp@gmail.com
 I02315,Malla Reddy Engineering College for Women,"Maisammaguda Village,Dhulapally Post, Via Kompally ",Secunderabad,,Telangana,500100,Dr.Y.Madhaveelatha,81067 14901,madhaveelatha2009@gmail.com
 I02316,Narayana Engineering College,"A.K. Nagar, Muthukur Road, ",Nellore,,Andhra Pradesh,524002,Dr.G.Jagadeeswara Reddy,99123 55501,principalnecn@gmail.com
@@ -783,7 +781,6 @@ M10040,GSSS Institute of Engineering and Technology for Women,"KRS Road, Metagal
 M10041,Sanjivani Rural Education Society College of Engineering,"At Sahajanand Nagar Post, Shingnapur, ",Kopargaon,,Maharashtra,423603,Dr.D.N.Kyatanavar,92267 98745,psrescoe@gmail.com
 M10042,Maratha Vidya Prasarak Samaj's Karmaveer Adv. Baburao Ganpatrao Thakare College of Engineering,"Udoji Maratha Boarding Campus,Near Pumping Station, Gangapur Road,",Nashik,,Maharashtra,422013,Dr.Kailas Shankarrao Holkar,98223 79056,principal@kbtcoe.org
 M10043,Anand Institute of Higher Technology,"Kalasalingam Nagar, Old Mahablipuram Road, Kazhipattur ,",Chennai,,Tamilnadu,603103,Dr.A.Kathirvel,90950 59465,kathirvela.cse@aiht.ac.in
-M10043,Anand Institute of Higher Technology,"Kalasalingam Nagar, Old Mahablipuram Road, Kazhipattur ,",Chennai,,Tamilnadu,603103,Dr.T.A.Raghavendiran,044-27471330,aiht_anand@yahoo.co.in
 M10044,Institute of Innovation in Technology and Management,"D-27 and 28 Institutional Area, Janakpuri, ",New Delhi,,New Delhi,110058,Dr.Vani Majumdar,88009 71514,director@iitmjp.ac.in
 M10045,Doon Group of Institution,,Rishikesh,,Uttarakhand,249204,Dr.Anurag Rai,98972 22119,rai_anurag@hotmail.com
 M10046,Don Bosco Institute of Technology,"Kumbalagodu, Mysore Road, ",Bangalore,,Karnataka,560074,Dr.T.Sreenivasan,96636 58899,dbit.principal@gmail.com
