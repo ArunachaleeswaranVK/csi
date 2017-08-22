@@ -3,25 +3,25 @@
 <div class="nested-fields">
     
 
-<div class="form-group col-md-4">
-        <%= f.label :no_of_articles_published %>
+<div class="form-group sf col-md-2">
+        
         <%= f.text_field :no_of_articles_published , class: "form-control" %>
 </div>
-<div class="form-group col-md-4">
-        <%= f.label :article_title %>
+<div class="form-group sf col-md-3">
+       
         <%= f.text_field :article_title , class: "form-control" %>
 </div>
-<div class="form-group col-md-3">
-        <%= f.label :published_in %>
+<div class="form-group sf col-md-3">
+        
         <%= f.text_field :published_in , class: "form-control" %>
 </div>
-<div class="form-group col-md-4">
-        <%= f.label :date_of_publishing , "No of students from Abroad / Country Name" %>
+<div class="form-group sf col-md-3">
+        
         <%= f.date_field :date_of_publishing , class: "form-control" %>
 </div>
 
 
-<div class="form-group col-md-1 remove-sub-form-button">
+<div class="form-group sf col-md-1 remove-sub-form-button">
    <%= link_to_remove_association "Remove", f, class: "form-button btn btn-danger" %> 
 </div>
 

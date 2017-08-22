@@ -2,27 +2,27 @@
 <div class="nested-fields">
     
 
-<div class="form-group col-md-4">
-        <%= f.label :name_of_event %>
+<div class="form-group sf col-md-2">
+        
         <%= f.text_field :name_of_event , class: "form-control" %>
 </div>
-<div class="form-group col-md-4">
-        <%= f.label :date_of_event %>
+<div class="form-group sf col-md-2">
+      
         <%= f.date_field :date_of_event , class: "form-control" %>
 </div>
-<div class="form-group col-md-4">
-        <%= f.label :organised_by %>
+<div class="form-group sf col-md-3">
+       
         <%= f.text_field :organised_by, class: "form-control" %>
 </div>
-<div class="form-group col-md-8">
-        <%= f.label :support_details %>
+<div class="form-group sf col-md-2">
+       
         <%= f.text_area :support_details , class: "form-control"%>
 </div>
-<div class="form-group col-md-3">
-        <%= f.label :monetary_value %>
+<div class="form-group sf col-md-2">
+        
         <%= f.text_field :monetary_value , class: "form-control"%>
 </div>
-<div class="form-group col-md-1 remove-sub-form-button">
+<div class="form-group sf col-md-1 remove-sub-form-button">
    <%= link_to_remove_association "Remove", f, class: "form-button btn btn-danger" %> 
 </div>
 

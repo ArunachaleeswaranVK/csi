@@ -3,113 +3,117 @@
 
 <%= form_for @studentbranchactivist, :html => {:class => "form-horizontal"} do |f| %>
     
-    <div class="form-group">
-     <label>Institution Name</label>
+    <p class="primary-form-subheading">Institution Details</p> 
+    <div class="row institution-details">
+    <div class="form-group col-md-6">
+     <label>Name</label>
      <input type="text" class="form-control" id="name">   
     </div>
-    <div class="form-group">
-      <%= f.label :imno , "Institution Membership Number" %>
-      <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
-    </div>
-    
-    
-    <div class="row">
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-6">
       <label>Postal Address</label>
       <input type="text" class="form-control" id="address"> 
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :imno , "IMNO" %>
+      <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
     </div>
     <div class="form-group col-md-3">
       <label>District</label>
       <input type="text" class="form-control" id="district"> 
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <label>City</label>
       <input type="text" class="form-control" id="city"> 
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <label>Pin</label>
       <input type="text" class="form-control" id="pin"> 
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <label>State</label>
       <input type="text" class="form-control" id="state"> 
     </div>
-    </div>
     
-     <!--nominating authority-->
-    
-    <div class="row">
-    <div class="form-group col-md-4">
-      <label>Name of the Head of the Institution</label>
+    <div class="form-group col-md-3">
+      <label>Head of the Institution</label>
       <input type="text" class="form-control" id="na"> 
     </div>
     
-    <div class="form-group col-md-4">
-      <label>NA Phone number</label>
+    <div class="form-group col-md-3">
+      <label>Phone number</label>
       <input type="text" class="form-control" id="na-phone"> 
     </div>
-    <div class="form-group col-md-4">
-      <label>NA Email</label>
+    <div class="form-group col-md-3">
+      <label>Email</label>
       <input type="email" class="form-control" id="na-email"> 
     </div>
-    </div>
     
     
-    <div class="row">
+    
+    <!--sbc details-->
+    <p class="primary-form-subheading">SBC Details</p>    
+  
     <div class="form-group col-md-3">
-      <label>SBC Name</label>
+      <label>Name</label>
       <input type="text" class="form-control" id="sbc-name"> 
     </div>
     
     <div class="form-group col-md-3">
-      <label>SBC CSI Imno</label>
+      <label>Mem.No</label>
       <input type="text" class="form-control" id="sbc-imno"> 
     </div>
     <div class="form-group col-md-3">
-      <label>SBC Email</label>
+      <label>Email</label>
       <input type="email" class="form-control" id="sbc-email"> 
     </div>
     <div class="form-group col-md-3">
-      <label>SBC Phonenumber</label>
+      <label>Phonenumber</label>
       <input type="text" class="form-control" id="sbc-phone"> 
-    </div>
     </div>
     
     
     
      <!--form specific details-->
     
-    <div class="row">
+    <p class="primary-form-subheading">Volunteer Details</p>  
       
-    <div class="form-group col-md-2">
-      <%= f.label :csi_volunteer_name %>
+    <div class="form-group col-md-3">
+      <%= f.label :csi_volunteer_name , "Name" %>
       <%= f.text_field :csi_volunteer_name , class: "form-control" %>
     </div>
-    <div class="form-group col-md-2">
-      <%= f.label :csi_volunteer_email %>
+    <div class="form-group col-md-3">
+      <%= f.label :csi_volunteer_email  , "Email" %>
       <%= f.email_field :csi_volunteer_email , class: "form-control" %>
     </div>
     <div class="form-group col-md-2">
-      <%= f.label :csi_volunteer_id , "csi_volunteer_id" %>
+      <%= f.label :csi_volunteer_id , "CSI Mem.Id" %>
       <%= f.text_field :csi_volunteer_id , class: "form-control" %>
     </div>
     
     <div class="form-group col-md-2">
-      <%= f.label :valid_till %>
+      <%= f.label :valid_till  , "Id Valid Till" %>
       <%= f.date_field :valid_till , class: "form-control" %>
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-1">
       <%= f.label :volunteers %>
       <%= f.text_field :volunteers , class: "form-control" %>
     </div>
-    <div class="form-group col-md-2">
-      <%= f.label :volunteers_added %>
+    <div class="form-group col-md-1">
+      <%= f.label :volunteers_added  , "Added" %>
       <%= f.text_field :volunteers_added , class: "form-control" %>
     </div>
     
-    </div>
     
-    <p class="sub-form-title">Event details:</p>
+    
+   <p class="primary-form-subheading">Event Details:</p>  
+    
+    <br>
+    <div class="row">
+      <div class="col-md-3"><p class="subform-head"><strong>Event name</strong></p></div>
+      <div class="col-md-3"><p  class="subform-head"><strong>Event held at which Place</strong></p></div>
+      <div class="col-md-6"><p><strong>Role played:Paper Presenter/Competitor/Speaker/Other(specify)& topic chosen</strong></p></div>
+      
+    </div>
 
     <%= f.fields_for :eventdetailsbystudentactivists do |i| %>
       <%= render 'eventdetailsbystudentactivist_fields', f: i %>
@@ -117,6 +121,7 @@
     <% end %>
     
     <div class="links col-md-12">
+        <br>
         <%= link_to_add_association 'Add Event', f, :eventdetailsbystudentactivists , class: "form-button btn btn-primary" %>
     </div>
     

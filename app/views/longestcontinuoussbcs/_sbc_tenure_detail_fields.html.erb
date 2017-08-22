@@ -2,24 +2,24 @@
 <div class="nested-fields">
     
 
-<div class="form-group col-md-3">
-        <%= f.label :year %>
+<div class="form-group sf col-md-3">
+        
         <%= f.text_field :year , class: "form-control"%>
 </div>
-<div class="form-group col-md-3">
-        <%= f.label :institution_name %>
+<div class="form-group sf col-md-3">
+       
         <%= f.text_field :institution_name , class: "form-control"%>
 </div>
-<div class="form-group col-md-3">
-        <%= f.label :imno_of_institution %>
+<div class="form-group sf col-md-3">
+        
         <%= f.text_field :imno_of_institution, class: "form-control" %>
 </div>
-<div class="form-group col-md-2">
-        <%= f.label :volunteers %>
+<div class="form-group sf col-md-2">
+       
         <%= f.text_field :volunteers , class: "form-control"%>
 </div>
 
-<div class="form-group col-md-1 remove-sub-form-button">
+<div class="form-group sf col-md-1 remove-sub-form-button">
    <%= link_to_remove_association "Remove", f, class: "form-button btn btn-danger" %> 
 </div>
 

@@ -2,54 +2,50 @@
 
 <%= form_for @facmaxpublishing, :html => {:class => "form-horizontal"} do |f| %>
     <!--institute details-->
-    <div class="form-group">
-     <label>Institution Name</label>
+    <div class="row">
+      
+    <p class="primary-form-subheading">Institution Details</p> 
+    
+    <div class="form-group col-md-6">
+     <label>Name</label>
      <input type="text" class="form-control" id="name">   
     </div>
-    <div class="form-group">
-      <%= f.label :imno , "Institution Membership Number" %>
-      <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
-    </div>
-    
-    
-    <div class="row">
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-6">
       <label>Postal Address</label>
       <input type="text" class="form-control" id="address"> 
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :imno , "IMNO" %>
+      <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
     </div>
     <div class="form-group col-md-3">
       <label>District</label>
       <input type="text" class="form-control" id="district"> 
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <label>City</label>
       <input type="text" class="form-control" id="city"> 
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <label>Pin</label>
       <input type="text" class="form-control" id="pin"> 
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <label>State</label>
       <input type="text" class="form-control" id="state"> 
     </div>
-    </div>
     
-    
-    
-    
-    <div class="row">
     <div class="form-group col-md-3">
-      <label>Name of the Head of the Institution</label>
+      <label>Head of the Institution</label>
       <input type="text" class="form-control" id="na"> 
     </div>
     
     <div class="form-group col-md-3">
-      <label>NA Phone number</label>
+      <label>Phone number</label>
       <input type="text" class="form-control" id="na-phone"> 
     </div>
     <div class="form-group col-md-3">
-      <label>NA Email</label>
+      <label>Email</label>
       <input type="email" class="form-control" id="na-email"> 
     </div>
     </div>
@@ -58,37 +54,45 @@
     <!--form specific details-->
     
     <div class="row">
-      
+      <p class="primary-form-subheading">Faculty Details</p>  
     <div class="form-group col-md-3">
-      <%= f.label :faculty_name %>
+      <%= f.label :faculty_name , "Name"%>
       <%= f.text_field :faculty_name , class: "form-control" %>
     </div>
-    <div class="form-group col-md-3">
-      <%= f.label :candidate_csi_membership_no %>
+    <div class="form-group col-md-2">
+      <%= f.label :candidate_csi_membership_no , "CSI Mem.No" %>
       <%= f.text_field :candidate_csi_membership_no , class: "form-control" %>
     </div>
-    <div class="form-group col-md-2">
-      <%= f.label :faculty_email %>
+    <div class="form-group col-md-3">
+      <%= f.label :faculty_email , "Email" %>
       <%= f.email_field :faculty_email , class: "form-control" %>
     </div>
     <div class="form-group col-md-2">
-      <%= f.label :valid_till %>
+      <%= f.label :valid_till , "Valid Till" %>
       <%= f.date_field :valid_till , class: "form-control" %>
     </div>
     <div class="form-group col-md-2">
-      <%= f.label :has_student_branch %>
+      <%= f.label :has_student_branch , "Has Student Branch" %>
       <%= f.check_box :has_student_branch , class: "form-control" %>
     </div>
     </div>
     
-    <p class="sub-form-title">Details of publishing in CSIC by the nominated Faculty:</p>
-
+    <p class="primary-form-subheading">Details of publishing in CSIC by the nominated Faculty:</p>
+    
+    <br>
+    <div class="row">
+      <div class="col-md-4"><p class="subform-head"><strong>Article Title</strong></p></div>
+      <div class="col-md-3"><p  class="subform-head"><strong>Published in (CSIC / Journal)</strong></p></div>
+      <div class="col-md-4"><p><strong>Month & year of publishing</strong></p></div>
+    </div>
+    
     <%= f.fields_for :publishingdetailbyfaculties do |i| %>
       <%= render 'publishingdetailbyfaculty_fields', f: i %>
       
     <% end %>
     
     <div class="links col-md-12">
+      <br>
         <%= link_to_add_association 'Add Event', f, :publishingdetailbyfaculties , class: "form-button btn btn-primary" %>
     </div>
     

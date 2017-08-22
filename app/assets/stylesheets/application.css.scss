@@ -76,6 +76,14 @@
 .primary-form{
     
 }
+.primary-form-subheading{
+    text-align: center;
+    font-family: Lato;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    
+    border-bottom: 1px solid rgba(19, 19, 19, 0.2);
+}
 
 .institution-details{
     
@@ -89,6 +97,21 @@
     margin: 0.5em;
     
 }
-.remove-sub-form-button{
-        margin-top: 1.7em;
+.subform-head{
+    
+    
+    
+    
+}
+div.form-group.sf{
+    // margin-right: 15px;
+    border: 1px solid rgba(19, 19, 19, 0.2);
+    
+    margin: 0px;
+    padding: 0px;
+}
+.btn-danger{
+    
+    padding-left: 30px;
+    border-radius: 0px;
 }

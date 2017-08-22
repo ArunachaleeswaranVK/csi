@@ -17,8 +17,8 @@ class PaperpresenterintconferencesController < ApplicationController
     
     def new
         @paperpresenterintconference = Paperpresenterintconference.new
-        2.times { @paperpresenterintconference.insideindiapaperpresentations.build}
-        2.times { @paperpresenterintconference.outsideindiapaperpresentations.build}
+        2.times { @paperpresenterintconference.paperpresentationdetails.build}
+        
     end
     
     def create
@@ -54,15 +54,8 @@ class PaperpresenterintconferencesController < ApplicationController
     
     def paperpresenterintconference_params
        params.require(:paperpresenterintconference).permit(:candidate_csi_membership_no,
-       :valid_till,:imno,:has_student_branch,:faculty_name,:faculty_email,
-       
-       
-       insideindiapaperpresentations_attributes: [:name_of_conference,
-       :date_of_conference,:organised_by,:name_and_place_of_conference,:_destroy],
-       
-       
-       outsideindiapaperpresentations_attributes: [:name_of_conference,
-       :date_of_conference,:organised_by,:name_and_place_of_conference,:_destroy])
+       :valid_till,:imno,:has_student_branch,:faculty_name,:faculty_email,paperpresentationdetails_attributes: [:name_of_conference,
+       :date_of_conference,:organised_by,:name_and_place_of_conference,:india_or_outside,:_destroy])
     end
     
     def set_award

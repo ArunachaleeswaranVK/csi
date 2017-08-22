@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822034707) do
+ActiveRecord::Schema.define(version: 20170822111722) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -67,16 +67,6 @@ ActiveRecord::Schema.define(version: 20170822034707) do
 
   add_index "highestsponsorshipofcsievents", ["imno"], name: "index_highestsponsorshipofcsievents_on_imno"
 
-  create_table "insideindiapaperpresentations", force: :cascade do |t|
-    t.string   "name_of_conference"
-    t.date     "date_of_conference"
-    t.string   "organised_by"
-    t.string   "name_and_place_of_conference"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.integer  "paperpresenterintconference_id"
-  end
-
   create_table "institutes", force: :cascade do |t|
     t.string   "imno",                 null: false
     t.string   "name",                 null: false
@@ -130,7 +120,7 @@ ActiveRecord::Schema.define(version: 20170822034707) do
 
   add_index "nominated_members", ["imno"], name: "index_nominated_members_on_imno"
 
-  create_table "outsideindiapaperpresentations", force: :cascade do |t|
+  create_table "paperpresentationdetails", force: :cascade do |t|
     t.string   "name_of_conference"
     t.date     "date_of_conference"
     t.string   "organised_by"
@@ -138,6 +128,7 @@ ActiveRecord::Schema.define(version: 20170822034707) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.integer  "paperpresenterintconference_id"
+    t.string   "india_or_outside"
   end
 
   create_table "paperpresenterintconferences", force: :cascade do |t|

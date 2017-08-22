@@ -1,34 +1,86 @@
 $('#imno').val('<%= @bestcsiinternationalstudentseventhost.imno %>');
-$('#address').val('<%= @bestcsiinternationalstudentseventhost.address %>');
+
+<% unless @bestcsiinternationalstudentseventhost.address.nil? %>
+  $('#address').val('<%= @bestcsiinternationalstudentseventhost.address %>');
+<% else %>  
+  $('#address').val('Not Available');   
+<% end %>
+
 <% unless @bestcsiinternationalstudentseventhost.district.nil? %>
   $('#district').val('<%= @bestcsiinternationalstudentseventhost.district %>');
 <% else %>  
   $('#district').val('Not Available');   
 <% end %>
+
 <% unless @bestcsiinternationalstudentseventhost.city.nil? %>
   $('#city').val('<%= @bestcsiinternationalstudentseventhost.city %>');
 <% else %>  
   $('#city').val('Not Available');   
 <% end %>
+
 <% unless @bestcsiinternationalstudentseventhost.state.nil? %>
   $('#state').val('<%= @bestcsiinternationalstudentseventhost.state %>');
 <% else %>  
   $('#state').val('Not Available');   
 <% end %>
 
+<% unless @bestcsiinternationalstudentseventhost.pincode.nil? %>
+  $('#pin').val('<%= @bestcsiinternationalstudentseventhost.pincode %>');
+<% else %>  
+  $('#pin').val('Not Available');   
+<% end %>
 
-$('#pin').val('<%= @bestcsiinternationalstudentseventhost.pincode %>');
-$('#sbc-name').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_name %>');
-<% unless @bestcsiinternationalstudentseventhost.district.nil? %>
+<% unless @bestcsiinternationalstudentseventhost.sbcs.first.nil? %>
+  $('#sbc-name').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_name %>');
+<% else %>  
+  $('#sbc-name').val('Not Available');   
+<% end %>
+
+<% unless @bestcsiinternationalstudentseventhost.sbcs.first.sbc_membership_no.nil? %>
   $('#sbc-imno').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_membership_no %>');
 <% else %>  
   $('#sbc-imno').val('Not Available');   
-<% end %>  
+<% end %> 
 
-$('#sbc-email').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_email %>');
-$('#sbc-phone').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_phone %>');
+<% unless @bestcsiinternationalstudentseventhost.sbcs.first.sbc_email.nil? %>
+  $('#sbc-email').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_email %>');
+<% else %>  
+  $('#sbc-email').val('Not Available');   
+<% end %> 
 
-$('#na').val('<%= @bestcsiinternationalstudentseventhost.nominating_authority %>');
-$('#na-phone').val('<%= @bestcsiinternationalstudentseventhost.na_phone %>');
-$('#na-email').val('<%= @bestcsiinternationalstudentseventhost.na_email %>');
+<% unless @bestcsiinternationalstudentseventhost.sbcs.first.sbc_phone.nil? %>
+  $('#sbc-phone').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_phone %>');
+<% else %>  
+  $('#sbc-phone').val('Not Available');   
+<% end %> 
+
+<% unless @bestcsiinternationalstudentseventhost.nominating_authority.nil? %>
+ $('#na').val('<%= @bestcsiinternationalstudentseventhost.nominating_authority %>');
+<% else %>  
+  $('#na').val('Not Available');   
+<% end %> 
+
+<% unless @bestcsiinternationalstudentseventhost.na_phone.nil? %>
+  $('#na-phone').val('<%= @bestcsiinternationalstudentseventhost.na_phone %>');
+<% else %>  
+  $('#na-phone').val('Not Available');   
+<% end %> 
+
+<% unless @bestcsiinternationalstudentseventhost.na_email.nil? %>
+  $('#na-email').val('<%= @bestcsiinternationalstudentseventhost.na_email %>');
+<% else %>  
+  $('#na-emai').val('Not Available');   
+<% end %> 
+
+
+
+
+
+
+
+
+
+
+
+
 
