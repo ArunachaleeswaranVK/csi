@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821155804) do
+ActiveRecord::Schema.define(version: 20170822034707) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -72,8 +72,9 @@ ActiveRecord::Schema.define(version: 20170821155804) do
     t.date     "date_of_conference"
     t.string   "organised_by"
     t.string   "name_and_place_of_conference"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "paperpresenterintconference_id"
   end
 
   create_table "institutes", force: :cascade do |t|
@@ -134,8 +135,9 @@ ActiveRecord::Schema.define(version: 20170821155804) do
     t.date     "date_of_conference"
     t.string   "organised_by"
     t.string   "name_and_place_of_conference"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "paperpresenterintconference_id"
   end
 
   create_table "paperpresenterintconferences", force: :cascade do |t|
