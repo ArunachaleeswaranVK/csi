@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   
   resources :paperpresenterintconferences , only: [:new, :create]
   
+  resources :paperpresenters , only: [:new, :create]
+  
   resources :studentmaxpublishings , only: [:new, :create]
   
   resources :studentbranchactivists , only: [:new, :create]

@@ -4,11 +4,11 @@ class PaperpresenterintconferencesController < ApplicationController
     
     def getname
         @name = params[:name]
-        @paperpresenterintconference = Institute.where("name like ?", "%#{@name}%").first
+        @paper = Institute.where("name like ?", "%#{@name}%").first
     end
     
     def index
-        @paperpresenterintconferences = Paperpresenterintconference.all
+        @papers = Paperpresenterintconference.all
     end
     
     def show
@@ -16,15 +16,15 @@ class PaperpresenterintconferencesController < ApplicationController
     end    
     
     def new
-        @paperpresenterintconference = Paperpresenterintconference.new
-        2.times { @paperpresenterintconference.paperpresentationdetails.build}
+        @paper = Paperpresenterintconference.new
+        2.times { @paper.paperpresentationdetails.build}
         
     end
     
     def create
-        @paperpresenterintconference = Paperpresenterintconference.new(paperpresenterintconference_params)
+        @paper = Paperpresenterintconference.new(paperpresenterintconference_params)
         
-        if @paperpresenterintconference.save
+        if @paper.save
             flash[:notice] = " Your response has been recorded"
             redirect_to root_path
         else
@@ -38,15 +38,15 @@ class PaperpresenterintconferencesController < ApplicationController
     end
     
     def update
-        if @paperpresenterintconference.update(paperpresenterintconference_params)
-            redirect_to @paperpresenterintconference
+        if @paper.update(paperpresenterintconference_params)
+            redirect_to @paper
         else
             render "edit"
         end    
     end
     
     def destroy
-        @paperpresenterintconference.destroy
+        @paper.destroy
         redirect_to paperpresenterintconferencees_path
     end
     
@@ -59,6 +59,6 @@ class PaperpresenterintconferencesController < ApplicationController
     end
     
     def set_award
-       @paperpresenterintconference = Paperpresenterintconference.find(params[:id])
+       @paper = Paperpresenterintconference.find(params[:id])
     end
 end
