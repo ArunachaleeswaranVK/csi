@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  
+  
   resources :bestcsiinternationalstudentseventhosts , only: [:new, :create]
   get '/bestcsiinternationalstudentseventhosts/getname/:name' => 'bestcsiinternationalstudentseventhosts#getname' , 
   :constraints => { :name => /[^\/]+/ }
@@ -29,7 +31,10 @@ Rails.application.routes.draw do
   
   resources :studentbranchactivists , only: [:new, :create]
   
-  resources :institutes , param: :imno
+  resources :institutes , param: :imno do
+    get :autocomplete_institute_name, :on => :collection
+  end
+  
   resources :sbcs , param: :imno
   
   resources :nominated_members , param: :imno

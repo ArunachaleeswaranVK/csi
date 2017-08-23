@@ -20,6 +20,11 @@ gem "cocoon"
 gem 'google-webfonts-rails', '~> 0.0.4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+gem 'rails4-autocomplete'
+
+# jQuery UI dependency.
+gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

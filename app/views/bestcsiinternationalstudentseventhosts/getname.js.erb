@@ -1,3 +1,10 @@
+$(function() {
+    var institute = <%Institute.all.collect{|institute| institute.name}%>
+    $( "#name" ).autocomplete({
+      source: institutes
+    });
+}); 
+
 $('#imno').val('<%= @bestcsiinternationalstudentseventhost.imno %>');
 
 <% unless @bestcsiinternationalstudentseventhost.address.nil? %>
