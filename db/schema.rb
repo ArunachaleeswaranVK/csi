@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822141640) do
+ActiveRecord::Schema.define(version: 20170822142835) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -119,30 +119,6 @@ ActiveRecord::Schema.define(version: 20170822141640) do
   end
 
   add_index "nominated_members", ["imno"], name: "index_nominated_members_on_imno"
-
-  create_table "paperpresentationdetails", force: :cascade do |t|
-    t.string   "name_of_conference"
-    t.date     "date_of_conference"
-    t.string   "organised_by"
-    t.string   "name_and_place_of_conference"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.integer  "paperpresenterintconference_id"
-    t.string   "india_or_outside"
-  end
-
-  create_table "paperpresenterintconferences", force: :cascade do |t|
-    t.string   "candidate_csi_membership_no"
-    t.date     "valid_till"
-    t.boolean  "has_student_branch"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.string   "faculty_name"
-    t.string   "faculty_email"
-    t.string   "imno"
-  end
-
-  add_index "paperpresenterintconferences", ["imno"], name: "index_paperpresenterintconferences_on_imno"
 
   create_table "publishingdetailbyfaculties", force: :cascade do |t|
     t.string   "article_title"

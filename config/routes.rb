@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :facmaxpublishings , only: [:new, :create]
   get '/facmaxpublishings/getname/:name' => 'facmaxpublishings#getname'
   
-  resources :paperpresenterintconferences , only: [:new, :create]
+  
   
   resources :paperpresenters , only: [:new, :create]
   

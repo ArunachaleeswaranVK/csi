@@ -7,10 +7,9 @@ class Institute < ActiveRecord::Base
     has_many :highestsponsorshipofcsievents, foreign_key: "imno" , dependent: :destroy
     has_many :longestcontinuoussbcs , foreign_key: "imno" , dependent: :destroy
     has_many :facmaxpublishings , foreign_key: "imno" , dependent: :destroy
-    has_many :paperpresenterintconferences , foreign_key: "imno" , dependent: :destroy
     has_many :studentmaxpublishings , foreign_key: "imno" , dependent: :destroy
     has_many :studentbranchactivists , foreign_key: "imno" , dependent: :destroy
-    has_many :paper_presenters , foreign_key: "imno" , dependent: :destroy
+    
     
     self.primary_key = 'imno'
     
