@@ -37,29 +37,35 @@ $('#imno').val('<%= @bestcsiinternationalstudentseventhost.imno %>');
   $('#pin').val('Not Available');   
 <% end %>
 
-<% unless @bestcsiinternationalstudentseventhost.sbcs.first.nil? %>
-  $('#sbc-name').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_name %>');
-<% else %>  
-  $('#sbc-name').val('Not Available');   
-<% end %>
+<!--sbc details-->
 
-<% unless @bestcsiinternationalstudentseventhost.sbcs.first.sbc_membership_no.nil? %>
-  $('#sbc-imno').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_membership_no %>');
-<% else %>  
-  $('#sbc-imno').val('Not Available');   
-<% end %> 
+<!--check if the institute has sbc association-->
 
-<% unless @bestcsiinternationalstudentseventhost.sbcs.first.sbc_email.nil? %>
-  $('#sbc-email').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_email %>');
-<% else %>  
-  $('#sbc-email').val('Not Available');   
-<% end %> 
+  <% unless @bestcsiinternationalstudentseventhost.sbcs.first.nil? %>
+    $('#sbc-name').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_name %>');
+  <% else %>  
+    $('#sbc-name').val('Not Available');   
+  <% end %>
+  
+  <% unless @bestcsiinternationalstudentseventhost.sbcs.first.sbc_membership_no.nil? %>
+    $('#sbc-imno').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_membership_no %>');
+  <% else %>  
+    $('#sbc-imno').val('Not Available');   
+  <% end %> 
+  
+  <% unless @bestcsiinternationalstudentseventhost.sbcs.first.sbc_email.nil? %>
+    $('#sbc-email').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_email %>');
+  <% else %>  
+    $('#sbc-email').val('Not Available');   
+  <% end %> 
+  
+  <% unless @bestcsiinternationalstudentseventhost.sbcs.first.sbc_phone.nil? %>
+    $('#sbc-phone').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_phone %>');
+  <% else %>  
+    $('#sbc-phone').val('Not Available');   
+  <% end %> 
 
-<% unless @bestcsiinternationalstudentseventhost.sbcs.first.sbc_phone.nil? %>
-  $('#sbc-phone').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_phone %>');
-<% else %>  
-  $('#sbc-phone').val('Not Available');   
-<% end %> 
+<!--nominating authority-->
 
 <% unless @bestcsiinternationalstudentseventhost.nominating_authority.nil? %>
  $('#na').val('<%= @bestcsiinternationalstudentseventhost.nominating_authority %>');
