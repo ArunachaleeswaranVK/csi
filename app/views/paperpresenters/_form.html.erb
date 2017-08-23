@@ -1,0 +1,131 @@
+
+<%= render 'shared/errors', object: @paperpresenter %>
+
+<%= form_for @paperpresenter, :html => {:class => "form-horizontal"} do |f| %>
+    
+    <p class="primary-form-subheading">Institution Details</p> 
+    <div class="row institution-details">
+    <div class="form-group col-md-6">
+     <label>Name</label>
+     <input type="text" class="form-control" id="name">   
+    </div>
+    <div class="form-group col-md-6">
+      <label>Postal Address</label>
+      <input type="text" class="form-control" id="address"> 
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :imno , "IMNO" %>
+      <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
+    </div>
+    <div class="form-group col-md-3">
+      <label>District</label>
+      <input type="text" class="form-control" id="district"> 
+    </div>
+    <div class="form-group col-md-3">
+      <label>City</label>
+      <input type="text" class="form-control" id="city"> 
+    </div>
+    <div class="form-group col-md-3">
+      <label>Pin</label>
+      <input type="text" class="form-control" id="pin"> 
+    </div>
+    <div class="form-group col-md-3">
+      <label>State</label>
+      <input type="text" class="form-control" id="state"> 
+    </div>
+    
+    <div class="form-group col-md-3">
+      <label>Head of the Institution</label>
+      <input type="text" class="form-control" id="na"> 
+    </div>
+    
+    <div class="form-group col-md-3">
+      <label>Phone number</label>
+      <input type="text" class="form-control" id="na-phone"> 
+    </div>
+    <div class="form-group col-md-3">
+      <label>Email</label>
+      <input type="email" class="form-control" id="na-email"> 
+    </div>
+    
+    
+    
+    <!--sbc details-->
+    <p class="primary-form-subheading">SBC Details</p>    
+  
+    <div class="form-group col-md-3">
+      <label>Name</label>
+      <input type="text" class="form-control" id="sbc-name"> 
+    </div>
+    
+    <div class="form-group col-md-3">
+      <label>Mem.No</label>
+      <input type="text" class="form-control" id="sbc-imno"> 
+    </div>
+    <div class="form-group col-md-3">
+      <label>Email</label>
+      <input type="email" class="form-control" id="sbc-email"> 
+    </div>
+    <div class="form-group col-md-3">
+      <label>Phonenumber</label>
+      <input type="text" class="form-control" id="sbc-phone"> 
+    </div>
+    
+    
+    
+     <!--form specific details-->
+    
+    <p class="primary-form-subheading">Faculty Details</p>  
+      
+    <div class="form-group col-md-3">
+      <%= f.label :faculty_name , "Name" %>
+      <%= f.text_field :faculty_name , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :faculty_email  , "Email" %>
+      <%= f.email_field :faculty_email , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-2">
+      <%= f.label :faculty_number , "Phone" %>
+      <%= f.text_field :faculty_number , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-2">
+      <%= f.label :faculty_csi_membership_no , "CSI Mem.Id" %>
+      <%= f.text_field :faculty_csi_membership_no , class: "form-control" %>
+    </div>
+    
+    <div class="form-group col-md-2">
+      <%= f.label :valid_till  , "Id Valid Till" %>
+      <%= f.date_field :valid_till , class: "form-control" %>
+    </div>
+   
+    <p class="primary-form-subheading">Conference Details:</p>  
+    
+    <br>
+    <div class="row">
+      <div class="col-md-3"><p class="subform-head"><strong>Name</strong></p></div>
+      <div class="col-md-2"><p  class="subform-head"><strong>Date</strong></p></div>
+      <div class="col-md-2"><p><strong>Organised by</strong></p></div>
+      <div class="col-md-3"><p><strong>Place</strong></p></div>
+      <div class="col-md-2"><p><strong>India or Outside</strong></p></div>
+      
+    </div>
+
+    <%= f.fields_for :paperpresenterdetails do |i| %>
+      <%= render 'paperpresenterdetail_fields', f: i %>
+      
+    <% end %>
+    
+    <div class="links col-md-12">
+        <br>
+        <%= link_to_add_association 'Add Event', f, :paperpresenterdetails , class: "form-button btn btn-primary" %>
+    </div>
+    
+    
+    <div class="form-group">
+        <div class="col-md-offset-5 col-md-2">
+            <%= f.submit "Submit" , class: "btn btn-primary btn-lg" %>
+        </div>
+    </div>
+    
+<% end %>   

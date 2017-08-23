@@ -17,6 +17,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 .alert_wrapper{
     position: absolute;
     width: 100%;
@@ -32,29 +33,41 @@
 }
 .award-area{
     font-family: "Lato";
-    
+    margin-left: 3em;  
+    border: 1px solid black;
+    border-radius: 8px;
+    background: #D31027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EA384D, #D31027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 5px 5px 5px #988585;
 }
 
 .award-title{
     
     font-family: "Lato";
-    padding: 1em;
-    margin-bottom: 1em;
+    padding: 0.5em;
     text-align: left;
+    font-size: 1.2em;
     
 }
 .award-title a{
     font-family: "Lato";
-    color: rgba(11, 33, 70, 0.87);
+    color: rgb(255, 255, 255);
     
     
 }
+.award-head{
+    color: white;
+}
 
 #award-banner{
-    
+    margin-top: 0px;
     padding: 1em;
     font-weight: bold;
     color: rgba(12, 12, 12, 0.69);
+}
+.servie-awards{
+    margin-bottom: 15em;
 }
 .submitted-details{
     font-family: "Lato";
