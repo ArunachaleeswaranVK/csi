@@ -5,6 +5,9 @@ $(function() {
     });
 }); 
 
+
+<!--instution details-->
+
 $('#imno').val('<%= @bestcsiinternationalstudentseventhost.imno %>');
 
 <% unless @bestcsiinternationalstudentseventhost.address.nil? %>
@@ -37,10 +40,31 @@ $('#imno').val('<%= @bestcsiinternationalstudentseventhost.imno %>');
   $('#pin').val('Not Available');   
 <% end %>
 
+<!--nominating authority-->
+
+<% unless @bestcsiinternationalstudentseventhost.nominating_authority.nil? %>
+ $('#na').val('<%= @bestcsiinternationalstudentseventhost.nominating_authority %>');
+<% else %>  
+  $('#na').val('Not Available');   
+<% end %> 
+
+<% unless @bestcsiinternationalstudentseventhost.na_phone.nil? %>
+  $('#na-phone').val('<%= @bestcsiinternationalstudentseventhost.na_phone %>');
+<% else %>  
+  $('#na-phone').val('Not Available');   
+<% end %> 
+
+<% unless @bestcsiinternationalstudentseventhost.na_email.nil? %>
+  $('#na-email').val('<%= @bestcsiinternationalstudentseventhost.na_email %>');
+<% else %>  
+  $('#na-emai').val('Not Available');   
+<% end %> 
+
+
 <!--sbc details-->
 
 <!--check if the institute has sbc association-->
-
+<% unless @bestcsiinternationalstudentseventhost.sbcs.empty? %>
   <% unless @bestcsiinternationalstudentseventhost.sbcs.first.nil? %>
     $('#sbc-name').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.sbc_name %>');
   <% else %>  
@@ -65,31 +89,13 @@ $('#imno').val('<%= @bestcsiinternationalstudentseventhost.imno %>');
     $('#sbc-phone').val('Not Available');   
   <% end %> 
 
-<!--nominating authority-->
-
-<% unless @bestcsiinternationalstudentseventhost.nominating_authority.nil? %>
- $('#na').val('<%= @bestcsiinternationalstudentseventhost.nominating_authority %>');
-<% else %>  
-  $('#na').val('Not Available');   
-<% end %> 
-
-<% unless @bestcsiinternationalstudentseventhost.na_phone.nil? %>
-  $('#na-phone').val('<%= @bestcsiinternationalstudentseventhost.na_phone %>');
-<% else %>  
-  $('#na-phone').val('Not Available');   
-<% end %> 
-
-<% unless @bestcsiinternationalstudentseventhost.na_email.nil? %>
-  $('#na-email').val('<%= @bestcsiinternationalstudentseventhost.na_email %>');
-<% else %>  
-  $('#na-emai').val('Not Available');   
-<% end %> 
-
-
-
-
-
-
+<% else %>
+  $('#sbc-name').val('Not Available');
+  $('#sbc-imno').val('Not Available');
+  $('#sbc-email').val('Not Available'); 
+  $('#sbc-phone').val('Not Available');
+  
+<% end %>
 
 
 
