@@ -54,7 +54,7 @@ class StudentmaxpublishingsController < ApplicationController
     def studentmaxpublishing_params
        params.require(:studentmaxpublishing).permit(:csi_volunteer_name,
        :csi_volunteer_email,:csi_volunteer_id,:valid_till,:imno,
-       publishingdetailbystudents_attributes: [:article_title,
+       publishingdetailbystudents_attributes: [:no_of_articles_published,:article_title,
        :published_in,:date_of_publishing,:_destroy])
     end
     

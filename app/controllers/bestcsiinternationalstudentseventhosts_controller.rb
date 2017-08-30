@@ -6,7 +6,7 @@ class BestcsiinternationalstudentseventhostsController < ApplicationController
     
     def getname
         
-        @bestcsiinternationalstudentseventhost = Institute.where("name like ?", "#{params[:name]}%").first
+        @bestcsiinternationalstudentseventhost = Institute.where("name like ?", "#{params[:name]}").first
     end
     
     def index

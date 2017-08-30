@@ -1,0 +1,263 @@
+
+<%= render 'shared/errors', object: @bestaccreditedstudentbranch %>
+
+<%= form_for @bestaccreditedstudentbranch, :html => {:class => "form-horizontal"} do |f| %>
+    
+     
+    <div class="primary-form">
+    <div class="row institution-details">
+      <!--institution details-->
+    <p class="primary-form-subheading">Institution Details</p>  
+    <div class="form-group col-md-6">
+     <%= f.fields_for :institute, @institute do |institute| %>
+      <label>Name</label>
+      <%= institute.autocomplete_field :name, autocomplete_institute_name_institutes_path ,id: "name" , class: "form-control" %>
+     <% end %>    
+    </div>
+    <div class="form-group col-md-6">
+      <label>Postal Address</label>
+      <input type="text" class="form-control" id="address"> 
+    </div>
+    <div class="form-group col-md-2">
+      <%= f.label :imno , "IMNO" %>
+      <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
+    </div>
+    
+    
+    <div class="form-group col-md-3">
+      <label>District</label>
+      <input type="text" class="form-control" id="district"> 
+    </div>
+    <div class="form-group col-md-2">
+      <label>City</label>
+      <input type="text" class="form-control" id="city"> 
+    </div>
+    <div class="form-group col-md-2">
+      <label>Pin</label>
+      <input type="text" class="form-control" id="pin"> 
+    </div>
+    <div class="form-group col-md-3">
+      <label>State</label>
+      <input type="text" class="form-control" id="state"> 
+    </div>
+    
+    
+    
+    <!--sbc details-->
+    <p class="primary-form-subheading">SBC Details</p>    
+    <div class="sbc-details">
+    <div class="form-group col-md-2">
+      <label>Name</label>
+      <input type="text" class="form-control" id="sbc-name"> 
+    </div>
+    
+    <div class="form-group col-md-2">
+      <label>Mem.No</label>
+      <input type="text" class="form-control" id="sbc-imno"> 
+    </div>
+    <div class="form-group col-md-3">
+      <label>Email</label>
+      <input type="email" class="form-control" id="sbc-email"> 
+    </div>
+    <div class="form-group col-md-3">
+      <label>Phonenumber</label>
+      <input type="text" class="form-control" id="sbc-phone"> 
+    </div>
+   </div>
+  
+    
+    
+    <!--should include in the institution table and make it display  -->
+    <div class="form-group col-md-1">
+      <label>Volunteers</label>
+      <input type="text" class="form-control" id="sbc-phone"> 
+    </div>
+    <div class="form-group col-md-1">
+      <label>Added</label>
+      <input type="text" class="form-control" id="sbc-phone"> 
+    </div>
+    </div>
+     <!--form specific details-->
+    <div class="row">
+        
+    <div class="col-md-6">
+    <p class="primary-form-subheading">Details of different programs organised</p>
+    
+    <table class="table table-bordered table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>No.of activities organised</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Expert Lecture</td>
+        <td class="form-group col-md-2">
+        
+          <%= f.text_field :program_organised_expert_lecture_no_of_activities  , class: "form-control"%>
+        
+        </td>
+      </tr>
+      <tr>
+        <td>Seminars / Technical workshop</td>
+        <td class="form-group col-md-2">
+          <%= f.text_field :program_organised_seminars_workshops_no_of_activities  , class: "form-control"%>
+        </td>
+      </tr>
+      <tr>
+        <td>Short term training program</td>
+        <td class="form-group col-md-2">
+         <%= f.text_field :program_organised_short_term_training_program_no_of_activities  , class: "form-control"%>
+       
+        </td>
+      </tr>
+      <tr>
+        <td>Inter college Symposium</td>
+        <td class="form-group col-md-2">
+            <%= f.text_field :program_organised_symposium_no_of_activities  , class: "form-control"%>
+        
+        </td>
+      </tr>
+      <tr>
+        <td>Motivational talks</td>
+        <td class="form-group col-md-2">
+            <%= f.text_field :program_organised_motivational_talks_no_of_activities  , class: "form-control"%>
+       
+        </td>
+      </tr>
+    </tbody>
+  </table>
+    
+    
+    </div>
+    
+    
+    <div class="col-md-6">  
+    <p class="primary-form-subheading">Student Branch Membership</p>
+    <div class="form-group col-md-8">
+      <%= f.label :student_branch_membership_institution_category , "Institution Category" %>
+      <%= f.select(:student_branch_membership_institution_category, options_for_select([
+          ['Engineering Institute', 'Engineering Institute'], 
+          ['MCA Institute', 'MCA Institute'],
+          ['MBA Institute','MBA Institute'],
+          ['Arts & Science College', 'Arts & Science College'],
+          ['Polytechnic Institution', "Polytechnic Institution"]]), {}, {class: "form-control"}) %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :student_branch_membership_no_of_volunteers , "# Volunteers" %>
+      <%= f.text_field :student_branch_membership_no_of_volunteers  , class: "form-control"%>
+    </div>
+    
+    <p class="primary-form-subheading">Competitions and Contests organised for students</p>
+    
+    <div class="form-group col-md-8">
+      <%= f.label :type_of_contests_organised_for_students , "Type of Contest" %>
+      <%= f.select(:type_of_contests_organised_for_students, options_for_select([
+          ['Web Design', 'Web Design'], 
+          ['Programming Contest', 'Programming Contest'],
+          ['Technical Quiz','Technical Quiz'],
+          ['Technical Paper Contest', 'Technical Paper Contest']]), {}, {class: "form-control"}) %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :number_of_contests_organised_for_students , "# Competitions held" %>
+      <%= f.text_field :number_of_contests_organised_for_students  , class: "form-control"%>
+    </div>
+     
+    
+    
+      
+    <p class="primary-form-subheading">Convention/Conference organised</p>
+    
+    <div class="form-group col-md-8">
+      <%= f.label :convention_seminar_type , "Type" %>
+      <%= f.select(:convention_seminar_type, options_for_select([
+          ['National/Regional/State Student Convention', 'National/Regional/State Student Convention'], 
+          ['National Level Seminar/Conference', 'National Level Seminar/Conference']]), {}, {class: "form-control"}) %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :convention_seminar_no_of_events_organised , "# Events" %>
+      <%= f.text_field :convention_seminar_no_of_events_organised  , class: "form-control"%>
+    </div>
+    
+    
+   
+    </div>
+    </div>
+    
+    
+    <div class="row">
+    <div class="col-md-6">   
+    <p class="primary-form-subheading">No. of Faculties as CSI memebers</p>
+    
+    
+    <table class="table table-bordered table-hover table-condensed">
+    <thead>
+      <tr>
+        <th><%= f.label :no_of_faculty_as_csi_members_institution_category , "Institution Category" %></th>
+        <th>Life memebers</th>
+        <th>Annual memebers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="form-group col-md-6"> 
+        <%= f.select(:no_of_faculty_as_csi_members_institution_category, options_for_select([
+          ['Engineering Institute', 'Engineering Institute'], 
+          ['MCA Institute', 'MCA Institute'],
+          ['MBA Institute','MBA Institute'],
+          ['Arts & Science College', 'Arts & Science College'],
+          ['Polytechnic Institution', "Polytechnic Institution"]]), {}, {class: "form-control"}) %>
+        </td>
+        <td class="form-group col-md-3">
+            <%= f.text_field :no_of_faculty_as_csi_members_life  , class: "form-control"%>
+        </td>
+        <td class="form-group col-md-3">
+            <%= f.text_field :no_of_faculty_as_csi_members_annual  , class: "form-control"%>
+        </td>
+      </tr>
+      
+    </tbody>
+    </table>
+    
+    <div class="form-group col-md-12">
+      <%= f.label :managing_committee_elected , "Managing Committee Elected during the year ?" %>
+      <%= f.select(:managing_committee_elected, options_for_select([
+          ['Yes', 'Yes'], 
+          ['No', 'No']]), {}, {class: "form-control"}) %>
+    </div>
+    
+    </div>
+    
+    <div class="col-md-6">
+    <p class="primary-form-subheading">Website for Student Branch</p>
+    
+    <div class="form-group col-md-12">
+      <%= f.label :student_branch_website_url , "Website URL of CSI Student Branch" %>
+      <%= f.text_field :student_branch_website_url  , class: "form-control"%>
+    </div>
+   
+    <p class="primary-form-subheading">Technical Newsletter for students</p>
+    
+    <div class="form-group col-md-8">
+      <%= f.label :newsletter_type , "Newsletter Type" %>
+      <%= f.select(:newsletter_type, options_for_select([
+          ['Print Version', 'Print Version'], 
+          ['Electronic Version', 'Electronic Version']]), {}, {class: "form-control"}) %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :no_of_issues_published_in_newsletter , "# Issues Published" %>
+      <%= f.text_field :no_of_issues_published_in_newsletter  , class: "form-control"%>
+    </div>
+    </div>
+    </div>
+    
+    <br>
+    
+    <div class="form-group">
+        <div class="col-md-offset-5 col-md-2">
+            <%= f.submit "Submit" , class: "btn btn-success btn-lg" %>
+        </div>
+    </div>
+    
+<% end %>   

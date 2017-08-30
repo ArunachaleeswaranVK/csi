@@ -1,0 +1,113 @@
+
+<%= render 'shared/errors', object: @bestthesisaward %>
+
+<%= form_for @bestthesisaward, :html => {:class => "form-horizontal"} do |f| %>
+    
+     
+    <div class="primary-form">
+    <div class="row institution-details">
+      <!--institution details-->
+    
+    <div class="form-group col-md-3">
+      <%= f.label :name_of_nominating_institution , "Name of nominating institution" %>
+      <%= f.text_field :name_of_nominating_institution  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :address , "Address" %>
+      <%= f.text_field :address  , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :recognized_by , "Recognized By" %>          
+      <!--add a drop down her-->
+      <%= f.text_field :recognized_by  , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :reference_number_of_recognition , "Reference number of recognition" %>
+      <%= f.text_field :reference_number_of_recognition  , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :date_of_recognition , "Date of recognition" %>
+      <%= f.date_field :date_of_recognition  , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :name_of_nominator  %>
+      <%= f.text_field :name_of_nominator  , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :designation , "Designation of Nominator" %>
+      <%= f.text_field :designation  , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :nominator_email %>
+      <%= f.text_field :nominator_email , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :nominator_phone   %>
+      <%= f.text_field :nominator_phone , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :name_of_candidate  %>
+      <%= f.text_field :name_of_candidate , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :candidate_email  %>
+      <%= f.text_field :candidate_email , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :candidate_phone  %>
+      <%= f.text_field :candidate_phone , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :thesis_title %>
+      <%= f.text_field :thesis_title , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :defence_of_dissertation_date  %>
+      <%= f.date_field :defence_of_dissertation_date , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :candidate_csi_membership_no  %>
+      <%= f.text_field :candidate_csi_membership_no , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :valid_till  %>
+      <%= f.date_field :valid_till , class: "form-control" %>
+    </div>
+    </div>
+    </div>
+    <!--sub form details-->
+    
+    
+    <p class="primary-form-subheading">Record of Publications of the work:</p>
+    
+    
+    <br>
+    <div class="row">
+      <div class="col-md-3"><p class="subform-head"><strong>Publication in Conference of Journal</strong></p></div>
+      <div class="col-md-2"><p  class="subform-head"><strong>Name</strong></p></div>
+      <div class="col-md-2"><p><strong>Date</strong></p></div>
+      <div class="col-md-5"><p><strong>Citation</strong></p></div>
+      
+      
+    </div>
+    
+    <%= f.fields_for :recordforthesisawards do |i| %>
+    
+      <%= render 'recordforthesisaward_fields', f: i %>
+   
+    <% end %>
+    
+    
+    <div class="links col-md-12">
+      <br>
+        <%= link_to_add_association 'Add Event', f, :recordforthesisawards , class: "form-button btn btn-primary" %>
+    </div>
+    
+    
+    <div class="form-group">
+        <div class="col-md-offset-5 col-md-2">
+            <%= f.submit "Submit" , class: "btn btn-success btn-lg" %>
+        </div>
+    </div>
+    
+<% end %>   

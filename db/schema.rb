@@ -11,12 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170823043509) do
+ActiveRecord::Schema.define(version: 20170830064013) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
+    t.integer  "program_organised_expert_lecture_no_of_activities"
+    t.integer  "program_organised_seminars_workshops_no_of_activities"
+    t.integer  "program_organised_short_term_training_program_no_of_activities"
+    t.integer  "program_organised_symposium_no_of_activities"
+    t.integer  "program_organised_motivational_talks_no_of_activities"
+    t.string   "student_branch_membership_institution_category"
+    t.integer  "student_branch_membership_no_of_volunteers"
+    t.string   "type_of_contests_organised_for_students"
+    t.integer  "number_of_contests_organised_for_students"
+    t.string   "convention_seminar_type"
+    t.integer  "convention_seminar_no_of_events_organised"
+    t.string   "student_branch_website_url"
+    t.string   "newsletter_type"
+    t.integer  "no_of_issues_published_in_newsletter"
+    t.string   "no_of_faculty_as_csi_members_institution_category"
+    t.integer  "no_of_faculty_as_csi_members_life"
+    t.integer  "no_of_faculty_as_csi_members_annual"
+    t.boolean  "managing_committee_elected"
+    t.string   "imno"
   end
+
+  add_index "bestaccreditedstudentbranches", ["imno"], name: "index_bestaccreditedstudentbranches_on_imno"
 
   create_table "bestcsiinternationalstudentseventhosts", force: :cascade do |t|
     t.integer  "volunteers"
@@ -31,9 +52,26 @@ ActiveRecord::Schema.define(version: 20170823043509) do
   create_table "bestthesisawards", force: :cascade do |t|
     t.string   "candidate_csi_membership_no"
     t.date     "valid_till"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "name_of_nominating_institution"
+    t.string   "address"
+    t.string   "recognized_by"
+    t.string   "reference_number_of_recognition"
+    t.date     "date_of_recognition"
+    t.string   "name_of_nominator"
+    t.string   "designation"
+    t.string   "nominator_email"
+    t.string   "nominator_phone"
+    t.string   "name_of_candidate"
+    t.string   "candidate_email"
+    t.string   "candidate_phone"
+    t.string   "thesis_title"
+    t.date     "defence_of_dissertation_date"
+    t.string   "imno"
   end
+
+  add_index "bestthesisawards", ["imno"], name: "index_bestthesisawards_on_imno"
 
   create_table "eventdetailsbystudentactivists", force: :cascade do |t|
     t.string   "event_name"
@@ -170,6 +208,7 @@ ActiveRecord::Schema.define(version: 20170823043509) do
     t.text     "citation"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "bestthesisaward_id"
   end
 
   create_table "sbc_tenure_details", force: :cascade do |t|
