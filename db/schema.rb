@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830064013) do
+ActiveRecord::Schema.define(version: 20170831153517) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -82,6 +82,14 @@ ActiveRecord::Schema.define(version: 20170830064013) do
     t.integer  "studentbranchactivist_id"
   end
 
+  create_table "eventsforregionalchapterawards", force: :cascade do |t|
+    t.string   "activity_name"
+    t.text     "remarks"
+    t.integer  "regionalchapteraward_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "facmaxpublishings", force: :cascade do |t|
     t.string   "candidate_csi_membership_no"
     t.date     "valid_till"
@@ -145,6 +153,14 @@ ActiveRecord::Schema.define(version: 20170830064013) do
   end
 
   add_index "longestcontinuoussbcs", ["imno"], name: "index_longestcontinuoussbcs_on_imno"
+
+  create_table "newslettersforregionalchapterawards", force: :cascade do |t|
+    t.date     "date_of_publication"
+    t.string   "title_theme"
+    t.integer  "regionalchapteraward_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "nominated_members", force: :cascade do |t|
     t.string   "ncode"
@@ -211,6 +227,25 @@ ActiveRecord::Schema.define(version: 20170830064013) do
     t.integer  "bestthesisaward_id"
   end
 
+  create_table "regionalchapterawards", force: :cascade do |t|
+    t.string   "category"
+    t.string   "region"
+    t.string   "chapter"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "email"
+    t.integer  "members_number_till_previous_year"
+    t.float    "members_percentage_till_previous_year"
+    t.integer  "members_number_till_current_year"
+    t.float    "members_percentage_till_current_year"
+    t.integer  "student_branch_number_previous_year"
+    t.integer  "student_branch_number_current_year"
+    t.text     "details_deputed_memeber"
+    t.text     "other_info"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
   create_table "sbc_tenure_details", force: :cascade do |t|
     t.string   "year"
     t.string   "institution_name"
@@ -268,6 +303,14 @@ ActiveRecord::Schema.define(version: 20170830064013) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.integer  "highestsponsorshipofcsievent_id"
+  end
+
+  create_table "techactivitiesregionalchapterawards", force: :cascade do |t|
+    t.string   "activity_name"
+    t.text     "remarks"
+    t.integer  "regionalchapteraward_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
 end

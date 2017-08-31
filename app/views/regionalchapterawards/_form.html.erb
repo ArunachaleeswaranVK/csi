@@ -1,0 +1,160 @@
+
+<%= render 'shared/errors', object: @regionalchapteraward %>
+
+<%= form_for @regionalchapteraward, :html => {:class => "form-horizontal"} do |f| %>
+    
+     
+   <div class="row">
+    <div class="form-group col-md-3">
+      <%= f.label :category  %>
+      <%= f.select(:category, options_for_select([
+          ['Best Regional Chapter Award (Category A)', 'Category A'], 
+          ['Best Regional Chapter Award (Category B)', 'Category B'],
+          ['Best Regional Chapter Award (Category C)','Category C']]), {}, {class: "form-control"}) %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :region  %>
+      <%= f.text_field :region  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :chapter  %>
+      <%= f.text_field :chapter  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :address  %>
+      <%= f.text_area :address  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :phone  %>
+      <%= f.text_field :phone  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :email  %>
+      <%= f.email_field :email  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :members_number_till_previous_year  %>
+      <%= f.text_field :members_number_till_previous_year  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :members_percentage_till_previous_year  %>
+      <%= f.text_field :members_percentage_till_previous_year  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :members_number_till_current_year  %>
+      <%= f.text_field :members_number_till_current_year  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :members_percentage_till_current_year  %>
+      <%= f.text_field :members_percentage_till_current_year  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :student_branch_number_previous_year  %>
+      <%= f.text_field :student_branch_number_previous_year  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :student_branch_number_current_year  %>
+      <%= f.text_field :student_branch_number_current_year  , class: "form-control"%>
+    </div>
+    
+   </div>
+   
+   
+    <!--sub form details-->
+    
+    <div>
+    <p class="primary-form-subheading">Monthly Technical Activities </p>
+    
+    
+    <br>
+    <div class="row">
+      <div class="col-md-6"><p class="subform-head"><strong>Name of the Activities</strong></p></div>
+      <div class="col-md-6"><p  class="subform-head"><strong>Remarks</strong></p></div>
+      
+      
+      
+    </div>
+    
+    <%= f.fields_for :techactivitiesregionalchapterawards do |i| %>
+    
+      <%= render 'techactivitiesregionalchapteraward_fields', f: i %>
+   
+    <% end %>
+    
+    
+    <div class="links col-md-12">
+      <br>
+        <%= link_to_add_association 'Add Event', f, :techactivitiesregionalchapterawards , class: "form-button btn btn-primary" %>
+    </div>
+    </div>
+    
+    <div>
+    <p class="primary-form-subheading">National/ International / Regional/ Division Event</p>
+    
+    
+    <br>
+    <div class="row">
+      <div class="col-md-6"><p class="subform-head"><strong>Name of the Activities</strong></p></div>
+      <div class="col-md-6"><p  class="subform-head"><strong>Remarks</strong></p></div>
+      
+      
+    </div>
+    
+    <%= f.fields_for :eventsforregionalchapterawards do |i| %>
+    
+      <%= render 'eventsforregionalchapteraward_fields', f: i %>
+   
+    <% end %>
+    
+    
+    <div class="links col-md-12">
+      <br>
+        <%= link_to_add_association 'Add Event', f, :eventsforregionalchapterawards , class: "form-button btn btn-primary" %>
+    </div>
+    </div>
+    
+    <div>
+    <p class="primary-form-subheading">Chapter News Letter</p>
+    
+    
+    <br>
+    <div class="row">
+      <div class="col-md-6"><p class="subform-head"><strong>Date of Publication</strong></p></div>
+      <div class="col-md-6"><p  class="subform-head"><strong>Title / Theme of the Newsletter</strong></p></div>
+     
+      
+      
+    </div>
+    
+    <%= f.fields_for :newslettersforregionalchapterawards do |i| %>
+    
+      <%= render 'newslettersforregionalchapteraward_fields', f: i %>
+   
+    <% end %>
+    
+    
+    <div class="links col-md-12">
+      <br>
+        <%= link_to_add_association 'Add Event', f, :newslettersforregionalchapterawards , class: "form-button btn btn-primary" %>
+    </div>
+    </div>
+    
+    <!--end of sub forms-->
+    <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label :details_deputed_memeber  %>
+      <%= f.text_area :details_deputed_memeber  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :other_info  %>
+      <%= f.text_area :other_info  , class: "form-control"%>
+    </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-offset-5 col-md-2">
+            <%= f.submit "Submit" , class: "btn btn-success btn-lg" %>
+        </div>
+    </div>
+    
+<% end %>   

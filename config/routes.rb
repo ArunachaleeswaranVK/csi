@@ -34,6 +34,8 @@ Rails.application.routes.draw do
   
   resources :bestthesisawards , only: [:new, :create]
   
+  resources :regionalchapterawards , only: [:new, :create]
+  
   resources :institutes , param: :imno do
     get :autocomplete_institute_name, :on => :collection
   end
