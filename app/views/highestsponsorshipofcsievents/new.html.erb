@@ -1,3 +1,8 @@
 <h3 align="center">Highest Sponsorship of CSI Events Award</h2>
 <br>
+<% if is_sbc? %>
 <%= render "form" %>
+<% else %>
+<p class="jumbotron">Only SBC's can fill this award</p>
+<p><%= link_to "Fill Other Awards", root_path %></p>
+<% end %>

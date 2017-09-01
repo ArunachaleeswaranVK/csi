@@ -1,4 +1,5 @@
 class Regionalchapteraward < ActiveRecord::Base
+    belongs_to :user
     
     has_many :eventsforregionalchapterawards , dependent: :destroy
     accepts_nested_attributes_for :eventsforregionalchapterawards , allow_destroy: true 

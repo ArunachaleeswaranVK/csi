@@ -1,5 +1,6 @@
 class StudentbranchactivistsController < ApplicationController
      before_action :set_award , only: [:edit,:update,:show,:destroy]
+     before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
     
     def getname
@@ -16,12 +17,12 @@ class StudentbranchactivistsController < ApplicationController
     end    
     
     def new
-        @studentbranchactivist = Studentbranchactivist.new
+        @studentbranchactivist = current_user.build_studentbranchactivist
         2.times { @studentbranchactivist.eventdetailsbystudentactivists.build}
     end
     
     def create
-        @studentbranchactivist = Studentbranchactivist.new(studentbranchactivist_params)
+        @studentbranchactivist = current_user.build_studentbranchactivist(studentbranchactivist_params)
         
         if @studentbranchactivist.save
             flash[:notice] = " Your response has been recorded"
@@ -50,6 +51,10 @@ class StudentbranchactivistsController < ApplicationController
     end
     
     private
+    
+    def authenticate
+       authenticate_user! && is_sbc? 
+    end
     
     def studentbranchactivist_params
        params.require(:studentbranchactivist).permit(:csi_volunteer_name,:csi_volunteer_email,:csi_volunteer_id,

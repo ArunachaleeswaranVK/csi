@@ -1,5 +1,6 @@
 class LongestcontinuoussbcsController < ApplicationController
     before_action :set_award , only: [:edit,:update,:show,:destroy]
+    before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
     
     def getname
@@ -16,12 +17,12 @@ class LongestcontinuoussbcsController < ApplicationController
     end    
     
     def new
-        @longestcontinuoussbc = Longestcontinuoussbc.new
+        @longestcontinuoussbc = current_user.build_longestcontinuoussbc
         2.times { @longestcontinuoussbc.sbc_tenure_details.build}
     end
     
     def create
-        @longestcontinuoussbc = Longestcontinuoussbc.new(longestcontinuoussbc_params)
+        @longestcontinuoussbc = current_user.build_longestcontinuoussbc(longestcontinuoussbc_params)
         
         if @longestcontinuoussbc.save
             flash[:notice] = " Your response has been recorded"
@@ -50,6 +51,10 @@ class LongestcontinuoussbcsController < ApplicationController
     end
     
     private
+    
+    def authenticate
+       authenticate_user! && is_sbc? 
+    end
     
     def longestcontinuoussbc_params
        params.require(:longestcontinuoussbc).permit(:volunteers,:volunteers_added,

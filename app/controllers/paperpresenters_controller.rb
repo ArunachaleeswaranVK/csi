@@ -1,5 +1,6 @@
 class PaperpresentersController < ApplicationController
     before_action :set_award , only: [:edit,:update,:show,:destroy]
+    before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
     
     def getname
@@ -16,12 +17,12 @@ class PaperpresentersController < ApplicationController
     end    
     
     def new
-        @paperpresenter = Paperpresenter.new
+        @paperpresenter = current_user.build_paperpresenter
         2.times { @paperpresenter.paperpresenterdetails.build}
     end
     
     def create
-        @paperpresenter = Paperpresenter.new(paperpresenter_params)
+        @paperpresenter = current_user.build_paperpresenter(paperpresenter_params)
         
         if @paperpresenter.save
             flash[:notice] = " Your response has been recorded"
@@ -50,6 +51,10 @@ class PaperpresentersController < ApplicationController
     end
     
     private
+    
+    def authenticate
+       authenticate_user! && is_sbc? 
+    end
     
     def paperpresenter_params
        params.require(:paperpresenter).permit(:faculty_name,

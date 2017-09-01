@@ -1,5 +1,6 @@
 class FacmaxpublishingsController < ApplicationController
     before_action :set_award , only: [:edit,:update,:show,:destroy]
+    before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
     
     def getname
@@ -16,12 +17,12 @@ class FacmaxpublishingsController < ApplicationController
     end    
     
     def new
-        @facmaxpublishing = Facmaxpublishing.new
+        @facmaxpublishing = current_user.build_facmaxpublishing
         2.times { @facmaxpublishing.publishingdetailbyfaculties.build}
     end
     
     def create
-        @facmaxpublishing = Facmaxpublishing.new(facmaxpublishing_params)
+        @facmaxpublishing = current_user.build_facmaxpublishing(facmaxpublishing_params)
         
         if @facmaxpublishing.save
             flash[:notice] = " Your response has been recorded"
@@ -50,6 +51,10 @@ class FacmaxpublishingsController < ApplicationController
     end
     
     private
+    
+    def authenticate
+       authenticate_user! && is_sbc? 
+    end
     
     def facmaxpublishing_params
        params.require(:facmaxpublishing).permit(:candidate_csi_membership_no,

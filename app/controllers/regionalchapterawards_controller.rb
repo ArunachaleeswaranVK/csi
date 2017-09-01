@@ -1,5 +1,6 @@
 class RegionalchapterawardsController < ApplicationController
     before_action :set_award , only: [:edit,:update,:show,:destroy]
+    before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
    
     
@@ -12,14 +13,14 @@ class RegionalchapterawardsController < ApplicationController
     end    
     
     def new
-        @regionalchapteraward = Regionalchapteraward.new
+        @regionalchapteraward = current_user.build_regionalchapteraward
         1.times { @regionalchapteraward.techactivitiesregionalchapterawards.build}
         1.times { @regionalchapteraward.eventsforregionalchapterawards.build}
         1.times { @regionalchapteraward.newslettersforregionalchapterawards.build}
     end
     
     def create
-        @regionalchapteraward = Regionalchapteraward.new(regionalchapteraward_params)
+        @regionalchapteraward = current_user.build_regionalchapteraward(regionalchapteraward_params)
         
         if @regionalchapteraward.save
             flash[:notice] = " Your response has been recorded"
@@ -48,6 +49,10 @@ class RegionalchapterawardsController < ApplicationController
     end
     
     private
+    
+    def authenticate
+       authenticate_user! && is_sbc? 
+    end
     
     def regionalchapteraward_params
        params.require(:regionalchapteraward).permit(:category,

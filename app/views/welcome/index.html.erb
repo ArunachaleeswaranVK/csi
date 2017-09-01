@@ -17,51 +17,65 @@
     <p><%= link_to "Best Accredited Student Branch Award" , new_bestaccreditedstudentbranch_path %> </p>
 </div>
 <% end %>
+<% if user_signed_in? && is_sbc? %>
 <div class="award-title">
     <p><%= link_to "Best CSI International Students Event Host Award" , new_bestcsiinternationalstudentseventhost_path %> </p>
 </div>
-
+<% end %>
+<% if user_signed_in? && is_sbc? %>
 <div class="award-title">
     <p><%= link_to "Highest Sponsorship of CSI Event Award" , new_highestsponsorshipofcsievent_path %> </p>
 </div>
-
+<% end %>
+<% if user_signed_in? && is_sbc? %>
 <div class="award-title">
     <p><%= link_to "Longest Continuous SBC Award" ,new_longestcontinuoussbc_path %> </p>
 </div>
-
+<% end %>
+<% if user_signed_in?  %>
 <div class="award-title">
     <p><%= link_to "Faculty with maximum publishing  in CSI Publications" ,new_facmaxpublishing_path %> </p>
 </div>
-
+<% end %>
+<% if user_signed_in?  %>
 <div class="award-title">
     <p><%= link_to "Paper Presenter at International Conference for Faculty" ,new_paperpresenter_path %> </p>
 </div>
-
+<% end %>
+<% if user_signed_in? && is_sbc? %>
 <div class="award-title">
     <p><%= link_to "Students with maximum publishing – CSI publications" ,new_studentmaxpublishing_path %> </p>
 </div>
-
+<% end %>
+<% if user_signed_in? && is_sbc? %>
 <div class="award-title">
     <p><%= link_to "Highest Committed Student Branch Activist Award" ,new_studentbranchactivist_path %> </p>
 </div>
-
+<% end %>
+<% if user_signed_in?  %>
 <div class="award-title">
     <p><%= link_to "Best Ph D Thesis Award" ,new_bestthesisaward_path %> </p>
 </div>
+<% end %>
 </div>
 
 <div class="col-md-5 award-area">  
 <h3  class="award-head servie-awards" align="center">SERVICE AWARDS</h3>
-
+<% if user_signed_in?  %>
 <div class="award-title">
     <p><%= link_to "Best Regional Chapter Award" , new_regionalchapteraward_path %> </p>
 </div>
+<% end %>
+<% if user_signed_in?  %>
 <div class="award-title">
     <p><%= link_to "Best Service Awards (Individual)" , new_individualserviceaward_path %> </p>
 </div>
+<% end %>
+<% if user_signed_in?  %>
 <div class="award-title">
     <p><%= link_to "Best Chapter Newsletter Award" , new_newsletteraward_path %> </p>
 </div>
+<% end %>
 
 </div>
 </div>

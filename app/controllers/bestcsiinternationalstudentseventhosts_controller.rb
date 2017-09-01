@@ -1,6 +1,7 @@
 class BestcsiinternationalstudentseventhostsController < ApplicationController
    
     before_action :set_award , only: [:edit,:update,:show,:destroy]
+    before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
    
     
@@ -18,12 +19,12 @@ class BestcsiinternationalstudentseventhostsController < ApplicationController
     end    
     
     def new
-        @bestcsiinternationalstudentseventhost = Bestcsiinternationalstudentseventhost.new
+        @bestcsiinternationalstudentseventhost = current_user.build_bestcsiinternationalstudentseventhost
         2.times { @bestcsiinternationalstudentseventhost.internationalevents.build}
     end
     
     def create
-        @bestcsiinternationalstudentseventhost = Bestcsiinternationalstudentseventhost.new(bestcsiinternationalstudentseventhost_params)
+        @bestcsiinternationalstudentseventhost = current_user.build_bestcsiinternationalstudentseventhost(bestcsiinternationalstudentseventhost_params)
         
         if @bestcsiinternationalstudentseventhost.save
             flash[:notice] = " Your response has been recorded"
@@ -52,6 +53,10 @@ class BestcsiinternationalstudentseventhostsController < ApplicationController
     end
     
     private
+    
+    def authenticate
+       authenticate_user! && is_sbc? 
+    end
     
     def bestcsiinternationalstudentseventhost_params
        params.require(:bestcsiinternationalstudentseventhost).permit(:volunteers,

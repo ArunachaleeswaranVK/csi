@@ -1,3 +1,8 @@
 <h3 align="center">Students with maximum publishing – CSI publications</h3>
 
+<% if is_sbc? %>
 <%= render "form" %>
+<% else %>
+<p class="jumbotron">Only SBC's can fill this award</p>
+<p><%= link_to "Fill Other Awards", root_path %></p>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901094050) do
+ActiveRecord::Schema.define(version: 20170901180849) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170901094050) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "imno"
+    t.integer  "user_id"
   end
 
   add_index "bestcsiinternationalstudentseventhosts", ["imno"], name: "index_bestcsiinternationalstudentseventhosts_on_imno"
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 20170901094050) do
     t.string   "thesis_title"
     t.date     "defence_of_dissertation_date"
     t.string   "imno"
+    t.integer  "user_id"
   end
 
   add_index "bestthesisawards", ["imno"], name: "index_bestthesisawards_on_imno"
@@ -118,6 +120,7 @@ ActiveRecord::Schema.define(version: 20170901094050) do
     t.string   "faculty_name"
     t.string   "faculty_email"
     t.string   "imno"
+    t.integer  "user_id"
   end
 
   add_index "facmaxpublishings", ["imno"], name: "index_facmaxpublishings_on_imno"
@@ -128,6 +131,7 @@ ActiveRecord::Schema.define(version: 20170901094050) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "imno"
+    t.integer  "user_id"
   end
 
   add_index "highestsponsorshipofcsievents", ["imno"], name: "index_highestsponsorshipofcsievents_on_imno"
@@ -153,6 +157,7 @@ ActiveRecord::Schema.define(version: 20170901094050) do
     t.text     "other_info"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "user_id"
   end
 
   create_table "institutes", force: :cascade do |t|
@@ -192,6 +197,7 @@ ActiveRecord::Schema.define(version: 20170901094050) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "imno"
+    t.integer  "user_id"
   end
 
   add_index "longestcontinuoussbcs", ["imno"], name: "index_longestcontinuoussbcs_on_imno"
@@ -205,6 +211,7 @@ ActiveRecord::Schema.define(version: 20170901094050) do
     t.text     "other_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "newslettersforregionalchapterawards", force: :cascade do |t|
@@ -247,6 +254,7 @@ ActiveRecord::Schema.define(version: 20170901094050) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.string   "imno"
+    t.integer  "user_id"
   end
 
   add_index "paperpresenters", ["imno"], name: "index_paperpresenters_on_imno"
@@ -297,6 +305,7 @@ ActiveRecord::Schema.define(version: 20170901094050) do
     t.text     "other_info"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+    t.integer  "user_id"
   end
 
   create_table "roleincsieventindserviceawards", force: :cascade do |t|
@@ -343,6 +352,7 @@ ActiveRecord::Schema.define(version: 20170901094050) do
     t.integer  "volunteers"
     t.integer  "volunteers_added"
     t.string   "imno"
+    t.integer  "user_id"
   end
 
   add_index "studentbranchactivists", ["imno"], name: "index_studentbranchactivists_on_imno"
@@ -355,6 +365,7 @@ ActiveRecord::Schema.define(version: 20170901094050) do
     t.string   "csi_volunteer_id"
     t.date     "valid_till"
     t.string   "imno"
+    t.integer  "user_id"
   end
 
   add_index "studentmaxpublishings", ["imno"], name: "index_studentmaxpublishings_on_imno"

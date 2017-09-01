@@ -1,5 +1,6 @@
 class NewsletterawardsController < ApplicationController
      before_action :set_award , only: [:edit,:update,:show,:destroy]
+     before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
    
     
@@ -12,14 +13,14 @@ class NewsletterawardsController < ApplicationController
     end    
     
     def new
-        @newsletteraward = Newsletteraward.new
+        @newsletteraward = current_user.build_newsletteraward
         1.times { @newsletteraward.detailsfornewsletterawards.build}
      
        
     end
     
     def create
-        @newsletteraward = Newsletteraward.new(newsletteraward_params)
+        @newsletteraward = current_user.build_newsletteraward(newsletteraward_params)
         
         if @newsletteraward.save
             flash[:notice] = " Your response has been recorded"
@@ -48,6 +49,10 @@ class NewsletterawardsController < ApplicationController
     end
     
     private
+    
+    def authenticate
+       authenticate_user! && is_sbc? 
+    end
     
     def newsletteraward_params
        params.require(:newsletteraward).permit(

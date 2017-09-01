@@ -1,6 +1,7 @@
 class HighestsponsorshipofcsieventsController < ApplicationController
   
   before_action :set_award , only: [:edit,:update,:show,:destroy]
+  before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
     
     def getname
@@ -17,12 +18,12 @@ class HighestsponsorshipofcsieventsController < ApplicationController
     end    
     
     def new
-        @highestsponsorshipofcsievent = Highestsponsorshipofcsievent.new
+        @highestsponsorshipofcsievent = current_user.build_highestsponsorshipofcsievent
         1.times { @highestsponsorshipofcsievent.supportforcsievents.build}
     end
     
     def create
-        @highestsponsorshipofcsievent = Highestsponsorshipofcsievent.new(highestsponsorshipofcsievent_params)
+        @highestsponsorshipofcsievent = current_user.build_highestsponsorshipofcsievent(highestsponsorshipofcsievent_params)
         
         if @highestsponsorshipofcsievent.save
             flash[:notice] = " Your response has been recorded"
@@ -51,6 +52,10 @@ class HighestsponsorshipofcsieventsController < ApplicationController
     end
     
     private
+    
+    def authenticate
+       authenticate_user! && is_sbc? 
+    end
     
     def highestsponsorshipofcsievent_params
        params.require(:highestsponsorshipofcsievent).permit(:volunteers,:volunteers_added,:imno, 

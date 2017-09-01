@@ -1,5 +1,6 @@
 class Paperpresenter < ActiveRecord::Base
     belongs_to :institute  , foreign_key: "imno"
+    belongs_to :user
     
     has_many :paperpresenterdetails , dependent: :destroy
     accepts_nested_attributes_for :paperpresenterdetails , allow_destroy: true

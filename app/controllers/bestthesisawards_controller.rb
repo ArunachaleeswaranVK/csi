@@ -1,5 +1,6 @@
 class BestthesisawardsController < ApplicationController
     before_action :set_award , only: [:edit,:update,:show,:destroy]
+    before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
    
     
@@ -14,12 +15,12 @@ class BestthesisawardsController < ApplicationController
     end    
     
     def new
-        @bestthesisaward = Bestthesisaward.new
+        @bestthesisaward = current_user.build_bestthesisaward
         2.times { @bestthesisaward.recordforthesisawards.build}
     end
     
     def create
-        @bestthesisaward = Bestthesisaward.new(bestthesisaward_params)
+        @bestthesisaward = current_user.build_bestthesisaward(bestthesisaward_params)
         
         if @bestthesisaward.save
             flash[:notice] = " Your response has been recorded"
@@ -48,6 +49,10 @@ class BestthesisawardsController < ApplicationController
     end
     
     private
+    
+    def authenticate
+       authenticate_user! && is_sbc? 
+    end
     
     def bestthesisaward_params
        params.require(:bestthesisaward).permit(:candidate_csi_membership_no,

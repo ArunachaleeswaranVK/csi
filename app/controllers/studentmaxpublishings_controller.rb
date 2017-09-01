@@ -1,5 +1,6 @@
 class StudentmaxpublishingsController < ApplicationController
     before_action :set_award , only: [:edit,:update,:show,:destroy]
+    before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
     
     def getname
@@ -16,12 +17,12 @@ class StudentmaxpublishingsController < ApplicationController
     end    
     
     def new
-        @studentmaxpublishing = Studentmaxpublishing.new
+        @studentmaxpublishing = current_user.build_studentmaxpublishing
         2.times { @studentmaxpublishing.publishingdetailbystudents.build}
     end
     
     def create
-        @studentmaxpublishing = Studentmaxpublishing.new(studentmaxpublishing_params)
+        @studentmaxpublishing = current_user.build_studentmaxpublishing(studentmaxpublishing_params)
         
         if @studentmaxpublishing.save
             flash[:notice] = " Your response has been recorded"
@@ -50,6 +51,10 @@ class StudentmaxpublishingsController < ApplicationController
     end
     
     private
+    
+    def authenticate
+       authenticate_user! && is_sbc? 
+    end
     
     def studentmaxpublishing_params
        params.require(:studentmaxpublishing).permit(:csi_volunteer_name,

@@ -1,5 +1,6 @@
 class IndividualserviceawardsController < ApplicationController
      before_action :set_award , only: [:edit,:update,:show,:destroy]
+     before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
    
     
@@ -12,14 +13,14 @@ class IndividualserviceawardsController < ApplicationController
     end    
     
     def new
-        @individualserviceaward = Individualserviceaward.new
+        @individualserviceaward = current_user.build_individualserviceaward
         1.times { @individualserviceaward.contributiontocsiindserviceawards.build}
         1.times { @individualserviceaward.roleincsieventindserviceawards.build}
        
     end
     
     def create
-        @individualserviceaward = Individualserviceaward.new(individualserviceaward_params)
+        @individualserviceaward = current_user.build_individualserviceaward(individualserviceaward_params)
         
         if @individualserviceaward.save
             flash[:notice] = " Your response has been recorded"
@@ -48,6 +49,10 @@ class IndividualserviceawardsController < ApplicationController
     end
     
     private
+    
+    def authenticate
+       authenticate_user! && is_sbc? 
+    end
     
     def individualserviceaward_params
        params.require(:individualserviceaward).permit(:applying_for,
