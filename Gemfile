@@ -18,6 +18,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem "cocoon"
 
 gem 'google-webfonts-rails', '~> 0.0.4'
+
+gem 'devise'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
