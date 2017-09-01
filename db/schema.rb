@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831153517) do
+ActiveRecord::Schema.define(version: 20170901033107) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -73,6 +73,15 @@ ActiveRecord::Schema.define(version: 20170831153517) do
 
   add_index "bestthesisawards", ["imno"], name: "index_bestthesisawards_on_imno"
 
+  create_table "contributiontocsiindserviceawards", force: :cascade do |t|
+    t.string   "year"
+    t.string   "name_of_position"
+    t.text     "achievement"
+    t.integer  "individualserviceaward_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
   create_table "eventdetailsbystudentactivists", force: :cascade do |t|
     t.string   "event_name"
     t.string   "event_place"
@@ -112,6 +121,29 @@ ActiveRecord::Schema.define(version: 20170831153517) do
   end
 
   add_index "highestsponsorshipofcsievents", ["imno"], name: "index_highestsponsorshipofcsievents_on_imno"
+
+  create_table "individualserviceawards", force: :cascade do |t|
+    t.string   "applying_for"
+    t.string   "region"
+    t.string   "chapter"
+    t.string   "applicant_name"
+    t.string   "applicant_csi_mem_no"
+    t.date     "applicant_csi_mem_since"
+    t.string   "applicant_phone"
+    t.string   "applicant_mobile"
+    t.string   "applicant_email"
+    t.date     "applicant_dob"
+    t.string   "applicant_educational_qualification"
+    t.string   "applicant_experience"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "email"
+    t.text     "membership_in_other_societies"
+    t.text     "publication_details"
+    t.text     "other_info"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
 
   create_table "institutes", force: :cascade do |t|
     t.string   "imno",                 null: false
@@ -244,6 +276,18 @@ ActiveRecord::Schema.define(version: 20170831153517) do
     t.text     "other_info"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+  end
+
+  create_table "roleincsieventindserviceawards", force: :cascade do |t|
+    t.date     "date_of_event"
+    t.string   "name_of_event"
+    t.string   "type_of_event"
+    t.string   "surplus_amount"
+    t.string   "role"
+    t.integer  "no_of_paper_received"
+    t.integer  "individualserviceaward_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "sbc_tenure_details", force: :cascade do |t|

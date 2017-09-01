@@ -1,0 +1,38 @@
+<div class="row">
+<div class="nested-fields">
+    
+
+<div class="form-group sf col-md-2">
+        
+        <%= f.date_field :date_of_event , class: "form-control"%>
+</div>
+<div class="form-group sf col-md-2">
+       
+        <%= f.text_field :name_of_event , class: "form-control"%>
+</div>
+<div class="form-group sf col-md-2">
+      
+        <%= f.select(:type_of_event, options_for_select([
+          ['Regional', 'Regional'], 
+          ['National', 'National'],
+          ['International','International)']]), {}, {class: "form-control"}) %>
+</div>
+<div class="form-group sf col-md-2">
+       
+        <%= f.text_field :surplus_amount , class: "form-control"%>
+</div>
+<div class="form-group sf col-md-2">
+        
+        <%= f.text_field :role , class: "form-control"%>
+</div>
+<div class="form-group sf col-md-1">
+       
+        <%= f.text_field :no_of_paper_received , class: "form-control"%>
+</div>
+
+<div class="form-group sf col-md-1 remove-sub-form-button">
+   <%= link_to_remove_association "Remove", f, class: "form-button btn btn-danger" %> 
+</div>
+
+</div>
+</div>

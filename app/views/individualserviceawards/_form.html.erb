@@ -1,0 +1,173 @@
+
+<%= render 'shared/errors', object: @individualserviceaward %>
+
+<%= form_for @individualserviceaward, :html => {:class => "form-horizontal"} do |f| %>
+    
+     
+   <div class="row">
+    <div class="form-group col-md-3">
+      <%= f.label :applying_for  %>
+      <%= f.select(:applying_for, options_for_select([
+          ['Chapter Patron Award', 'Chapter Patron Award'], 
+          ['Significant Contribution Award', 'Significant Contribution Award'],
+          ['Active Participation Award (Youth)','Active Participation Award (Youth)'],
+          ['Active Participation Award (Woman)','Active Participation Award (Woman)']]), {}, {class: "form-control"}) %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :region  %>
+      <%= f.text_field :region  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :chapter  %>
+      <%= f.text_field :chapter  , class: "form-control"%>
+    </div>
+    
+    <!--applicant details-->
+
+      
+   
+       
+    <div class="form-group col-md-3">
+      <%= f.label :applicant_name  %>
+      <%= f.text_area :applicant_name  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :applicant_csi_mem_no  %>
+      <%= f.text_field :applicant_csi_mem_no  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :applicant_csi_mem_since  %>
+      <%= f.date_field :applicant_csi_mem_since  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :applicant_phone  %>
+      <%= f.text_field :applicant_phone  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :applicant_mobile  %>
+      <%= f.text_field :applicant_mobile  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :applicant_email  %>
+      <%= f.email_field :applicant_email  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :applicant_dob  %>
+      <%= f.date_field :applicant_dob  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :applicant_educational_qualification  %>
+      <%= f.text_field :applicant_educational_qualification  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :applicant_experience  %>
+      <%= f.text_field :applicant_experience  , class: "form-control"%>
+    </div>
+    
+    
+    
+   </div>
+   
+   
+    <div class="row">
+    <p class="primary-form-subheading">Chapter Office Contact details  </p>
+    <div class="form-group col-md-3">
+      <%= f.label :address  %>
+      <%= f.text_field :address  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :phone  %>
+      <%= f.text_field :phone  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :email  %>
+      <%= f.email_field :email  , class: "form-control"%>
+    </div>
+    </div>
+   
+   
+    <!--sub form details-->
+    <div>
+    <p class="primary-form-subheading">Holding any position in CSI present or past ( in chronological order)</p>
+    
+    
+    <br>
+    <div class="row">
+      <div class="col-md-2"><p class="subform-head"><strong>Year</strong></p></div>
+      <div class="col-md-5"><p  class="subform-head"><strong>Name of the position</strong></p></div>
+      <div class="col-md-5"><p  class="subform-head"><strong>Achievement</strong></p></div>
+      
+      
+    </div>
+    
+    <%= f.fields_for :contributiontocsiindserviceawards do |i| %>
+    
+      <%= render 'contributiontocsiindserviceaward_fields', f: i %>
+   
+    <% end %>
+    
+    
+    <div class="links col-md-12">
+      <br>
+        <%= link_to_add_association 'Add Event', f, :contributiontocsiindserviceawards , class: "form-button btn btn-primary" %>
+    </div>
+    </div>
+    
+    <div>
+    <p class="primary-form-subheading">Role in conducting CSI Events
+    (Conference, Seminar, Workshop, Symposium and any other technical events)</p>
+    
+   			
+    
+    <br>
+    <div class="row">
+      <div class="col-md-2"><p class="subform-head"><strong>Date</strong></p></div>
+      <div class="col-md-2"><p  class="subform-head"><strong>Name of the Event</strong></p></div>
+      <div class="col-md-2"><p class="subform-head"><strong>Regional/National/ International</strong></p></div>
+      <div class="col-md-2"><p  class="subform-head"><strong>Surplus Amount</strong></p></div>
+      <div class="col-md-2"><p class="subform-head"><strong>Role played by Applicant</strong></p></div>
+      <div class="col-md-2"><p  class="subform-head"><strong>Number of quality paper received</strong></p></div>
+     
+      
+      
+    </div>
+    
+    <%= f.fields_for :roleincsieventindserviceawards do |i| %>
+    
+      <%= render 'roleincsieventindserviceaward_fields', f: i %>
+   
+    <% end %>
+    
+    
+    <div class="links col-md-12">
+      <br>
+        <%= link_to_add_association 'Add Event', f, :roleincsieventindserviceawards , class: "form-button btn btn-primary" %>
+    </div>
+    </div>
+    
+    <!--end of sub forms-->
+    
+        
+       
+    <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :membership_in_other_societies  %>
+      <%= f.text_area :membership_in_other_societies  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :publication_details  %>
+      <%= f.text_area :publication_details  , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :other_info  %>
+      <%= f.text_area :other_info  , class: "form-control"%>
+    </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-offset-5 col-md-2">
+            <%= f.submit "Submit" , class: "btn btn-success btn-lg" %>
+        </div>
+    </div>
+    
+<% end %>   
