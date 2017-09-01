@@ -1,8 +1,10 @@
 class BestaccreditedstudentbranchesController < ApplicationController
     before_action :set_award , only: [:edit,:update,:show,:destroy]
+    before_action :authenticate , only: [:new] 
+    
     # before_action :authenticate_user!, except: [:index,:show]
    
-    
+  
     def getname
         
         @bestaccreditedstudentbranch = Institute.where("name like ?", "#{params[:name]}").first
@@ -17,12 +19,12 @@ class BestaccreditedstudentbranchesController < ApplicationController
     end    
     
     def new
-        @bestaccreditedstudentbranch = Bestaccreditedstudentbranch.new
+        @bestaccreditedstudentbranch = current_user.build_bestaccreditedstudentbranch
         
     end
     
     def create
-        @bestaccreditedstudentbranch = Bestaccreditedstudentbranch.new(bestaccreditedstudentbranch_params)
+        @bestaccreditedstudentbranch = current_user.build_bestaccreditedstudentbranch(bestaccreditedstudentbranch_params)
         
         if @bestaccreditedstudentbranch.save
             flash[:notice] = " Your response has been recorded"
@@ -51,6 +53,10 @@ class BestaccreditedstudentbranchesController < ApplicationController
     end
     
     private
+    
+    def authenticate
+       authenticate_user! && is_sbc? 
+    end
     
     def bestaccreditedstudentbranch_params
        params.require(:bestaccreditedstudentbranch).permit(

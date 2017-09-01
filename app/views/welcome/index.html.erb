@@ -3,13 +3,20 @@
 
 
 <div class="container">
+    <% if user_signed_in? %>
+        <li><%= link_to "Edit account" ,edit_user_registration_path %></li>
+        <li><%= link_to "Sign out" , destroy_user_session_path , method: :delete %></li>
+    <% else %>
+        <li><%= link_to "Login" , user_session_path %></li>
+    <% end %>
 <div class="row">    
 <div class="col-md-5 award-area"> 
 <h3 class="award-head"align="center">ACADEMIC AWARDS</h3>
+<% if user_signed_in? && is_sbc? %>
 <div class="award-title">
     <p><%= link_to "Best Accredited Student Branch Award" , new_bestaccreditedstudentbranch_path %> </p>
 </div>
-
+<% end %>
 <div class="award-title">
     <p><%= link_to "Best CSI International Students Event Host Award" , new_bestcsiinternationalstudentseventhost_path %> </p>
 </div>
@@ -58,3 +65,4 @@
 
 </div>
 </div>
+

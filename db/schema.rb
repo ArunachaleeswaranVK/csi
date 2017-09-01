@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901064106) do
+ActiveRecord::Schema.define(version: 20170901094050) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170901064106) do
     t.integer  "no_of_faculty_as_csi_members_annual"
     t.boolean  "managing_committee_elected"
     t.string   "imno"
+    t.integer  "user_id"
   end
 
   add_index "bestaccreditedstudentbranches", ["imno"], name: "index_bestaccreditedstudentbranches_on_imno"
