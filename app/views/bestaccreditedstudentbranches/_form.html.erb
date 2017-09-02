@@ -18,9 +18,13 @@
       <label>Postal Address</label>
       <input type="text" class="form-control" id="address"> 
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-1">
       <%= f.label :imno , "IMNO" %>
       <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
+    </div>
+    <div class="form-group col-md-1">
+      <label>Validity</label>
+      <input type="text" class="form-control" id="validity"> 
     </div>
     
     
@@ -67,14 +71,14 @@
   
     
     
-    <!--should include in the institution table and make it display  -->
+    <!--should include in the sbc table and make it display  -->
     <div class="form-group col-md-1">
       <label>Volunteers</label>
-      <input type="text" class="form-control" id="sbc-phone"> 
+      <input type="text" class="form-control" id="volunteers"> 
     </div>
     <div class="form-group col-md-1">
-      <label>Added</label>
-      <input type="text" class="form-control" id="sbc-phone"> 
+      <%= f.label :volunteers_added , "Added" %>
+      <%= f.text_field :volunteers_added  , class: "form-control" %>
     </div>
     </div>
      <!--form specific details-->
@@ -151,16 +155,10 @@
     
     <p class="primary-form-subheading">Competitions and Contests organised for students</p>
     
-    <div class="form-group col-md-8">
-      <%= f.label :type_of_contests_organised_for_students , "Type of Contest" %>
-      <%= f.select(:type_of_contests_organised_for_students, options_for_select([
-          ['Web Design', 'Web Design'], 
-          ['Programming Contest', 'Programming Contest'],
-          ['Technical Quiz','Technical Quiz'],
-          ['Technical Paper Contest', 'Technical Paper Contest']]), {}, {class: "form-control"}) %>
-    </div>
-    <div class="form-group col-md-4">
-      <%= f.label :number_of_contests_organised_for_students , "# Competitions held" %>
+    
+    <div class="form-group col-md-12">
+      <%= f.label :number_of_contests_organised_for_students ,
+      "No of competitions held for students (Web Design ,Programming Contest,Technical Quiz,Technical Paper Contest) " %>
       <%= f.text_field :number_of_contests_organised_for_students  , class: "form-control"%>
     </div>
      

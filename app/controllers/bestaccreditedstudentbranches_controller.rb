@@ -67,7 +67,7 @@ class BestaccreditedstudentbranchesController < ApplicationController
             :program_organised_motivational_talks_no_of_activities,
             :student_branch_membership_institution_category,
             :student_branch_membership_no_of_volunteers,
-            :type_of_contests_organised_for_students,
+            :volunteers_added,
             :number_of_contests_organised_for_students,
             :convention_seminar_type,
             :convention_seminar_no_of_events_organised,

@@ -71,7 +71,7 @@ class BestthesisawardsController < ApplicationController
        :candidate_phone,
        :thesis_title,
        :defence_of_dissertation_date,
-       :imno,
+       
        recordforthesisawards_attributes: [:conference_or_journal,:name,
        :date,:citation,:_destroy])
     end

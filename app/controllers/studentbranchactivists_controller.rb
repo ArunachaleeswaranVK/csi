@@ -58,7 +58,7 @@ class StudentbranchactivistsController < ApplicationController
     
     def studentbranchactivist_params
        params.require(:studentbranchactivist).permit(:csi_volunteer_name,:csi_volunteer_email,:csi_volunteer_id,
-       :volunteers,:volunteers_added,:valid_till,:imno,
+       :volunteers_added,:valid_till,:imno,
        eventdetailsbystudentactivists_attributes: [:event_name,
        :event_place,:role_played,:_destroy])
     end

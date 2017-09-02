@@ -142,23 +142,36 @@
     <div class="links col-md-12">
       <br>
         <%= link_to_add_association 'Add Event', f, :roleincsieventindserviceawards , class: "form-button btn btn-primary" %>
+         <br>
     </div>
     </div>
     
+    
+    
+   
     <!--end of sub forms-->
     
         
        
     <div class="row">
-    <div class="form-group col-md-4">
+       <br>
+      <div class="form-group col-md-3">
+      <%= f.label :role_in_csi_membership_promotion_in_chapter  %>
+      <%= f.select(:role_in_csi_membership_promotion_in_chapter, options_for_select([
+          ['Individual Membership', 'Individual Membership'], 
+          ['Academic Institutional Membership / Student Branches', 'Academic Institutional Membership / Student Branches'],
+          ['Non Academic Institutional Membership (Corporate Membership)',
+          'Non Academic Institutional Membership (Corporate Membership)']]), {}, {class: "form-control"}) %>
+    </div>
+    <div class="form-group col-md-3">
       <%= f.label :membership_in_other_societies  %>
       <%= f.text_area :membership_in_other_societies  , class: "form-control"%>
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <%= f.label :publication_details  %>
       <%= f.text_area :publication_details  , class: "form-control"%>
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <%= f.label :other_info  %>
       <%= f.text_area :other_info  , class: "form-control"%>
     </div>

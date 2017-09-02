@@ -9,6 +9,6 @@ class Studentbranchactivist < ActiveRecord::Base
     validates :imno, presence: true
     validates :csi_volunteer_id, presence: true 
     validates :valid_till, presence: true
-    validates :volunteers, presence: true 
+  
     validates :volunteers_added, presence: true
 end

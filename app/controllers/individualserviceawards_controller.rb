@@ -70,6 +70,7 @@ class IndividualserviceawardsController < ApplicationController
        :membership_in_other_societies,
        :publication_details,
        :other_info,
+       :role_in_csi_membership_promotion_in_chapter,
        
        roleincsieventindserviceawards_attributes: [:date_of_event,
        :name_of_event,:type_of_event,:surplus_amount,:role,:no_of_paper_received,:_destroy],

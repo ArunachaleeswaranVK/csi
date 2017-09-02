@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901180849) do
+ActiveRecord::Schema.define(version: 20170902053820) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20170901180849) do
     t.integer  "program_organised_motivational_talks_no_of_activities"
     t.string   "student_branch_membership_institution_category"
     t.integer  "student_branch_membership_no_of_volunteers"
-    t.string   "type_of_contests_organised_for_students"
     t.integer  "number_of_contests_organised_for_students"
     t.string   "convention_seminar_type"
     t.integer  "convention_seminar_no_of_events_organised"
@@ -36,12 +35,12 @@ ActiveRecord::Schema.define(version: 20170901180849) do
     t.boolean  "managing_committee_elected"
     t.string   "imno"
     t.integer  "user_id"
+    t.integer  "volunteers_added"
   end
 
   add_index "bestaccreditedstudentbranches", ["imno"], name: "index_bestaccreditedstudentbranches_on_imno"
 
   create_table "bestcsiinternationalstudentseventhosts", force: :cascade do |t|
-    t.integer  "volunteers"
     t.integer  "volunteers_added"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -70,11 +69,8 @@ ActiveRecord::Schema.define(version: 20170901180849) do
     t.string   "candidate_phone"
     t.string   "thesis_title"
     t.date     "defence_of_dissertation_date"
-    t.string   "imno"
     t.integer  "user_id"
   end
-
-  add_index "bestthesisawards", ["imno"], name: "index_bestthesisawards_on_imno"
 
   create_table "contributiontocsiindserviceawards", force: :cascade do |t|
     t.string   "year"
@@ -126,7 +122,6 @@ ActiveRecord::Schema.define(version: 20170901180849) do
   add_index "facmaxpublishings", ["imno"], name: "index_facmaxpublishings_on_imno"
 
   create_table "highestsponsorshipofcsievents", force: :cascade do |t|
-    t.integer  "volunteers"
     t.integer  "volunteers_added"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -155,9 +150,10 @@ ActiveRecord::Schema.define(version: 20170901180849) do
     t.text     "membership_in_other_societies"
     t.text     "publication_details"
     t.text     "other_info"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.integer  "user_id"
+    t.string   "role_in_csi_membership_promotion_in_chapter"
   end
 
   create_table "institutes", force: :cascade do |t|
@@ -173,6 +169,9 @@ ActiveRecord::Schema.define(version: 20170901180849) do
     t.string   "na_email"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.date     "join_date"
+    t.date     "valid_till"
+    t.string   "validity"
   end
 
   add_index "institutes", ["imno"], name: "index_institutes_on_imno", unique: true
@@ -192,7 +191,6 @@ ActiveRecord::Schema.define(version: 20170901180849) do
   end
 
   create_table "longestcontinuoussbcs", force: :cascade do |t|
-    t.integer  "volunteers"
     t.integer  "volunteers_added"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -338,6 +336,7 @@ ActiveRecord::Schema.define(version: 20170901180849) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.string   "imno"
+    t.integer  "no_of_volunteers"
   end
 
   add_index "sbcs", ["imno"], name: "index_sbcs_on_imno"
@@ -349,7 +348,6 @@ ActiveRecord::Schema.define(version: 20170901180849) do
     t.string   "csi_volunteer_email"
     t.string   "csi_volunteer_id"
     t.date     "valid_till"
-    t.integer  "volunteers"
     t.integer  "volunteers_added"
     t.string   "imno"
     t.integer  "user_id"

@@ -57,7 +57,25 @@ $('#imno').val('<%= @bestcsiinternationalstudentseventhost.imno %>');
 <% unless @bestcsiinternationalstudentseventhost.na_email.nil? %>
   $('#na-email').val('<%= @bestcsiinternationalstudentseventhost.na_email %>');
 <% else %>  
-  $('#na-emai').val('Not Available');   
+  $('#na-email').val('Not Available');   
+<% end %> 
+
+<!--join date valid till validity-->
+
+<% unless @bestcsiinternationalstudentseventhost.join_date.nil? %>
+  $('#join_date').val('<%= @bestcsiinternationalstudentseventhost.join_date %>');
+<% else %>  
+  $('#join_date').val('Not Available');   
+<% end %> 
+<% unless @bestcsiinternationalstudentseventhost.valid_till.nil? %>
+  $('#valid_till').val('<%= @bestcsiinternationalstudentseventhost.valid_till %>');
+<% else %>  
+  $('#valid_till').val('Not Available');   
+<% end %> 
+<% unless @bestcsiinternationalstudentseventhost.validity.nil? %>
+  $('#validity').val('<%= @bestcsiinternationalstudentseventhost.validity %>');
+<% else %>  
+  $('#validity').val('Not Available');   
 <% end %> 
 
 
@@ -88,13 +106,19 @@ $('#imno').val('<%= @bestcsiinternationalstudentseventhost.imno %>');
   <% else %>  
     $('#sbc-phone').val('Not Available');   
   <% end %> 
+  
+  <% unless @bestcsiinternationalstudentseventhost.sbcs.first.no_of_volunteers.nil? %>
+    $('#volunteers').val('<%= @bestcsiinternationalstudentseventhost.sbcs.first.no_of_volunteers %>');
+  <% else %>  
+    $('#volunteers').val('Not Available');   
+  <% end %> 
 
 <% else %>
   $('#sbc-name').val('Not Available');
   $('#sbc-imno').val('Not Available');
   $('#sbc-email').val('Not Available'); 
   $('#sbc-phone').val('Not Available');
-  
+  $('#volunteers').val('Not Available'); 
 <% end %>
 
 
