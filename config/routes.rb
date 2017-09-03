@@ -2,6 +2,14 @@ Rails.application.routes.draw do
   
 
   devise_for :users
+  devise_scope :user do
+    authenticated :user do
+      root :to => 'welcome#index', as: :authenticated_root
+    end
+    unauthenticated :user do
+      root :to => 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

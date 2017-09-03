@@ -2,59 +2,196 @@
 <%= render 'shared/errors', object: @paperpresenter %>
 
 <%= form_for @paperpresenter, :html => {:class => "form-horizontal"} do |f| %>
-    
+<p class="form-detail">(Awarded to the CSI member Faculty who presented papers at prestigious International Conferences 
+during 01/07/2015 to 30/06/2016) 
+</p>      
+    <div class="row">
+      
     <p class="primary-form-subheading">Institution Details</p> 
-    <div class="row institution-details">
+    
     <div class="form-group col-md-6">
+    <% unless is_sbc? %>
      <%= f.fields_for :institute, @institute do |institute| %>
       <label>Name</label>
       <%= institute.autocomplete_field :name, autocomplete_institute_name_institutes_path ,id: "name" , 
-      placeholder: "Enter your institution name" ,title: "Enter your Institution name", class: "form-control" %>
-     <% end %>  
+      placeholder: "Enter your institution name" ,title: "Enter your Institution name", autofocus: true,  required: true , class: "form-control" %>
+     <% end %> 
+    <% else %>
+    
+     <label>Institution Name</label>
+     <input type="text" class="form-control" id="name" value="<%= current_sbc_user_data.institute.name %>" disabled>     
+    
+    <% end %>
     </div>
+    
+    <!--address-->
+    
     <div class="form-group col-md-6">
-      <label>Postal Address</label>
-      <input type="text" class="form-control" id="address"> 
+      <% if is_sbc? %>
+      <label>Address</label>
+      <input type="text" class="form-control" id="address" value="
+      <% unless current_sbc_user_data.institute.address.nil? %>
+      <%= current_sbc_user_data.institute.address %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled>  
+    <% else %>
+      <label>Address</label>
+      <input type="text" class="form-control" id="address" disabled>
+    <% end %>
     </div>
+    
+    
+    
     <div class="form-group col-md-2">
+      <% unless is_sbc? %>
       <%= f.label :imno , "IMNO" %>
-      <%= f.text_field :imno  , class: "form-control", required: true  , id:"imno"%>
+      <%= f.text_field :imno , readonly: true , required: true, class: "form-control" , id:"imno"%>
+       <% else %>
+       <%= f.label :imno , "IMNO" %>
+      <%= f.text_field :imno , value: current_sbc_user_data.institute.imno,
+      required: true , readonly: true ,class: "form-control" , id:"imno"%>
+       <% end %>
     </div>
     
-    <div class="form-group col-md-1">
-      <label>valid_till</label>
-      <input type="text" class="form-control" id="valid_till"> 
+    <!--valid till-->
+    
+    <div class="form-group col-md-2">
+    <% if is_sbc? %>
+      <label>Valid Till</label>
+      <input type="text" class="form-control" id="valid_till" value="
+      <% unless current_sbc_user_data.institute.valid_till.nil? %>
+      <%= current_sbc_user_data.institute.valid_till %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled>  
+    <% else %>
+      <label>Valid Till</label>
+      <input type="text" class="form-control" id="valid_till" disabled>
+    <% end %>
     </div>
-    <div class="form-group col-md-3">
-      <label>District</label>
-      <input type="text" class="form-control" id="district"> 
-    </div>
-    <div class="form-group col-md-3">
+    
+    <!--city-->
+    
+    <div class="form-group col-md-2">
+      <% if is_sbc? %>
       <label>City</label>
-      <input type="text" class="form-control" id="city"> 
+      <input type="text" class="form-control" id="city" value="
+      <% unless current_sbc_user_data.institute.city.nil? %>
+      <%= current_sbc_user_data.institute.city %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled>  
+     <% else %>
+      <label>City</label>
+      <input type="text" class="form-control" id="city" disabled>
+      <% end %>
     </div>
+    
     <div class="form-group col-md-3">
-      <label>Pin</label>
-      <input type="text" class="form-control" id="pin"> 
+     <% if is_sbc? %>
+      <label>District</label>
+      <input type="text" class="form-control" id="district" value="
+      <% unless current_sbc_user_data.institute.district.nil? %>
+      <%= current_sbc_user_data.institute.district %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled>  
+     <% else %>
+      <label>District</label>
+      <input type="text" class="form-control" id="district" disabled>
+      <% end %>
     </div>
+    
+    <!--state-->
+    
     <div class="form-group col-md-3">
+      <% if is_sbc? %>
       <label>State</label>
-      <input type="text" class="form-control" id="state"> 
+      <input type="text" class="form-control" id="state" value="
+      <% unless current_sbc_user_data.institute.state.nil? %>
+      <%= current_sbc_user_data.institute.state %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled>  
+     <% else %>
+      <label>State</label>
+      <input type="text" class="form-control" id="state" disabled>
+      <% end %>
     </div>
     
+    <!--pin-->
+    
     <div class="form-group col-md-3">
+       <% if is_sbc? %>
+      <label>Pin</label>
+      <input type="text" class="form-control" id="pin" value="
+      <% unless current_sbc_user_data.institute.pincode.nil? %>
+      <%= current_sbc_user_data.institute.pincode %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled>  
+     <% else %>
+      <label>Pin</label>
+      <input type="text" class="form-control" id="pin" disabled>
+      <% end %>
+    </div>
+    
+    
+    <div class="form-group col-md-3">
+      
+      <% if is_sbc? %>
       <label>Head of the Institution</label>
-      <input type="text" class="form-control" id="na"> 
+      <input type="text" class="form-control" id="na" value="
+      <% unless current_sbc_user_data.institute.nominating_authority.nil? %>
+      <%= current_sbc_user_data.institute.nominating_authority %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled> 
+       <% else %>
+       <label>Head of the Institution</label>
+      <input type="text" class="form-control" id="na" disabled> 
+      <% end %>
     </div>
     
     <div class="form-group col-md-3">
+      <% if is_sbc? %>
       <label>Phone number</label>
-      <input type="text" class="form-control" id="na-phone"> 
+      <input type="text" class="form-control" id="na-phone" value="
+      <% unless current_sbc_user_data.institute.na_phone.nil? %>
+      <%= current_sbc_user_data.institute.na_phone %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled>
+       <% else %>
+      <label>Phone number</label>
+      <input type="text" class="form-control" id="na-phone" disabled> 
+      <% end %>
     </div>
     <div class="form-group col-md-3">
+      <% if is_sbc? %>
       <label>Email</label>
-      <input type="email" class="form-control" id="na-email"> 
+      <input type="email" class="form-control" id="na-email" value="
+      <% unless current_sbc_user_data.institute.na_email.nil? %>
+      <%= current_sbc_user_data.institute.na_email %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled> 
+       <% else %>
+      <label>Email</label>
+      <input type="email" class="form-control" id="na-email" disabled>
+      <% end %>
     </div>
+    
     
     
     
@@ -62,21 +199,65 @@
     <p class="primary-form-subheading">SBC Details</p>    
   
     <div class="form-group col-md-3">
+      <% if is_sbc? %>
       <label>Name</label>
-      <input type="text" class="form-control" id="sbc-name"> 
+      <input type="text" class="form-control" id="sbc-name" value="
+      <% unless current_sbc_user_data.sbc_name.nil? %>
+      <%= current_sbc_user_data.sbc_name %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled> 
+      <% else %>
+      <label>Name</label>
+      <input type="text" class="form-control" id="sbc-name" disabled> 
+      <% end %>
     </div>
     
     <div class="form-group col-md-3">
-      <label>Mem.No</label>
-      <input type="text" class="form-control" id="sbc-imno"> 
+       <% if is_sbc? %>
+      <label>Mem. No</label>
+      <input type="text" class="form-control" id="sbc-imno" value="
+      <% unless current_sbc_user_data.sbc_membership_no.nil? %>
+      <%= current_sbc_user_data.sbc_membership_no %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled> 
+       <% else %>
+       <label>Mem. No</label>
+      <input type="text" class="form-control" id="sbc-imno" disabled> 
+      <% end %>
     </div>
     <div class="form-group col-md-3">
+       <% if is_sbc? %>
       <label>Email</label>
-      <input type="email" class="form-control" id="sbc-email"> 
+      <input type="text" class="form-control" id="sbc-email" value="
+      <% unless current_sbc_user_data.sbc_email.nil? %>
+      <%= current_sbc_user_data.sbc_email %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled> 
+       <% else %>
+       <label>Email</label>
+      <input type="text" class="form-control" id="sbc-email" disabled> 
+      <% end %>
     </div>
     <div class="form-group col-md-3">
-      <label>Phonenumber</label>
-      <input type="text" class="form-control" id="sbc-phone"> 
+       <% if is_sbc? %>
+      <label>Phone</label>
+      <input type="text" class="form-control" id="sbc-phone" value="
+      <% unless current_sbc_user_data.sbc_phone.nil? %>
+      <%= current_sbc_user_data.sbc_phone %>
+      <% else %>
+      <%= "Not available" %>
+      <% end %>
+      " disabled> 
+       <% else %>
+        <label>Phone</label>
+      <input type="text" class="form-control" id="sbc-phone" disabled> 
+      <% end %>
     </div>
     
     
@@ -106,6 +287,8 @@
       <%= f.label :valid_till  , "Id Valid Till" %>
       <%= f.date_field :valid_till , required: true , class: "form-control" %>
     </div>
+    
+    </div>
    
     <p class="primary-form-subheading">Conference Details:</p>  
     
@@ -132,7 +315,7 @@
     
     <div class="form-group">
         <div class="col-md-offset-5 col-md-2">
-            <%= f.submit "Submit" , class: "btn btn-primary btn-lg" %>
+            <%= f.submit "Submit" , class: "btn btn-success btn-lg" %>
         </div>
     </div>
     

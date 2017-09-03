@@ -1,0 +1,14 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">THE COMPUTER SOCIETY OF INDIA</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      
+      <% if user_signed_in? %>
+        <li><%= link_to "Edit account" ,edit_user_registration_path %></li>
+        <li><%= link_to "Sign out" , destroy_user_session_path , method: :delete %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

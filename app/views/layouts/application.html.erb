@@ -12,11 +12,15 @@
 </head>
 <body>
 
-
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-md-offset-2">
 <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "alert_wrapper" %>
 <% end %>
-
+</div>
+</div>
+</div>
 <div class="container">
   <%= yield %>
 </div>

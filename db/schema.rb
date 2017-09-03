@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170902053820) do
+ActiveRecord::Schema.define(version: 20170903140034) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -179,10 +179,11 @@ ActiveRecord::Schema.define(version: 20170902053820) do
   create_table "internationalevents", force: :cascade do |t|
     t.string   "competetion_name"
     t.date     "date_of_event"
-    t.string   "no_of_students_from_abroad_with_country_name"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "bestcsiinternationalstudentseventhost_id"
+    t.string   "no_of_students_from_abroad"
+    t.string   "country_name"
   end
 
   create_table "largeststudentbranches", force: :cascade do |t|
@@ -192,10 +193,13 @@ ActiveRecord::Schema.define(version: 20170902053820) do
 
   create_table "longestcontinuoussbcs", force: :cascade do |t|
     t.integer  "volunteers_added"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "imno"
     t.integer  "user_id"
+    t.integer  "last_but_before_year_vol_strength"
+    t.integer  "last_year_vol_strength"
+    t.integer  "current_year_vol_strength"
   end
 
   add_index "longestcontinuoussbcs", ["imno"], name: "index_longestcontinuoussbcs_on_imno"
@@ -270,7 +274,7 @@ ActiveRecord::Schema.define(version: 20170902053820) do
     t.integer  "no_of_articles_published"
     t.string   "article_title"
     t.string   "published_in"
-    t.date     "date_of_publishing"
+    t.string   "date_of_publishing"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "studentmaxpublishing_id"

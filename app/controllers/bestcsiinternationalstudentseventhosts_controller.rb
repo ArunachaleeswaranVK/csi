@@ -61,7 +61,7 @@ class BestcsiinternationalstudentseventhostsController < ApplicationController
     def bestcsiinternationalstudentseventhost_params
        params.require(:bestcsiinternationalstudentseventhost).permit(
        :volunteers_added,:imno,internationalevents_attributes: [:competetion_name,
-       :date_of_event,:no_of_students_from_abroad_with_country_name,:_destroy])
+       :date_of_event,:no_of_students_from_abroad,:country_name,:_destroy])
     end
     
     def set_award

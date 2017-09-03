@@ -8,7 +8,11 @@
 
 <div class="form-group sf col-md-3">
         
-        <%= f.text_field :conference_or_journal ,  required: true , class: "form-control" %>
+       
+        <%= f.select(:conference_or_journal, options_for_select([
+          ['Conference', 'conference'], 
+          
+          ['Journal','journal']]), {}, {class: "form-control"}) %>
 </div>
 
 <div class="form-group sf col-md-2">

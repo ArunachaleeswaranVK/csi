@@ -2,34 +2,36 @@
 <%= render 'shared/errors', object: @bestthesisaward %>
 
 <%= form_for @bestthesisaward, :html => {:class => "form-horizontal"} do |f| %>
-    
+ <p class="form-detail"> (Awarded to CSI Members for a high-quality thesis leading to acceptance for 
+ Ph D degree by a recognized Indian Institution / University / Employer during 1/7/2015 and 30/6/2016) </p>     
      
     <div class="primary-form">
     <div class="row institution-details">
       <!--institution details-->
     
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-6">
       <%= f.label :name_of_nominating_institution , "Name of nominating institution" %>
       <%= f.text_field :name_of_nominating_institution  , 
-      placeholder: "Enter your institution name" ,title: "Enter your Institution name",  required: true , class: "form-control"%>
+      placeholder: "Enter your institution name" ,title: "Enter your Institution name", autofocus: true,  required: true , class: "form-control"%>
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-6">
       <%= f.label :address , "Address" %>
       <%= f.text_field :address  ,  required: true , class: "form-control" %>
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-4">
       <%= f.label :recognized_by , "Recognized By" %>          
       <!--add a drop down her-->
       <%= f.text_field :recognized_by  ,placeholder: "AICTE/ UGC/ Others (Please specify)" ,  required: true, class: "form-control" %>
     </div>
-    <div class="form-group col-md-3">
-      <%= f.label :reference_number_of_recognition , "Reference number of recognition" %>
+    <div class="form-group col-md-4">
+      <%= f.label :reference_number_of_recognition  %>
       <%= f.text_field :reference_number_of_recognition ,  required: true  , class: "form-control" %>
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-4">
       <%= f.label :date_of_recognition , "Date of recognition" %>
       <%= f.date_field :date_of_recognition ,  required: true  , class: "form-control" %>
     </div>
+     <p class="primary-form-subheading">Nominator Details</p>
     <div class="form-group col-md-3">
       <%= f.label :name_of_nominator  %>
       <%= f.text_field :name_of_nominator ,  required: true  , class: "form-control" %>
@@ -46,19 +48,29 @@
       <%= f.label :nominator_phone   %>
       <%= f.text_field :nominator_phone ,  required: true , class: "form-control" %>
     </div>
+    <p class="primary-form-subheading">Candidate Details</p>
     <div class="form-group col-md-3">
-      <%= f.label :name_of_candidate  %>
+      <%= f.label :name_of_candidate , "Name" %>
       <%= f.text_field :name_of_candidate ,  required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
-      <%= f.label :candidate_email  %>
+      <%= f.label :candidate_email, "Email"  %>
       <%= f.text_field :candidate_email ,  required: true  , type: "email", class: "form-control" %>
+    </div>
+    
+    <div class="form-group col-md-3">
+      <%= f.label :candidate_csi_membership_no , "CSI Membership Number" %>
+      <%= f.text_field :candidate_csi_membership_no ,  required: true , class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :valid_till  %>
+      <%= f.date_field :valid_till ,  required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :candidate_phone  %>
       <%= f.text_field :candidate_phone ,  required: true , class: "form-control" %>
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-6">
       <%= f.label :thesis_title %>
       <%= f.text_field :thesis_title ,  required: true , class: "form-control" %>
     </div>
@@ -66,14 +78,7 @@
       <%= f.label :defence_of_dissertation_date  %>
       <%= f.date_field :defence_of_dissertation_date ,  required: true , class: "form-control" %>
     </div>
-    <div class="form-group col-md-3">
-      <%= f.label :candidate_csi_membership_no  %>
-      <%= f.text_field :candidate_csi_membership_no ,  required: true , class: "form-control" %>
-    </div>
-    <div class="form-group col-md-3">
-      <%= f.label :valid_till  %>
-      <%= f.date_field :valid_till ,  required: true , class: "form-control" %>
-    </div>
+    
     </div>
     </div>
     <!--sub form details-->
@@ -84,7 +89,7 @@
     
     <br>
     <div class="row">
-      <div class="col-md-3"><p class="subform-head"><strong>Publication in Conference of Journal</strong></p></div>
+      <div class="col-md-3"><p class="subform-head"><strong>Publication in Conference or Journal</strong></p></div>
       <div class="col-md-2"><p  class="subform-head"><strong>Name</strong></p></div>
       <div class="col-md-2"><p><strong>Date</strong></p></div>
       <div class="col-md-5"><p><strong>Citation</strong></p></div>
@@ -101,7 +106,7 @@
     
     <div class="links col-md-12">
       <br>
-        <%= link_to_add_association 'Add Event', f, :recordforthesisawards , class: "form-button btn btn-primary" %>
+        <%= link_to_add_association 'Add Record', f, :recordforthesisawards , class: "form-button btn btn-primary" %>
     </div>
     
     

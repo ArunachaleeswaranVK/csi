@@ -20,18 +20,38 @@
 
 
 .alert_wrapper{
+    
     position: absolute;
     width: 100%;
     z-index: 999;
     background: #1d6fda;
     padding: 2.5rem 0;
     text-align: center;
-    margin: 0;
+    margin: 50px;
+    
     font-size: 1.25rem;
     font-weight: 700;
     color: #ffffff;
     letter-spacing: 1px;
+    box-shadow: 5px 5px 5px #988585
 }
+
+.sign-up{
+    margin-top: 5em;
+    border: 0.75em solid rgba(32, 105, 169, 0.71);
+    background: rgba(212, 235, 255, 0.43);
+    margin-left: 20em;
+    margin-right: 20em;
+    font-family: lato;
+    padding: 1em;
+    box-shadow: 5px 5px 5px #988585;
+}
+
+body{
+  
+    font-family: lato;
+}
+
 .award-area{
     font-family: "Lato";
     margin-left: 3em;  
@@ -70,6 +90,17 @@
 // .servie-awards{
 //     margin-bottom: 15em;
 // }
+.accredited-subform{
+    padding: 1em;
+}
+.form-detail{
+    font-family: lato;
+    font-size: 1em;
+    text-align: center;
+    margin-top: -12px;
+    font-style: italic;
+    color: #858990;
+}
 .submitted-details{
     font-family: "Lato";
     font-size: 1.5em;

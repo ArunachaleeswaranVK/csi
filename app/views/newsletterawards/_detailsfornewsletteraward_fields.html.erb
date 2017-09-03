@@ -4,15 +4,15 @@
 
 <div class="form-group sf col-md-3">
         
-        <%= f.date_field :date_of_publication , class: "form-control"%>
+        <%= f.date_field :date_of_publication , required: true, class: "form-control"%>
 </div>
 <div class="form-group sf col-md-4">
        
-        <%= f.text_field :title , class: "form-control"%>
+        <%= f.text_field :title, required: true , class: "form-control"%>
 </div>
 <div class="form-group sf col-md-4">
        
-        <%= f.text_area :remarks , class: "form-control"%>
+        <%= f.text_field :remarks, required: true , class: "form-control"%>
 </div>
 
 <div class="form-group sf col-md-1 remove-sub-form-button">

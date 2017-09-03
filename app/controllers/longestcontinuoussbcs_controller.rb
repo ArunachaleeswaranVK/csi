@@ -18,7 +18,7 @@ class LongestcontinuoussbcsController < ApplicationController
     
     def new
         @longestcontinuoussbc = current_user.build_longestcontinuoussbc
-        2.times { @longestcontinuoussbc.sbc_tenure_details.build}
+       
     end
     
     def create
@@ -55,11 +55,10 @@ class LongestcontinuoussbcsController < ApplicationController
     def authenticate
        authenticate_user! && is_sbc? 
     end
-    
+
     def longestcontinuoussbc_params
-       params.require(:longestcontinuoussbc).permit(:volunteers_added,
-       :imno,sbc_tenure_details_attributes: [:year,
-       :institution_name,:imno_of_institution,:volunteers,:_destroy])
+       params.require(:longestcontinuoussbc).permit(:volunteers_added,:last_but_before_year_vol_strength,
+       :last_year_vol_strength,:current_year_vol_strength,:imno)
     end
     
     def set_award

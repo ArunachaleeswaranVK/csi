@@ -2,68 +2,142 @@
 <%= render 'shared/errors', object: @individualserviceaward %>
 
 <%= form_for @individualserviceaward, :html => {:class => "form-horizontal"} do |f| %>
-    
+
      
    <div class="row">
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-4">
       <%= f.label :applying_for  %>
       <%= f.select(:applying_for, options_for_select([
           ['Chapter Patron Award', 'Chapter Patron Award'], 
           ['Significant Contribution Award', 'Significant Contribution Award'],
           ['Active Participation Award (Youth)','Active Participation Award (Youth)'],
-          ['Active Participation Award (Woman)','Active Participation Award (Woman)']]), {}, {class: "form-control"}) %>
+          ['Active Participation Award (Woman)','Active Participation Award (Woman)']]), {}, {class: "form-control", autofocus: true}) %>
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-4">
       <%= f.label :region  %>
-      <%= f.text_field :region  , class: "form-control"%>
+      <%= f.select(:region, options_for_select([
+          ['I', '1'], 
+          ['II', '2'],
+          ['III','3'], 
+          ['IV', '4'], 
+          ['V', '5'], 
+          ['VI', '6']]), {}, {class: "form-control"}) %>
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-4">
       <%= f.label :chapter  %>
-      <%= f.text_field :chapter  , class: "form-control"%>
+     
+      <%= f.select(:chapter, options_for_select([
+        ['Ahmedabad ','Ahmedabad'],
+        ['Allahabad','Allahabad'],
+['Aurangabad','Aurangabad'],
+['Balasore','Balasore'],
+['Bangalore','Bangalore'],
+['Bhilai','Bhilai'],
+['Bhopal','Bhopal'],
+['Bhubaneswar','Bhubaneswar'],
+['Calicut','Calicut'],
+['Chandigarh','Chandigarh'],
+['Chennai','Chennai'],
+['Cochin','Cochin'],
+['Coimbatore','Coimbatore'],
+['Cuttack','Cuttack'],
+['Dehradun','Dehradun'],
+['Delhi','Delhi'],
+['Ghaziabad','Ghaziabad'],
+['Goa','Goa'],
+['Gurgaon','Gurgaon'],
+['Guwahati','Guwahati'],
+['Gwalior','Gwalior'],
+['Haridwar','Haridwar'],
+['Hosur','Hosur'],
+['Hyderabad','Hyderabad'],
+['Indore','Indore'],
+['Jabalpur','Jabalpur'],
+['Jaipur','Jaipur'],
+['Jammu & Kashmir','Jammu & Kashmir'],
+['Jhansi','Jhansi'],
+['Kanpur','Kanpur'],
+['Kanyakumari','Kanyakumari'],
+['Kolkata','Kolkata'],
+['Koneru','Koneru'],
+['Lucknow','Lucknow'],
+['Mathura','Mathura'],
+['Mhow','Mhow'],
+['Mumbai','Mumbai'],
+['Mysore','Mysore'],
+['Nagpur','Nagpur'],
+['Nashik','Nashik'],
+['New Guntur','New Guntur'],
+['Noida','Noida'],
+['Ongole','Ongole'],
+['Patna','Patna'],
+['Pondicherry','Pondicherry'],
+['Pune','Pune'],
+['Raipur','Raipur'],
+['Rajkot','Rajkot'],
+['Ranchi','Ranchi'],
+['Rourkela','Rourkela'],
+['Salem','Salem'],
+['Siliguri','Siliguri'],
+['Sivakasi','Sivakasi'],
+['Solapur','Solapur'],
+['Surat','Surat'],
+['Surat ','Surat '],
+['Thanjavur','Thanjavur'],
+['Tiruchirapalli','Tiruchirapalli'],
+['Trivandrum','Trivandrum'],
+['Udaipur','Udaipur'],
+['V.V.Nagar','V.V.Nagar'],
+['Vadodara','Vadodara'],
+['Varanasi','Varanasi'],
+['Vellore','Vellore'],
+['Vijayawada','Vijayawada'],
+['Visakhapatnam','Visakhapatnam'],
+['Visakhapatnam ','Visakhapatnam ']]), {}, {class: "form-control", autofocus: true}) %>
     </div>
     
     <!--applicant details-->
 
       
-   
-       
-    <div class="form-group col-md-3">
-      <%= f.label :applicant_name  %>
-      <%= f.text_area :applicant_name  , class: "form-control"%>
+   <div>
+     <p class="primary-form-subheading">Applicant Details</p>  
+    <div class="form-group col-md-4">
+      <%= f.label :applicant_name  ,"Name"%>
+      <%= f.text_field :applicant_name , required: true  , class: "form-control"%>
     </div>
     <div class="form-group col-md-3">
-      <%= f.label :applicant_csi_mem_no  %>
-      <%= f.text_field :applicant_csi_mem_no  , class: "form-control"%>
+      <%= f.label :applicant_csi_mem_no , "CSI Membership No."%>
+      <%= f.text_field :applicant_csi_mem_no  , required: true , class: "form-control"%>
+    </div>
+    <div class="form-group col-md-2">
+      <%= f.label :applicant_csi_mem_since , "CSI Member since" %>
+      <%= f.date_field :applicant_csi_mem_since  , required: true , class: "form-control"%>
     </div>
     <div class="form-group col-md-3">
-      <%= f.label :applicant_csi_mem_since  %>
-      <%= f.date_field :applicant_csi_mem_since  , class: "form-control"%>
+      <%= f.label :applicant_phone ,"Phone No.with STD Code "  %>
+      <%= f.text_field :applicant_phone , required: true  , class: "form-control"%>
     </div>
     <div class="form-group col-md-3">
-      <%= f.label :applicant_phone  %>
-      <%= f.text_field :applicant_phone  , class: "form-control"%>
+      <%= f.label :applicant_mobile ,"Mobile No." %>
+      <%= f.text_field :applicant_mobile  , required: true , class: "form-control"%>
     </div>
     <div class="form-group col-md-3">
-      <%= f.label :applicant_mobile  %>
-      <%= f.text_field :applicant_mobile  , class: "form-control"%>
+      <%= f.label :applicant_email,"Email"  %>
+      <%= f.email_field :applicant_email , required: true , type: "email" , class: "form-control"%>
     </div>
-    <div class="form-group col-md-3">
-      <%= f.label :applicant_email  %>
-      <%= f.email_field :applicant_email  , class: "form-control"%>
+    <div class="form-group col-md-2">
+      <%= f.label :applicant_dob ,"D.O.B" %>
+      <%= f.date_field :applicant_dob , required: true  , class: "form-control"%>
     </div>
-    <div class="form-group col-md-3">
-      <%= f.label :applicant_dob  %>
-      <%= f.date_field :applicant_dob  , class: "form-control"%>
+    <div class="form-group col-md-2">
+      <%= f.label :applicant_educational_qualification , "Educational Qualification"  %>
+      <%= f.text_field :applicant_educational_qualification , required: true  , class: "form-control"%>
     </div>
-    <div class="form-group col-md-3">
-      <%= f.label :applicant_educational_qualification  %>
-      <%= f.text_field :applicant_educational_qualification  , class: "form-control"%>
+    <div class="form-group col-md-2">
+      <%= f.label :applicant_experience , "Experience" %>
+      <%= f.text_field :applicant_experience , required: true  , class: "form-control"%>
     </div>
-    <div class="form-group col-md-3">
-      <%= f.label :applicant_experience  %>
-      <%= f.text_field :applicant_experience  , class: "form-control"%>
     </div>
-    
     
     
    </div>
@@ -71,17 +145,17 @@
    
     <div class="row">
     <p class="primary-form-subheading">Chapter Office Contact details  </p>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-4">
       <%= f.label :address  %>
-      <%= f.text_field :address  , class: "form-control"%>
+      <%= f.text_field :address  , required: true , class: "form-control"%>
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-4">
       <%= f.label :phone  %>
-      <%= f.text_field :phone  , class: "form-control"%>
+      <%= f.text_field :phone , required: true  , class: "form-control"%>
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-4">
       <%= f.label :email  %>
-      <%= f.email_field :email  , class: "form-control"%>
+      <%= f.email_field :email , required: true  , class: "form-control"%>
     </div>
     </div>
    
@@ -110,6 +184,7 @@
     <div class="links col-md-12">
       <br>
         <%= link_to_add_association 'Add Event', f, :contributiontocsiindserviceawards , class: "form-button btn btn-primary" %>
+        <br></br>
     </div>
     </div>
     
@@ -123,10 +198,10 @@
     <div class="row">
       <div class="col-md-2"><p class="subform-head"><strong>Date</strong></p></div>
       <div class="col-md-2"><p  class="subform-head"><strong>Name of the Event</strong></p></div>
-      <div class="col-md-2"><p class="subform-head"><strong>Regional/National/ International</strong></p></div>
+      <div class="col-md-2"><p class="subform-head"><strong>Type</strong></p></div>
       <div class="col-md-2"><p  class="subform-head"><strong>Surplus Amount</strong></p></div>
       <div class="col-md-2"><p class="subform-head"><strong>Role played by Applicant</strong></p></div>
-      <div class="col-md-2"><p  class="subform-head"><strong>Number of quality paper received</strong></p></div>
+      <div class="col-md-2"><p  class="subform-head"><strong># quality papers received</strong></p></div>
      
       
       
@@ -142,7 +217,7 @@
     <div class="links col-md-12">
       <br>
         <%= link_to_add_association 'Add Event', f, :roleincsieventindserviceawards , class: "form-button btn btn-primary" %>
-         <br>
+         <br></br>
     </div>
     </div>
     
@@ -156,7 +231,7 @@
     <div class="row">
        <br>
       <div class="form-group col-md-3">
-      <%= f.label :role_in_csi_membership_promotion_in_chapter  %>
+      <%= f.label :role_in_csi_membership_promotion_in_chapter , "Role in promotion of CSI mebership"  %>
       <%= f.select(:role_in_csi_membership_promotion_in_chapter, options_for_select([
           ['Individual Membership', 'Individual Membership'], 
           ['Academic Institutional Membership / Student Branches', 'Academic Institutional Membership / Student Branches'],
@@ -165,11 +240,11 @@
     </div>
     <div class="form-group col-md-3">
       <%= f.label :membership_in_other_societies  %>
-      <%= f.text_area :membership_in_other_societies  , class: "form-control"%>
+      <%= f.text_area :membership_in_other_societies , required: true  , class: "form-control"%>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :publication_details  %>
-      <%= f.text_area :publication_details  , class: "form-control"%>
+      <%= f.text_area :publication_details  , required: true , class: "form-control"%>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :other_info  %>

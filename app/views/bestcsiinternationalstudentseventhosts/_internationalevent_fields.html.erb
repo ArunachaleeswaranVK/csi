@@ -6,7 +6,7 @@
 
 <div class="nested-fields">
 
-<div class="form-group sf col-md-4">
+<div class="form-group sf col-md-3">
         
         <%= f.text_field :competetion_name ,  required: true , class: "form-control" %>
 </div>
@@ -16,9 +16,19 @@
       <%= f.date_field :date_of_event ,  required: true , class: "form-control" %>
 </div>
 
-<div class="form-group sf col-md-4">
+<div class="form-group sf col-md-2">
         
-        <%= f.text_field :no_of_students_from_abroad_with_country_name  ,  required: true, class: "form-control" %>
+        
+         <%= f.select(:no_of_students_from_abroad, options_for_select([
+          ['10-25', '10-25'], 
+          ['26-50', '26-50'],
+          ['51-75','51-75'], 
+          ['76-100', '76-100'], 
+          ['>100', '>100']]), {}, {class: "form-control"}) %>
+</div>
+<div class="form-group sf col-md-3">
+        
+        <%= f.text_field :country_name  ,  required: true, class: "form-control" %>
 </div>
 
 

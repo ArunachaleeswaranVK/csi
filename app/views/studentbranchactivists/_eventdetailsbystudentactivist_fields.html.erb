@@ -12,7 +12,13 @@
 </div>
 <div class="form-group sf col-md-5">
         
-        <%= f.text_field :role_played,  required: true, class: "form-control" %>
+       
+        
+        <%= f.select(:role_played, options_for_select([
+          ['Paper Presenter', 'Paper Presenter'], 
+          ['Competitor', 'Competitor'],
+          ['Speaker','Speaker'],
+          ['Other','Other']]), {}, {class: "form-control"}) %>
 </div>
 
 

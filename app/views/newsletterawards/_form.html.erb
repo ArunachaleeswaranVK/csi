@@ -2,38 +2,116 @@
 <%= render 'shared/errors', object: @newsletteraward %>
 
 <%= form_for @newsletteraward, :html => {:class => "form-horizontal"} do |f| %>
-    
+
      
    <div class="row">
-    
-    <div class="form-group col-md-2">
+    <div class="col-md-3">
+    <div class="form-group col-md-12">
       <%= f.label :region  %>
-      <%= f.text_field :region  , class: "form-control"%>
+      <%= f.select(:region, options_for_select([
+          ['I', '1'], 
+          ['II', '2'],
+          ['III','3'], 
+          ['IV', '4'], 
+          ['V', '5'], 
+          ['VI', '6']]), {}, {class: "form-control", autofocus: true}) %>
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-12">
       <%= f.label :chapter  %>
-      <%= f.text_field :chapter  , class: "form-control"%>
+     
+      <%= f.select(:chapter, options_for_select([
+        ['Ahmedabad ','Ahmedabad'],
+        ['Allahabad','Allahabad'],
+['Aurangabad','Aurangabad'],
+['Balasore','Balasore'],
+['Bangalore','Bangalore'],
+['Bhilai','Bhilai'],
+['Bhopal','Bhopal'],
+['Bhubaneswar','Bhubaneswar'],
+['Calicut','Calicut'],
+['Chandigarh','Chandigarh'],
+['Chennai','Chennai'],
+['Cochin','Cochin'],
+['Coimbatore','Coimbatore'],
+['Cuttack','Cuttack'],
+['Dehradun','Dehradun'],
+['Delhi','Delhi'],
+['Ghaziabad','Ghaziabad'],
+['Goa','Goa'],
+['Gurgaon','Gurgaon'],
+['Guwahati','Guwahati'],
+['Gwalior','Gwalior'],
+['Haridwar','Haridwar'],
+['Hosur','Hosur'],
+['Hyderabad','Hyderabad'],
+['Indore','Indore'],
+['Jabalpur','Jabalpur'],
+['Jaipur','Jaipur'],
+['Jammu & Kashmir','Jammu & Kashmir'],
+['Jhansi','Jhansi'],
+['Kanpur','Kanpur'],
+['Kanyakumari','Kanyakumari'],
+['Kolkata','Kolkata'],
+['Koneru','Koneru'],
+['Lucknow','Lucknow'],
+['Mathura','Mathura'],
+['Mhow','Mhow'],
+['Mumbai','Mumbai'],
+['Mysore','Mysore'],
+['Nagpur','Nagpur'],
+['Nashik','Nashik'],
+['New Guntur','New Guntur'],
+['Noida','Noida'],
+['Ongole','Ongole'],
+['Patna','Patna'],
+['Pondicherry','Pondicherry'],
+['Pune','Pune'],
+['Raipur','Raipur'],
+['Rajkot','Rajkot'],
+['Ranchi','Ranchi'],
+['Rourkela','Rourkela'],
+['Salem','Salem'],
+['Siliguri','Siliguri'],
+['Sivakasi','Sivakasi'],
+['Solapur','Solapur'],
+['Surat','Surat'],
+['Surat ','Surat '],
+['Thanjavur','Thanjavur'],
+['Tiruchirapalli','Tiruchirapalli'],
+['Trivandrum','Trivandrum'],
+['Udaipur','Udaipur'],
+['V.V.Nagar','V.V.Nagar'],
+['Vadodara','Vadodara'],
+['Varanasi','Varanasi'],
+['Vellore','Vellore'],
+['Vijayawada','Vijayawada'],
+['Visakhapatnam','Visakhapatnam'],
+['Visakhapatnam ','Visakhapatnam ']]), {}, {class: "form-control", autofocus: true}) %>
+
+</div>
+    </div>
+    <div class="col-md-9">
+    <p class="primary-form-subheading">Chapter Office Contact details </p>
+    <div class="form-group col-md-6">
+      <%= f.label :address  %>
+      <%= f.text_area :address , required: true , class: "form-control"%>
     </div>
     <div class="form-group col-md-3">
-      <%= f.label :address  %>
-      <%= f.text_area :address  , class: "form-control"%>
-    </div>
-    <div class="form-group col-md-2">
       <%= f.label :phone  %>
-      <%= f.text_field :phone  , class: "form-control"%>
+      <%= f.text_field :phone  , required: true, class: "form-control"%>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :email  %>
-      <%= f.email_field :email  , class: "form-control"%>
+      <%= f.email_field :email  , required: true , type: "email", class: "form-control"%>
     </div>
-    
+    </div>
     
    </div>
    
    
     <!--sub form details-->
-    <div>
-    <p class="primary-form-subheading">Details of Chapter News Letter Published</p>
+    <div class="col-md-12">
+    <p class="primary-form-subheading">Details of Chapter News Letter Published during 1st April 2015 to 31st March  2016</p>
     
 
     <br>
@@ -55,14 +133,15 @@
     <div class="links col-md-12">
       <br>
         <%= link_to_add_association 'Add Event', f, :detailsfornewsletterawards , class: "form-button btn btn-primary" %>
+        <br></br>
     </div>
     </div>
-    
+    </div>
     <!--end of sub forms-->
     <div class="row">
     
-    <div class="form-group col-md-12">
-      <%= f.label :other_info  %>
+    <div class="form-group col-md-12 ">
+      <%= f.label :other_info ,"Other Relevant Information "  %>
       <%= f.text_area :other_info  , class: "form-control"%>
     </div>
     </div>
