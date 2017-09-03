@@ -8,7 +8,8 @@
     <div class="form-group col-md-6">
      <%= f.fields_for :institute, @institute do |institute| %>
       <label>Name</label>
-      <%= institute.autocomplete_field :name, autocomplete_institute_name_institutes_path ,id: "name" , class: "form-control" %>
+      <%= institute.autocomplete_field :name, autocomplete_institute_name_institutes_path ,id: "name" , 
+      placeholder: "Enter your institution name" ,title: "Enter your Institution name", class: "form-control" %>
      <% end %>  
     </div>
     <div class="form-group col-md-6">
@@ -17,7 +18,7 @@
     </div>
     <div class="form-group col-md-2">
       <%= f.label :imno , "IMNO" %>
-      <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
+      <%= f.text_field :imno  , class: "form-control", required: true  , id:"imno"%>
     </div>
     
     <div class="form-group col-md-1">
@@ -86,24 +87,24 @@
       
     <div class="form-group col-md-3">
       <%= f.label :faculty_name , "Name" %>
-      <%= f.text_field :faculty_name , class: "form-control" %>
+      <%= f.text_field :faculty_name , required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :faculty_email  , "Email" %>
-      <%= f.email_field :faculty_email , class: "form-control" %>
+      <%= f.email_field :faculty_email , required: true  , type: "email" , class: "form-control" %>
     </div>
     <div class="form-group col-md-2">
       <%= f.label :faculty_number , "Phone" %>
-      <%= f.text_field :faculty_number , class: "form-control" %>
+      <%= f.text_field :faculty_number , required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-2">
       <%= f.label :faculty_csi_membership_no , "CSI Mem.Id" %>
-      <%= f.text_field :faculty_csi_membership_no , class: "form-control" %>
+      <%= f.text_field :faculty_csi_membership_no , required: true , class: "form-control" %>
     </div>
     
     <div class="form-group col-md-2">
       <%= f.label :valid_till  , "Id Valid Till" %>
-      <%= f.date_field :valid_till , class: "form-control" %>
+      <%= f.date_field :valid_till , required: true , class: "form-control" %>
     </div>
    
     <p class="primary-form-subheading">Conference Details:</p>  

@@ -8,7 +8,8 @@
     <div class="form-group col-md-6">
      <%= f.fields_for :institute, @institute do |institute| %>
       <label>Name</label>
-      <%= institute.autocomplete_field :name, autocomplete_institute_name_institutes_path ,id: "name" , class: "form-control" %>
+      <%= institute.autocomplete_field :name, autocomplete_institute_name_institutes_path ,id: "name" , 
+      placeholder: "Enter your institution name" ,title: "Enter your Institution name",  required: true , class: "form-control" %>
      <% end %>  
     </div>
     <div class="form-group col-md-6">
@@ -17,7 +18,7 @@
     </div>
     <div class="form-group col-md-1">
       <%= f.label :imno , "IMNO" %>
-      <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
+      <%= f.text_field :imno  , required: true ,class: "form-control" , id:"imno"%>
     </div>
    
     <div class="form-group col-md-1">
@@ -70,7 +71,8 @@
     </div>
     <div class="form-group col-md-1">
       <%= f.label :volunteers_added ,"Added" %>
-      <%= f.text_field :volunteers_added , class: "form-control" %>
+      <%= f.text_field :volunteers_added , required: true , type: "number",
+      min: "0" ,max: "100", maxlength: "3", class: "form-control" %>
     </div>
     </div>
     

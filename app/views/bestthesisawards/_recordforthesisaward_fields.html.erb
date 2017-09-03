@@ -8,21 +8,21 @@
 
 <div class="form-group sf col-md-3">
         
-        <%= f.text_field :conference_or_journal , class: "form-control" %>
+        <%= f.text_field :conference_or_journal ,  required: true , class: "form-control" %>
 </div>
 
 <div class="form-group sf col-md-2">
         
-      <%= f.text_field :name , class: "form-control" %>
+      <%= f.text_field :name ,  required: true , class: "form-control" %>
 </div>
 
 <div class="form-group sf col-md-2">
         
-        <%= f.date_field :date , class: "form-control" %>
+        <%= f.date_field :date ,  required: true , class: "form-control" %>
 </div>
 
 <div class="form-group sf col-md-4">
-        
+        <!--verify if needed -->
       <%= f.text_field :citation , class: "form-control" %>
 </div>
 

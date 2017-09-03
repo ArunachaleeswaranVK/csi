@@ -11,7 +11,8 @@
     <div class="form-group col-md-6">
      <%= f.fields_for :institute, @institute do |institute| %>
       <label>Name</label>
-      <%= institute.autocomplete_field :name, autocomplete_institute_name_institutes_path ,id: "name" , class: "form-control" %>
+      <%= institute.autocomplete_field :name, autocomplete_institute_name_institutes_path ,id: "name" , 
+      placeholder: "Enter your institution name" ,title: "Enter your Institution name",  required: true , class: "form-control" %>
      <% end %>    
     </div>
     <div class="form-group col-md-6">
@@ -20,7 +21,7 @@
     </div>
     <div class="form-group col-md-1">
       <%= f.label :imno , "IMNO" %>
-      <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
+      <%= f.text_field :imno  , required: true ,class: "form-control" , id:"imno"%>
     </div>
     <div class="form-group col-md-1">
       <label>Validity</label>
@@ -78,7 +79,8 @@
     </div>
     <div class="form-group col-md-1">
       <%= f.label :volunteers_added , "Added" %>
-      <%= f.text_field :volunteers_added  , class: "form-control" %>
+      <%= f.text_field :volunteers_added  , required: true , type: "number",
+      min: "0" ,max: "100", maxlength: "3", class: "form-control" %>
     </div>
     </div>
      <!--form specific details-->
@@ -99,34 +101,39 @@
         <td>Expert Lecture</td>
         <td class="form-group col-md-2">
         
-          <%= f.text_field :program_organised_expert_lecture_no_of_activities  , class: "form-control"%>
+          <%= f.text_field :program_organised_expert_lecture_no_of_activities ,
+          required: true , type: "number",  min: "0" ,max: "100", maxlength: "3", class: "form-control"%>
         
         </td>
       </tr>
       <tr>
         <td>Seminars / Technical workshop</td>
         <td class="form-group col-md-2">
-          <%= f.text_field :program_organised_seminars_workshops_no_of_activities  , class: "form-control"%>
+          <%= f.text_field :program_organised_seminars_workshops_no_of_activities ,required: true , type: "number",
+            min: "0" ,max: "100", maxlength: "3" , class: "form-control"%>
         </td>
       </tr>
       <tr>
         <td>Short term training program</td>
         <td class="form-group col-md-2">
-         <%= f.text_field :program_organised_short_term_training_program_no_of_activities  , class: "form-control"%>
+         <%= f.text_field :program_organised_short_term_training_program_no_of_activities ,required: true , type: "number",
+           min: "0" ,max: "100", maxlength: "3" , class: "form-control"%>
        
         </td>
       </tr>
       <tr>
         <td>Inter college Symposium</td>
         <td class="form-group col-md-2">
-            <%= f.text_field :program_organised_symposium_no_of_activities  , class: "form-control"%>
+            <%= f.text_field :program_organised_symposium_no_of_activities , required: true , type: "number",
+              min: "0" ,max: "100", maxlength: "3" , class: "form-control"%>
         
         </td>
       </tr>
       <tr>
         <td>Motivational talks</td>
         <td class="form-group col-md-2">
-            <%= f.text_field :program_organised_motivational_talks_no_of_activities  , class: "form-control"%>
+            <%= f.text_field :program_organised_motivational_talks_no_of_activities ,required: true , type: "number",
+            min: "0" ,max: "100", maxlength: "3" , class: "form-control"%>
        
         </td>
       </tr>
@@ -150,7 +157,8 @@
     </div>
     <div class="form-group col-md-4">
       <%= f.label :student_branch_membership_no_of_volunteers , "# Volunteers" %>
-      <%= f.text_field :student_branch_membership_no_of_volunteers  , class: "form-control"%>
+      <%= f.text_field :student_branch_membership_no_of_volunteers  , required: true , type: "number",
+              min: "0" ,max: "100", maxlength: "3", class: "form-control"%>
     </div>
     
     <p class="primary-form-subheading">Competitions and Contests organised for students</p>
@@ -159,7 +167,8 @@
     <div class="form-group col-md-12">
       <%= f.label :number_of_contests_organised_for_students ,
       "No of competitions held for students (Web Design ,Programming Contest,Technical Quiz,Technical Paper Contest) " %>
-      <%= f.text_field :number_of_contests_organised_for_students  , class: "form-control"%>
+      <%= f.text_field :number_of_contests_organised_for_students  , required: true , type: "number",
+              min: "0" ,max: "100", maxlength: "3", class: "form-control"%>
     </div>
      
     
@@ -175,7 +184,8 @@
     </div>
     <div class="form-group col-md-4">
       <%= f.label :convention_seminar_no_of_events_organised , "# Events" %>
-      <%= f.text_field :convention_seminar_no_of_events_organised  , class: "form-control"%>
+      <%= f.text_field :convention_seminar_no_of_events_organised , required: true , type: "number",
+              min: "0" ,max: "100", maxlength: "3" , class: "form-control"%>
     </div>
     
     
@@ -208,10 +218,12 @@
           ['Polytechnic Institution', "Polytechnic Institution"]]), {}, {class: "form-control"}) %>
         </td>
         <td class="form-group col-md-3">
-            <%= f.text_field :no_of_faculty_as_csi_members_life  , class: "form-control"%>
+            <%= f.text_field :no_of_faculty_as_csi_members_life , required: true , type: "number",
+              min: "0" ,max: "100", maxlength: "3" , class: "form-control"%>
         </td>
         <td class="form-group col-md-3">
-            <%= f.text_field :no_of_faculty_as_csi_members_annual  , class: "form-control"%>
+            <%= f.text_field :no_of_faculty_as_csi_members_annual , required: true , type: "number",
+              min: "0" ,max: "100", maxlength: "3" , class: "form-control"%>
         </td>
       </tr>
       
@@ -232,7 +244,7 @@
     
     <div class="form-group col-md-12">
       <%= f.label :student_branch_website_url , "Website URL of CSI Student Branch" %>
-      <%= f.text_field :student_branch_website_url  , class: "form-control"%>
+      <%= f.text_field :student_branch_website_url , type: "url" ,title: "Please enter a valid URL" , class: "form-control"%>
     </div>
    
     <p class="primary-form-subheading">Technical Newsletter for students</p>
@@ -245,7 +257,8 @@
     </div>
     <div class="form-group col-md-4">
       <%= f.label :no_of_issues_published_in_newsletter , "# Issues Published" %>
-      <%= f.text_field :no_of_issues_published_in_newsletter  , class: "form-control"%>
+      <%= f.text_field :no_of_issues_published_in_newsletter  , required: true , type: "number",
+              min: "0" ,max: "100", maxlength: "3", class: "form-control"%>
     </div>
     </div>
     </div>

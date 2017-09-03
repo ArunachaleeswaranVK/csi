@@ -8,7 +8,8 @@
     <div class="form-group col-md-6">
      <%= f.fields_for :institute, @institute do |institute| %>
       <label>Name</label>
-      <%= institute.autocomplete_field :name, autocomplete_institute_name_institutes_path ,id: "name" , class: "form-control" %>
+      <%= institute.autocomplete_field :name, autocomplete_institute_name_institutes_path ,id: "name" , 
+      placeholder: "Enter your institution name" ,title: "Enter your Institution name",  required: true, class: "form-control" %>
      <% end %>   
     </div>
     <div class="form-group col-md-6">
@@ -17,7 +18,7 @@
     </div>
     <div class="form-group col-md-2">
       <%= f.label :imno , "IMNO" %>
-      <%= f.text_field :imno  , class: "form-control" , id:"imno"%>
+      <%= f.text_field :imno  , class: "form-control" ,  required: true, id:"imno"%>
     </div>
     
     <div class="form-group col-md-1">
@@ -89,20 +90,20 @@
     <p class="primary-form-subheading">Volunteer Details</p>
     <div class="form-group col-md-3">
       <%= f.label :csi_volunteer_name ,"Name" %>
-      <%= f.text_field :csi_volunteer_name , class: "form-control" %>
+      <%= f.text_field :csi_volunteer_name ,  required: true, class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :csi_volunteer_email ,"Email"  %>
-      <%= f.email_field :csi_volunteer_email , class: "form-control" %>
+      <%= f.email_field :csi_volunteer_email ,  required: true ,type: "email", class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :csi_volunteer_id , "CSI Mem.Id" %>
-      <%= f.text_field :csi_volunteer_id , class: "form-control" %>
+      <%= f.text_field :csi_volunteer_id ,  required: true, class: "form-control" %>
     </div>
     
     <div class="form-group col-md-3">
       <%= f.label :valid_till , "Id Valid Till" %>
-      <%= f.date_field :valid_till , class: "form-control" %>
+      <%= f.date_field :valid_till ,  required: true, class: "form-control" %>
     </div>
     
     

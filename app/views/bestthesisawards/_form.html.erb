@@ -10,68 +10,69 @@
     
     <div class="form-group col-md-3">
       <%= f.label :name_of_nominating_institution , "Name of nominating institution" %>
-      <%= f.text_field :name_of_nominating_institution  , class: "form-control"%>
+      <%= f.text_field :name_of_nominating_institution  , 
+      placeholder: "Enter your institution name" ,title: "Enter your Institution name",  required: true , class: "form-control"%>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :address , "Address" %>
-      <%= f.text_field :address  , class: "form-control" %>
+      <%= f.text_field :address  ,  required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :recognized_by , "Recognized By" %>          
       <!--add a drop down her-->
-      <%= f.text_field :recognized_by  , class: "form-control" %>
+      <%= f.text_field :recognized_by  ,placeholder: "AICTE/ UGC/ Others (Please specify)" ,  required: true, class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :reference_number_of_recognition , "Reference number of recognition" %>
-      <%= f.text_field :reference_number_of_recognition  , class: "form-control" %>
+      <%= f.text_field :reference_number_of_recognition ,  required: true  , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :date_of_recognition , "Date of recognition" %>
-      <%= f.date_field :date_of_recognition  , class: "form-control" %>
+      <%= f.date_field :date_of_recognition ,  required: true  , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :name_of_nominator  %>
-      <%= f.text_field :name_of_nominator  , class: "form-control" %>
+      <%= f.text_field :name_of_nominator ,  required: true  , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :designation , "Designation of Nominator" %>
-      <%= f.text_field :designation  , class: "form-control" %>
+      <%= f.text_field :designation  ,  required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :nominator_email %>
-      <%= f.text_field :nominator_email , class: "form-control" %>
+      <%= f.text_field :nominator_email ,  required: true  , type: "email", class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :nominator_phone   %>
-      <%= f.text_field :nominator_phone , class: "form-control" %>
+      <%= f.text_field :nominator_phone ,  required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :name_of_candidate  %>
-      <%= f.text_field :name_of_candidate , class: "form-control" %>
+      <%= f.text_field :name_of_candidate ,  required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :candidate_email  %>
-      <%= f.text_field :candidate_email , class: "form-control" %>
+      <%= f.text_field :candidate_email ,  required: true  , type: "email", class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :candidate_phone  %>
-      <%= f.text_field :candidate_phone , class: "form-control" %>
+      <%= f.text_field :candidate_phone ,  required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :thesis_title %>
-      <%= f.text_field :thesis_title , class: "form-control" %>
+      <%= f.text_field :thesis_title ,  required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :defence_of_dissertation_date  %>
-      <%= f.date_field :defence_of_dissertation_date , class: "form-control" %>
+      <%= f.date_field :defence_of_dissertation_date ,  required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :candidate_csi_membership_no  %>
-      <%= f.text_field :candidate_csi_membership_no , class: "form-control" %>
+      <%= f.text_field :candidate_csi_membership_no ,  required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-3">
       <%= f.label :valid_till  %>
-      <%= f.date_field :valid_till , class: "form-control" %>
+      <%= f.date_field :valid_till ,  required: true , class: "form-control" %>
     </div>
     </div>
     </div>
