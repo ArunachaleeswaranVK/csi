@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170903140034) do
+ActiveRecord::Schema.define(version: 20170904214729) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20170903140034) do
     t.integer  "volunteers_added"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "imno"
     t.integer  "user_id"
+    t.string   "imno"
   end
 
   add_index "bestcsiinternationalstudentseventhosts", ["imno"], name: "index_bestcsiinternationalstudentseventhosts_on_imno"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20170903140034) do
     t.string   "reference_number_of_recognition"
     t.date     "date_of_recognition"
     t.string   "name_of_nominator"
-    t.string   "designation"
+    t.string   "designation_of_nominator"
     t.string   "nominator_email"
     t.string   "nominator_phone"
     t.string   "name_of_candidate"
@@ -170,7 +170,7 @@ ActiveRecord::Schema.define(version: 20170903140034) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.date     "join_date"
-    t.date     "valid_till"
+    t.date     "valid_date"
     t.string   "validity"
   end
 
@@ -218,7 +218,7 @@ ActiveRecord::Schema.define(version: 20170903140034) do
 
   create_table "newslettersforregionalchapterawards", force: :cascade do |t|
     t.date     "date_of_publication"
-    t.string   "title_theme"
+    t.string   "title"
     t.integer  "regionalchapteraward_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
@@ -235,6 +235,17 @@ ActiveRecord::Schema.define(version: 20170903140034) do
   end
 
   add_index "nominated_members", ["imno"], name: "index_nominated_members_on_imno"
+
+  create_table "paperpresentationdetails", force: :cascade do |t|
+    t.string   "name_of_conference"
+    t.date     "date_of_conference"
+    t.string   "organised_by"
+    t.string   "name_and_place_of_conference"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "paperpresenterintconference_id"
+    t.string   "india_or_outside"
+  end
 
   create_table "paperpresenterdetails", force: :cascade do |t|
     t.string   "name_of_conference"
@@ -320,16 +331,6 @@ ActiveRecord::Schema.define(version: 20170903140034) do
     t.integer  "individualserviceaward_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-  end
-
-  create_table "sbc_tenure_details", force: :cascade do |t|
-    t.string   "year"
-    t.string   "institution_name"
-    t.string   "imno_of_institution"
-    t.integer  "volunteers"
-    t.integer  "longestcontinuoussbc_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
   end
 
   create_table "sbcs", force: :cascade do |t|

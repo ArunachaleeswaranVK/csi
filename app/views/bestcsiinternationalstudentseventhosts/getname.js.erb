@@ -68,7 +68,7 @@ $('#imno').val('<%= @bestcsiinternationalstudentseventhost.imno %>');
   $('#join_date').val('Not Available');   
 <% end %> 
 <% unless @bestcsiinternationalstudentseventhost.valid_till.nil? %>
-  $('#valid_till').val('<%= @bestcsiinternationalstudentseventhost.valid_till %>');
+  $('#valid_till').val('<%= @bestcsiinternationalstudentseventhost.valid_date %>');
 <% else %>  
   $('#valid_till').val('Not Available');   
 <% end %> 

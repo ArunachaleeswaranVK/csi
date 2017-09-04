@@ -29,8 +29,8 @@
     <div class="form-group col-md-2">
       <label>Valid Till</label>
       <input type="text" class="form-control" id="valid_till" value="
-      <% unless current_sbc_user_data.institute.valid_till.nil? %>
-      <%= current_sbc_user_data.institute.valid_till %>
+      <% unless current_sbc_user_data.institute.valid_date.nil? %>
+      <%= current_sbc_user_data.institute.valid_date %>
       <% else %>
       <%= "Not available" %>
       <% end %>
