@@ -23,92 +23,31 @@
       <% end %>
       " disabled> 
     </div>
-    <div class="form-group col-md-1">
+    <div class="form-group col-md-4">
       <%= f.label :imno , "IMNO" %>
       <%= f.text_field :imno , value: current_sbc_user_data.institute.imno,
       required: true , readonly: true ,class: "form-control" , id:"imno"%>
     </div>
-    <div class="form-group col-md-1">
-      <label>Validity</label>
-      <input type="text" class="form-control" id="validity" value="<%= current_sbc_user_data.institute.validity %>" disabled> 
-    </div>
     
     
-    <div class="form-group col-md-3">
-      <label>District</label>
-      <input type="text" class="form-control" id="district"  value="
-      <% unless current_sbc_user_data.institute.district.nil? %>
-      <%= current_sbc_user_data.institute.district %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled> 
-    </div>
-    <div class="form-group col-md-2">
+    
+    
+    <div class="form-group col-md-4">
       <label>City</label>
       <input type="text" class="form-control" id="city" value="<%= current_sbc_user_data.institute.city %>" disabled> 
     </div>
-    <div class="form-group col-md-2">
-      <label>Pin</label>
-      <input type="text" class="form-control" id="pin" value="<%= current_sbc_user_data.institute.pincode %>" disabled> 
-    </div>
-    <div class="form-group col-md-3">
-      <label>State</label>
-      <input type="text" class="form-control" id="state"  value="
-      <% unless current_sbc_user_data.institute.state.nil? %>
-      <%= current_sbc_user_data.institute.state %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled> 
-    </div>
+   
     
     
-    
-    <!--sbc details-->
-    <p class="primary-form-subheading">SBC Details</p>    
-    <div class="sbc-details">
-    <div class="form-group col-md-2">
-      <label>Name</label>
-      <input type="text" class="form-control" id="sbc-name" value="<%= current_sbc_user_data.sbc_name %>" disabled>
-    </div>
-    
-    <div class="form-group col-md-2">
-      <label>Mem.No</label>
-      <input type="text" class="form-control" id="sbc-imno"  value="
-      <% unless current_sbc_user_data.sbc_membership_no.nil? %>
-      <%= current_sbc_user_data.sbc_membership_no %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled> 
-    </div>
-    <div class="form-group col-md-3">
-      <label>Email</label>
-      <input type="email" class="form-control" id="sbc-email" value="<%= current_sbc_user_data.sbc_email %>" disabled> 
-    </div>
-    <div class="form-group col-md-3">
-      <label>Phonenumber</label>
-      <input type="text" class="form-control" id="sbc-phone" value="<%= current_sbc_user_data.sbc_phone %>" disabled> 
-    </div>
-   </div>
-  
-    
-    
-    <!--should include in the sbc table and make it display  -->
-    <div class="form-group col-md-1">
-      <label>Volunteers</label>
-      <input type="text" class="form-control" id="volunteers" value="<%= current_sbc_user_data.no_of_volunteers %>"
-      title="Number of CSI Volunteers as on 30th  June  2017" disabled> 
-    </div>
-    <div class="form-group col-md-1">
-      <%= f.label :volunteers_added  , "Added" %>
+   
+    <div class="form-group col-md-4">
+      <%= f.label :volunteers_added  , "# CSI Volunteers added - 2016-17 " %>
       <%= f.text_field :volunteers_added , required: true , type: "number",
-      min: "0" ,max: "100", maxlength: "3", title: "Number of CSI Volunteers added during  July 2017 – June 2018", class: "form-control" %>
+      min: "0" ,max: "9999", maxlength: "4", class: "form-control" %>
     </div>
     </div>
      <!--form specific details-->
-     <br></br>
+    
     <div class="row">
         
     <div class="col-md-6 accredited-subform">
@@ -124,7 +63,7 @@
     <tbody>
       <tr>
         <td>Expert Lecture</td>
-        <td class="form-group col-md-2">
+        <td class="form-group col-md-4">
         
           <%= f.text_field :program_organised_expert_lecture_no_of_activities ,
           required: true , type: "number",  min: "0" ,max: "100", maxlength: "3", class: "form-control"%>
@@ -133,14 +72,14 @@
       </tr>
       <tr>
         <td>Seminars / Technical workshop</td>
-        <td class="form-group col-md-2">
+        <td class="form-group col-md-4">
           <%= f.text_field :program_organised_seminars_workshops_no_of_activities ,required: true , type: "number",
             min: "0" ,max: "100", maxlength: "3" , class: "form-control"%>
         </td>
       </tr>
       <tr>
         <td>Short term training program</td>
-        <td class="form-group col-md-2">
+        <td class="form-group col-md-4">
          <%= f.text_field :program_organised_short_term_training_program_no_of_activities ,required: true , type: "number",
            min: "0" ,max: "100", maxlength: "3" , class: "form-control"%>
        
@@ -148,7 +87,7 @@
       </tr>
       <tr>
         <td>Inter college Symposium</td>
-        <td class="form-group col-md-2">
+        <td class="form-group col-md-4">
             <%= f.text_field :program_organised_symposium_no_of_activities , required: true , type: "number",
               min: "0" ,max: "100", maxlength: "3" , class: "form-control"%>
         
@@ -156,7 +95,7 @@
       </tr>
       <tr>
         <td>Motivational talks</td>
-        <td class="form-group col-md-2">
+        <td class="form-group col-md-4">
             <%= f.text_field :program_organised_motivational_talks_no_of_activities ,required: true , type: "number",
             min: "0" ,max: "100", maxlength: "3" , class: "form-control"%>
        
@@ -186,14 +125,17 @@
               min: "0" ,max: "100", maxlength: "3", class: "form-control"%>
     </div>
     
-    <p class="primary-form-subheading">Competitions and Contests organised for students</p>
+    <p class="primary-form-subheading">Competitions and Contests organised</p>
     
     
     <div class="form-group col-md-12">
-      <%= f.label :number_of_contests_organised_for_students ,
-      "No of competitions held for students (Web Design ,Programming Contest,Technical Quiz,Technical Paper Contest) " %>
+      <div class="col-md-8">
+      <label id="competitions">No of competitions held for students (Web Design ,Programming Contest,Technical Quiz,Technical Paper Contest)</label>
+      </div>
+    <div  class="col-md-4">
       <%= f.text_field :number_of_contests_organised_for_students  , required: true , type: "number",
-              min: "0" ,max: "100", maxlength: "3", class: "form-control"%>
+              min: "0" ,max: "100", maxlength: "3", class: "form-control", id: "competitions-input"%>
+    </div>          
     </div>
      
     
@@ -217,7 +159,7 @@
    
     </div>
     </div>
-     <br>
+
     
     <div class="row">
     <div class="col-md-6 accredited-subform">   
@@ -256,10 +198,14 @@
     </table>
     
     <div class="form-group col-md-12">
+      <div class="col-md-8">
       <%= f.label :managing_committee_elected , "Managing Committee Elected during the year ?" %>
+      </div>
+      <div class="col-md-4">
       <%= f.select(:managing_committee_elected, options_for_select([
           ['Yes', 'Yes'], 
           ['No', 'No']]), {}, {class: "form-control"}) %>
+          </div>
     </div>
     
     </div>
@@ -272,10 +218,10 @@
       <%= f.text_field :student_branch_website_url , type: "url" ,title: "Please enter a valid URL" , class: "form-control"%>
     </div>
    
-    <p class="primary-form-subheading">Technical Newsletter for students</p>
+
     
     <div class="form-group col-md-8">
-      <%= f.label :newsletter_type , "Newsletter Type" %>
+      <%= f.label :newsletter_type , "Technical Newsletter Type" %>
       <%= f.select(:newsletter_type, options_for_select([
           ['Print Version', 'Print Version'], 
           ['Electronic Version', 'Electronic Version']]), {}, {class: "form-control"}) %>

@@ -18,7 +18,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+#competitions{
+        font-size: 11px;
+    margin-left: -13px;
+}
+#competitions-input{
+    
+}
 .alert_wrapper{
     
     position: absolute;
@@ -122,10 +128,11 @@ body{
     
 }
 .primary-form-subheading{
-    text-align: center;
+    text-align: left;
     font-family: Lato;
     font-size: 1.5em;
-    letter-spacing: 1px;
+        color: #1d3daf;
+    
     
     border-bottom: 1px solid rgba(19, 19, 19, 0.2);
 }
