@@ -6,8 +6,9 @@
 
 <div class="row">    
 <div class="col-md-5 award-area"> 
-<h4 class="award-head"align="center">ACADEMIC AWARDS - STUDENT BRANCH</h4>
+
 <% if user_signed_in? && is_sbc? %>
+<h4 class="award-head"align="center">ACADEMIC AWARDS - STUDENT BRANCH</h4>
 <div class="award-title">
     <p><%= link_to "Best Accredited Student Branch Award" , new_bestaccreditedstudentbranch_path %> </p>
 </div>
