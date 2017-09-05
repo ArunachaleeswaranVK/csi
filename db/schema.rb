@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170905042235) do
+ActiveRecord::Schema.define(version: 20170905053746) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -331,8 +331,8 @@ ActiveRecord::Schema.define(version: 20170905042235) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "imno"
-    t.integer  "no_of_volunteers"
     t.string   "sbc_email"
+    t.integer  "no_of_volunteers"
   end
 
   add_index "sbcs", ["imno"], name: "index_sbcs_on_imno"
