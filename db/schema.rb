@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170904214729) do
+ActiveRecord::Schema.define(version: 20170905042235) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -161,17 +161,10 @@ ActiveRecord::Schema.define(version: 20170904214729) do
     t.string   "name",                 null: false
     t.string   "address"
     t.string   "city"
-    t.string   "district"
     t.string   "state"
-    t.string   "pincode"
     t.string   "nominating_authority"
-    t.string   "na_phone"
-    t.string   "na_email"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.date     "join_date"
-    t.date     "valid_date"
-    t.string   "validity"
   end
 
   add_index "institutes", ["imno"], name: "index_institutes_on_imno", unique: true
@@ -334,14 +327,12 @@ ActiveRecord::Schema.define(version: 20170904214729) do
   end
 
   create_table "sbcs", force: :cascade do |t|
-    t.string   "sbc_membership_no"
-    t.string   "sbc_name",          null: false
-    t.string   "sbc_phone"
-    t.string   "sbc_email"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.string   "sbc_name",         null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "imno"
     t.integer  "no_of_volunteers"
+    t.string   "sbc_email"
   end
 
   add_index "sbcs", ["imno"], name: "index_sbcs_on_imno"

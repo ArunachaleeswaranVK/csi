@@ -44,7 +44,7 @@ during 01/07/2015 to 30/06/2016)
     
     
     
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <% unless is_sbc? %>
       <%= f.label :imno , "IMNO" %>
       <%= f.text_field :imno , readonly: true , required: true, class: "form-control" , id:"imno"%>
@@ -55,27 +55,11 @@ during 01/07/2015 to 30/06/2016)
        <% end %>
     </div>
     
-    <!--valid till-->
     
-    <div class="form-group col-md-2">
-    <% if is_sbc? %>
-      <label>Valid Till</label>
-      <input type="text" class="form-control" id="valid_till" value="
-      <% unless current_sbc_user_data.institute.valid_date.nil? %>
-      <%= current_sbc_user_data.institute.valid_date %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled>  
-    <% else %>
-      <label>Valid Till</label>
-      <input type="text" class="form-control" id="valid_till" disabled>
-    <% end %>
-    </div>
     
     <!--city-->
     
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <% if is_sbc? %>
       <label>City</label>
       <input type="text" class="form-control" id="city" value="
@@ -91,21 +75,7 @@ during 01/07/2015 to 30/06/2016)
       <% end %>
     </div>
     
-    <div class="form-group col-md-3">
-     <% if is_sbc? %>
-      <label>District</label>
-      <input type="text" class="form-control" id="district" value="
-      <% unless current_sbc_user_data.institute.district.nil? %>
-      <%= current_sbc_user_data.institute.district %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled>  
-     <% else %>
-      <label>District</label>
-      <input type="text" class="form-control" id="district" disabled>
-      <% end %>
-    </div>
+   
     
     <!--state-->
     
@@ -127,21 +97,7 @@ during 01/07/2015 to 30/06/2016)
     
     <!--pin-->
     
-    <div class="form-group col-md-3">
-       <% if is_sbc? %>
-      <label>Pin</label>
-      <input type="text" class="form-control" id="pin" value="
-      <% unless current_sbc_user_data.institute.pincode.nil? %>
-      <%= current_sbc_user_data.institute.pincode %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled>  
-     <% else %>
-      <label>Pin</label>
-      <input type="text" class="form-control" id="pin" disabled>
-      <% end %>
-    </div>
+   
     
     
     <div class="form-group col-md-3">
@@ -161,44 +117,13 @@ during 01/07/2015 to 30/06/2016)
       <% end %>
     </div>
     
-    <div class="form-group col-md-3">
-      <% if is_sbc? %>
-      <label>Phone number</label>
-      <input type="text" class="form-control" id="na-phone" value="
-      <% unless current_sbc_user_data.institute.na_phone.nil? %>
-      <%= current_sbc_user_data.institute.na_phone %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled>
-       <% else %>
-      <label>Phone number</label>
-      <input type="text" class="form-control" id="na-phone" disabled> 
-      <% end %>
-    </div>
-    <div class="form-group col-md-3">
-      <% if is_sbc? %>
-      <label>Email</label>
-      <input type="email" class="form-control" id="na-email" value="
-      <% unless current_sbc_user_data.institute.na_email.nil? %>
-      <%= current_sbc_user_data.institute.na_email %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled> 
-       <% else %>
-      <label>Email</label>
-      <input type="email" class="form-control" id="na-email" disabled>
-      <% end %>
-    </div>
-    
-    
+   
     
     
     <!--sbc details-->
     <p class="primary-form-subheading">SBC Details</p>    
   
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-6">
       <% if is_sbc? %>
       <label>Name</label>
       <input type="text" class="form-control" id="sbc-name" value="
@@ -214,22 +139,8 @@ during 01/07/2015 to 30/06/2016)
       <% end %>
     </div>
     
-    <div class="form-group col-md-3">
-       <% if is_sbc? %>
-      <label>Mem. No</label>
-      <input type="text" class="form-control" id="sbc-imno" value="
-      <% unless current_sbc_user_data.sbc_membership_no.nil? %>
-      <%= current_sbc_user_data.sbc_membership_no %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled> 
-       <% else %>
-       <label>Mem. No</label>
-      <input type="text" class="form-control" id="sbc-imno" disabled> 
-      <% end %>
-    </div>
-    <div class="form-group col-md-3">
+  
+    <div class="form-group col-md-6">
        <% if is_sbc? %>
       <label>Email</label>
       <input type="text" class="form-control" id="sbc-email" value="
@@ -244,22 +155,7 @@ during 01/07/2015 to 30/06/2016)
       <input type="text" class="form-control" id="sbc-email" disabled> 
       <% end %>
     </div>
-    <div class="form-group col-md-3">
-       <% if is_sbc? %>
-      <label>Phone</label>
-      <input type="text" class="form-control" id="sbc-phone" value="
-      <% unless current_sbc_user_data.sbc_phone.nil? %>
-      <%= current_sbc_user_data.sbc_phone %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled> 
-       <% else %>
-        <label>Phone</label>
-      <input type="text" class="form-control" id="sbc-phone" disabled> 
-      <% end %>
-    </div>
-    
+  
     
     
      <!--form specific details-->
