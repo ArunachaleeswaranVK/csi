@@ -77,7 +77,8 @@ class BestaccreditedstudentbranchesController < ApplicationController
             :no_of_faculty_as_csi_members_life,
             :no_of_faculty_as_csi_members_annual,
             :managing_committee_elected,
-            :imno)
+            :imno,
+            :attachment)
     end
     
     def set_award
