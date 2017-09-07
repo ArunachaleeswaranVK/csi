@@ -6,7 +6,6 @@ class BestaccreditedstudentbranchesController < ApplicationController
    
   
     def getname
-        
         @bestaccreditedstudentbranch = Institute.where("name like ?", "#{params[:name]}").first
     end
     
