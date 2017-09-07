@@ -16,6 +16,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem "cocoon"
 
+gem 'filepicker-rails'
+
 gem 'google-webfonts-rails', '~> 0.0.4'
 
 gem 'devise'
