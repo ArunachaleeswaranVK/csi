@@ -1,1 +1,3 @@
+<% unless current_user.bestaccreditedstudentbranch.nil? %>
 <%= filepicker_save_button "Save", current_user.bestaccreditedstudentbranch.attachment, "application/zip" %>
+<% end %>
