@@ -6,22 +6,23 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first) sbcprod
 
+
+
+
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'instinprod.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'sbcprod.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
-  t = Institute.new
+  t = Sbc.new
   t.imno = row['IM No']
-  t.name = row['Instititution Name']
-  t.address = row['Address']
-  t.city = row['City']
-  t.state = row['State']
-  t.nominating_authority = row['Authority']
-  
+  t.sbc_name = row['Name']
+  t.sbc_email = row['Email']
+  t.no_of_volunteers = row['Strength']
  
+  
   t.save
-  puts "#{t.name}, #{t.imno} saved"
+  puts "#{t.sbc_name}, #{t.imno} saved"
 end
 
-puts "There are now #{Institute.count} rows in the transactions table"
+puts "There are now #{Sbc.count} rows in the transactions table"
