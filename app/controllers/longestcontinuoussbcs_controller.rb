@@ -57,7 +57,7 @@ class LongestcontinuoussbcsController < ApplicationController
     end
 
     def longestcontinuoussbc_params
-       params.require(:longestcontinuoussbc).permit(:volunteers_added,:last_but_before_year_vol_strength,
+       params.require(:longestcontinuoussbc).permit(:volunteers_added,:last_but_before_year_vol_strength,:attachment,
        :last_year_vol_strength,:current_year_vol_strength,:imno)
     end
     

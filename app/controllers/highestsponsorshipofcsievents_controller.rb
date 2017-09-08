@@ -58,7 +58,7 @@ class HighestsponsorshipofcsieventsController < ApplicationController
     end
     
     def highestsponsorshipofcsievent_params
-       params.require(:highestsponsorshipofcsievent).permit(:volunteers_added,:imno, 
+       params.require(:highestsponsorshipofcsievent).permit(:volunteers_added,:imno, :attachment,
        supportforcsievents_attributes: [:date_of_event,
        :name_of_event,:organised_by,:support_details,:monetary_value,:_destroy])
     end

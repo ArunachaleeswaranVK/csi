@@ -58,7 +58,7 @@ class FacmaxpublishingsController < ApplicationController
     
     def facmaxpublishing_params
        params.require(:facmaxpublishing).permit(:candidate_csi_membership_no,
-       :valid_till,:imno,:has_student_branch,:faculty_name,:faculty_email,
+       :valid_till,:imno,:has_student_branch,:faculty_name,:faculty_email,:attachment,
        publishingdetailbyfaculties_attributes: [:article_title,
        :published_in,:date_of_publishing,:_destroy])
     end

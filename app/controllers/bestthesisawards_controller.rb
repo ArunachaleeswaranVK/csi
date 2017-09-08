@@ -70,6 +70,7 @@ class BestthesisawardsController < ApplicationController
        :candidate_email,
        :candidate_phone,
        :thesis_title,
+       :attachment,
        :defence_of_dissertation_date,
        
        recordforthesisawards_attributes: [:conference_or_journal,:name,

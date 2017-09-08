@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170907094003) do
+ActiveRecord::Schema.define(version: 20170908100221) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170907094003) do
     t.datetime "updated_at",       null: false
     t.integer  "user_id"
     t.string   "imno"
+    t.string   "attachment"
   end
 
   add_index "bestcsiinternationalstudentseventhosts", ["imno"], name: "index_bestcsiinternationalstudentseventhosts_on_imno"
@@ -71,6 +72,7 @@ ActiveRecord::Schema.define(version: 20170907094003) do
     t.string   "thesis_title"
     t.date     "defence_of_dissertation_date"
     t.integer  "user_id"
+    t.string   "attachment"
   end
 
   create_table "contributiontocsiindserviceawards", force: :cascade do |t|
@@ -118,6 +120,7 @@ ActiveRecord::Schema.define(version: 20170907094003) do
     t.string   "faculty_email"
     t.string   "imno"
     t.integer  "user_id"
+    t.string   "attachment"
   end
 
   add_index "facmaxpublishings", ["imno"], name: "index_facmaxpublishings_on_imno"
@@ -128,6 +131,7 @@ ActiveRecord::Schema.define(version: 20170907094003) do
     t.datetime "updated_at",       null: false
     t.string   "imno"
     t.integer  "user_id"
+    t.string   "attachment"
   end
 
   add_index "highestsponsorshipofcsievents", ["imno"], name: "index_highestsponsorshipofcsievents_on_imno"
@@ -194,6 +198,7 @@ ActiveRecord::Schema.define(version: 20170907094003) do
     t.integer  "last_but_before_year_vol_strength"
     t.integer  "last_year_vol_strength"
     t.integer  "current_year_vol_strength"
+    t.string   "attachment"
   end
 
   add_index "longestcontinuoussbcs", ["imno"], name: "index_longestcontinuoussbcs_on_imno"
@@ -262,6 +267,7 @@ ActiveRecord::Schema.define(version: 20170907094003) do
     t.datetime "updated_at",                null: false
     t.string   "imno"
     t.integer  "user_id"
+    t.string   "attachment"
   end
 
   add_index "paperpresenters", ["imno"], name: "index_paperpresenters_on_imno"
@@ -348,6 +354,7 @@ ActiveRecord::Schema.define(version: 20170907094003) do
     t.integer  "volunteers_added"
     t.string   "imno"
     t.integer  "user_id"
+    t.string   "attachment"
   end
 
   add_index "studentbranchactivists", ["imno"], name: "index_studentbranchactivists_on_imno"
@@ -361,6 +368,7 @@ ActiveRecord::Schema.define(version: 20170907094003) do
     t.date     "valid_till"
     t.string   "imno"
     t.integer  "user_id"
+    t.string   "attachment"
   end
 
   add_index "studentmaxpublishings", ["imno"], name: "index_studentmaxpublishings_on_imno"
