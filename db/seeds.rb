@@ -8,15 +8,20 @@
 
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'users.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'instinprod.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
-  t = User.new
-  t.email = row['email']
-  t.password = row['password']
+  t = Institute.new
+  t.imno = row['IM No']
+  t.name = row['Instititution Name']
+  t.address = row['Address']
+  t.city = row['City']
+  t.state = row['State']
+  t.nominating_authority = row['Authority']
+  
  
   t.save
-  puts "#{t.email}, #{t.password} saved"
+  puts "#{t.name}, #{t.imno} saved"
 end
 
-puts "There are now #{User.count} rows in the transactions table"
+puts "There are now #{Institute.count} rows in the transactions table"
