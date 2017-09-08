@@ -4,23 +4,19 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#   Mayor.create(name: 'Emanuel', city: cities.first) sbcprod
 
+require 'csv'
 
-Sbc.create(sbc_membership_no: "1", sbc_name: "sbc1", sbc_phone: "11111",
-sbc_email: "sbc1@example.com" , imno: "111", no_of_volunteers: 5) 
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'users.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  t = User.new
+  t.email = row['email']
+  t.password = row['password']
+ 
+  t.save
+  puts "#{t.email}, #{t.password} saved"
+end
 
-Sbc.create(sbc_membership_no: "2", sbc_name: "sbc1", sbc_phone: "11111",
-sbc_email: "sbc2@example.com" , imno: "222", no_of_volunteers: 5) 
-
-Sbc.create(sbc_membership_no: "3", sbc_name: "sbc1", sbc_phone: "11111",
-sbc_email: "sbc3@example.com" , imno: "333", no_of_volunteers: 5) 
-
-Sbc.create(sbc_membership_no: "4", sbc_name: "sbc1", sbc_phone: "11111",
-sbc_email: "sbc4@example.com" , imno: "444", no_of_volunteers: 5) 
-
-Sbc.create(sbc_membership_no: "5", sbc_name: "sbc1", sbc_phone: "11111",
-sbc_email: "sbc5@example.com" , imno: "555", no_of_volunteers: 5) 
-
-Sbc.create(sbc_membership_no: "6", sbc_name: "sbc1", sbc_phone: "11111",
-sbc_email: "sbc6@example.com" , imno: "666", no_of_volunteers: 5) 
+puts "There are now #{User.count} rows in the transactions table"
