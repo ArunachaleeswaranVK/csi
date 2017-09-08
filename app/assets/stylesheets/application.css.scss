@@ -63,28 +63,28 @@ body{
     margin-left: 3em;  
     border: 1px solid black;
     border-radius: 8px;
-    background: #D31027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #EA384D, #D31027);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    box-shadow: 5px 5px 5px #988585;
+    background: rgba(255, 251, 129, 0.81);
 }
 
 .award-title{
     
     font-family: "Lato";
-    padding: 0.5em;
+    padding: 0.175em;
     text-align: left;
     font-size: 1.2em;
     
 }
 .award-title a{
     font-family: "Lato";
-    color: rgb(255, 255, 255);
+    color: #0a0a0a;
+    padding: 0.175em;
     
     
 }
 .award-head{
-    color: white;
+    color: #15307d;
+    font-weight: bold;
+    
 }
 
 #award-banner{
@@ -166,4 +166,12 @@ div.form-group.sf{
     
     padding-left: 30px;
     border-radius: 0px;
+}
+
+#logo{
+    width: 60px;
+    height: 30px;
+}
+#brand-logo{
+    padding-top: 10px;
 }
