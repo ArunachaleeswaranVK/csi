@@ -1,7 +1,7 @@
 class BestaccreditedstudentbranchesController < ApplicationController
     before_action :set_award , only: [:edit,:update,:show,:destroy]
     before_action :authenticate , only: [:new] 
-    
+ 
     # before_action :authenticate_user!, except: [:index,:show]
    
   
@@ -84,4 +84,5 @@ class BestaccreditedstudentbranchesController < ApplicationController
     def set_award
        @bestaccreditedstudentbranch = Bestaccreditedstudentbranch.find(params[:id])
     end
+ 
 end

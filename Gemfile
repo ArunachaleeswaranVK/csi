@@ -14,6 +14,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem 'country_select'
+
 gem "cocoon"
 
 gem 'filepicker-rails'

@@ -5,7 +5,7 @@
 
      
    <div class="row">
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-8">
       <%= f.label :applying_for  %>
       <%= f.select(:applying_for, options_for_select([
           ['Chapter Patron Award', 'Chapter Patron Award'], 
@@ -13,16 +13,7 @@
           ['Active Participation Award (Youth)','Active Participation Award (Youth)'],
           ['Active Participation Award (Woman)','Active Participation Award (Woman)']]), {}, {class: "form-control", autofocus: true}) %>
     </div>
-    <div class="form-group col-md-4">
-      <%= f.label :region  %>
-      <%= f.select(:region, options_for_select([
-          ['I', '1'], 
-          ['II', '2'],
-          ['III','3'], 
-          ['IV', '4'], 
-          ['V', '5'], 
-          ['VI', '6']]), {}, {class: "form-control"}) %>
-    </div>
+    
     <div class="form-group col-md-4">
       <%= f.label :chapter  %>
      

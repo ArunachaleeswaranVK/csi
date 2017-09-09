@@ -19,15 +19,15 @@
       <%= f.text_field :address  ,  required: true , class: "form-control" %>
     </div>
     <div class="form-group col-md-4">
-      <%= f.label :recognized_by , "Recognized By" %>          
+      <%= f.label :recognized_by , "Recognized By" %>      
       <!--add a drop down her-->
       <%= f.text_field :recognized_by  ,placeholder: "AICTE/ UGC/ Others (Please specify)" ,  required: true, class: "form-control" %>
     </div>
-    <div class="form-group col-md-4">
-      <%= f.label :reference_number_of_recognition  %>
+    <div class="form-group col-md-5">
+      <%= f.label :reference_number_of_recognition  %> <span class="proof">(Please attach a photocopy)</span>   
       <%= f.text_field :reference_number_of_recognition ,  required: true  , class: "form-control" %>
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <%= f.label :date_of_recognition , "Date of recognition" %>
       <%= f.date_field :date_of_recognition ,  required: true  , class: "form-control" %>
     </div>
@@ -78,6 +78,9 @@
       <%= f.label :defence_of_dissertation_date  %>
       <%= f.date_field :defence_of_dissertation_date ,  required: true , class: "form-control" %>
     </div>
+  
+
+     
     
     </div>
     </div>
@@ -109,12 +112,37 @@
         <%= link_to_add_association 'Add Record', f, :recordforthesisawards , class: "form-button btn btn-primary" %>
     </div>
     
+     <p class="proof fifthform"><strong>Table may be extended as required. Attach document proof for each publication) *</strong></p>
+    
+    <ol class="proof">
+       <strong><li>Attach Passport size Photo of the candidate</li></strong>
+       <strong><li>Attach photocopy of Ph D Certificate</li></strong>
+       <strong><li>Attach  a one-page summary of the significance of the dissertation ( Mandatory)</li></strong>
+       <strong><li>Attach a copy of the complete thesis (Mandatory  - if too large for e-mail attachment, please send on a CD / DVD) </li></strong>
+     </ol>
+     
+      <ol class="proof">
+        <h4><strong>Enclosures</strong></h4>
+        <strong><li>A one-page summary of the significance of the dissertation should 
+        be attached as soft copy along with the application and sent to edawards@csi-india.org.</li></strong>
+        <strong><li>One copy of the thesis in electronic format (to email-id edawards@csi-india.org )
+        (if too large in size,can be sent as a CD/DVD to CSI Education Directorate, Chennai)</li></strong>
+        <strong><li>Dissertations will be reviewed by a committee of eminent Researchers/Scientists for technical depth,
+        significance of the research contribution
+        , potential impact on theory and practice, quality of presentation and other parameters of importance.</li></strong>
+      </ol>
+     <p class="proof"><strong>Upload All the attachments in a <strong>single zip</strong> file in the link below</strong></p>
+     <br>
+    
+    
+    
     <div>
-        <%= f.label :attachment, "Upload Your Data in Zip file:" %>
-        <%= f.filepicker_field :attachment %> <!-- User#avatar_url is a regular string column -->
-    </div>
+        
+<%= f.label :attachment %>
+        
+<%= f.filepicker_field :attachment %> <!-- User#avatar_url is a regular string column -->
     
-    
+  </div>
     <div class="form-group">
         <div class="col-md-offset-5 col-md-2">
             <%= f.submit "Submit" , class: "btn btn-success btn-lg" %>

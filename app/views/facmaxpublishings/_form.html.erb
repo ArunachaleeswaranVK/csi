@@ -9,7 +9,7 @@ during 01/07/2016 to 30/06/2017)
       
     <p class="primary-form-subheading">Institution Details</p> 
     
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-5">
     <% unless is_sbc? %>
      <%= f.fields_for :institute, @institute do |institute| %>
       <label>Name</label>
@@ -26,27 +26,13 @@ during 01/07/2016 to 30/06/2017)
     
     <!--address-->
     
-    <div class="form-group col-md-6">
-      <% if is_sbc? %>
-      <label>Address</label>
-      <input type="text" class="form-control" id="address" value="
-      <% unless current_sbc_user_data.institute.address.nil? %>
-      <%= current_sbc_user_data.institute.address %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled>  
-      <% else %>
-      <label>Address</label>
-      <input type="text" class="form-control" id="address" disabled>
-      <% end %>
-    </div>
     
     
     
-    <div class="form-group col-md-3">
+    
+    <div class="form-group col-md-2">
       <% unless is_sbc? %>
-      <%= f.label :imno , "IMNO" %>
+      <%= f.label :imno , "Institution Number" %>
       <%= f.text_field :imno , readonly: true , required: true, class: "form-control" , id:"imno"%>
        <% else %>
        <%= f.label :imno , "IMNO" %>
@@ -59,7 +45,7 @@ during 01/07/2016 to 30/06/2017)
     
     <!--city-->
     
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-2">
       <% if is_sbc? %>
       <label>City</label>
       <input type="text" class="form-control" id="city" value="
@@ -79,21 +65,7 @@ during 01/07/2016 to 30/06/2017)
     
     <!--state-->
     
-    <div class="form-group col-md-3">
-      <% if is_sbc? %>
-      <label>State</label>
-      <input type="text" class="form-control" id="state" value="
-      <% unless current_sbc_user_data.institute.state.nil? %>
-      <%= current_sbc_user_data.institute.state %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled>  
-     <% else %>
-      <label>State</label>
-      <input type="text" class="form-control" id="state" disabled>
-      <% end %>
-    </div>
+  
     
     <!--pin-->
     
@@ -151,6 +123,7 @@ during 01/07/2016 to 30/06/2017)
       <%= f.label :has_student_branch , "Has Student Branch" %>
       <%= f.check_box :has_student_branch , class: "form-control" %>
     </div>
+     <p class="proof"><strong>Attach Passport size Photo of the candidate</strong></p>
     </div>
     
     <p class="primary-form-subheading">Details of publishing in CSIC by the nominated Faculty</p>
@@ -172,11 +145,19 @@ during 01/07/2016 to 30/06/2017)
         <%= link_to_add_association 'Add Event', f, :publishingdetailbyfaculties , class: "form-button btn btn-primary" %>
     </div>
     
-    <div>
-        <%= f.label :attachment, "Upload Your Data in Zip file:" %>
-        <%= f.filepicker_field :attachment %> <!-- User#avatar_url is a regular string column -->
-      </div>
+   <p class="proof fifthform"><strong>(Table may be ex
+   tended as required. Attach copy of articles as published in CSI Publications) *</strong></p>
     
+     <p class="proof"><strong>Upload All the attachments in a <strong>single zip</strong> file in the link below</strong></p>
+     <br>
+     
+     <div>
+        
+<%= f.label :attachment %>
+        
+<%= f.filepicker_field :attachment %> <!-- User#avatar_url is a regular string column -->
+    
+  </div>
     
     <div class="form-group">
         <div class="col-md-offset-5 col-md-2">

@@ -12,37 +12,19 @@ during 01/07/2016 to 30/06/2017)
      <label>Institution Name</label>
      <input type="text" class="form-control" id="name" value="<%= current_sbc_user_data.institute.name %>" disabled>     
     </div>
-   <div class="form-group col-md-6">
-      <label>Postal Address</label>
-      <input type="text" class="form-control" id="address" value="
-      <% unless current_sbc_user_data.institute.address.nil? %>
-      <%= current_sbc_user_data.institute.address %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled> 
-    </div>
-    <div class="form-group col-md-4">
-      <%= f.label :imno , "IMNO" %>
+  
+    <div class="form-group col-md-3">
+      <%= f.label :imno , "Institution Number" %>
       <%= f.text_field :imno , value: current_sbc_user_data.institute.imno,
       required: true , readonly: true ,class: "form-control" , id:"imno"%>
     </div>
     
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-3">
       <label>City</label>
       <input type="text" class="form-control" id="city" value="<%= current_sbc_user_data.institute.city %>" disabled> 
     </div>
     
-    <div class="form-group col-md-4">
-      <label>State</label>
-      <input type="text" class="form-control" id="state"  value="
-      <% unless current_sbc_user_data.institute.state.nil? %>
-      <%= current_sbc_user_data.institute.state %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled> 
-    </div>
+    
     
     <p class="primary-form-subheading">SBC Details</p>
         <div class="form-group col-md-3">
@@ -67,7 +49,7 @@ during 01/07/2016 to 30/06/2017)
     <div class="form-group col-md-3">
       <%= f.label :volunteers_added  , "# CSI Volunteers added - 2016-17" %>
       <%= f.text_field :volunteers_added , required: true , type: "number",
-      min: "0" ,max: "100", maxlength: "3", class: "form-control" %>
+      min: "0" ,max: "100", maxlength: "3", title:"Enter the number of Volunteers", class: "form-control" %>
     </div>
     
     </div>
@@ -96,16 +78,25 @@ during 01/07/2016 to 30/06/2017)
       
     <% end %>
     
+    
     <div class="links col-md-12">
+      <br>
         <%= link_to_add_association 'Add Event', f, :supportforcsievents , class: "form-button btn btn-primary" %>
     </div>
+    <br>
+    <p class="proof thirdform">(Table may be extended as required. Attach document proof such as invitation /
+    brochure of the events, photos taken on the occasion etc along with receipts for sponsorship amount paid) *</p>
+     <br>
    
-   
-   <div>
-        <%= f.label :attachment, "Upload Your Data in Zip file:" %>
-        <%= f.filepicker_field :attachment %> <!-- User#avatar_url is a regular string column -->
-      </div>
+    <p class="proof"><strong>Upload All the attachments in a <strong>single zip</strong> file in the link below</strong></p>
+  
+    <div>
+        
+<%= f.label :attachment %>
+        
+<%= f.filepicker_field :attachment %> <!-- User#avatar_url is a regular string column -->
     
+  </div>
     
     <div class="form-group">
         <div class="col-md-offset-5 col-md-2">
