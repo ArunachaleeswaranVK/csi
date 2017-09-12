@@ -8,21 +8,18 @@
 
 
 
-
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'sbcprod.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'chapter.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
-  t = Sbc.new
-  t.imno = row['IM No']
-  t.sbc_name = row['Name']
-  t.sbc_email = row['Email']
-  t.no_of_volunteers = row['Strength']
+  t = User.new
  
-  
+  t.email = row['Email']
+  t.password = row['Mobile']
+
   t.save
-  puts "#{t.sbc_name}, #{t.imno} saved"
+  puts "#{t.email}, #{t.password} saved"
 end
 
-puts "There are now #{Sbc.count} rows in the transactions table"
+puts "There are now #{User.count} rows in the transactions table"

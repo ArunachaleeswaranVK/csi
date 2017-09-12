@@ -7,7 +7,9 @@
 <div class="row">    
 <div class="col-md-5 award-area"> 
 
-<% if user_signed_in? && is_sbc? %>
+<!--award 1-->
+
+<% if (user_signed_in? && is_sbc?)  %>
 <h4 class="award-head"align="center">ACADEMIC AWARDS - STUDENT BRANCH</h4>
 <div class="award-title">
     <p><%= link_to "Best Accredited Student Branch " , new_bestaccreditedstudentbranch_path %> </p>
@@ -33,6 +35,8 @@
 </div>
 <% end %>
 
+<!--award 2 -->
+
 <h4 class="award-head"align="center">ACADEMIC AWARDS - INDIVIDUAL</h4>
 <% if user_signed_in?  %>
 <div class="award-title">
@@ -47,9 +51,11 @@
 <% end %>
 </div>
 
+<!--award 3-->
+
 <div class="col-md-5 award-area">  
 <h4  class="award-head servie-awards" align="center">SERVICE AWARDS</h4>
-<% if user_signed_in?  %>
+<% if (user_signed_in? and is_chairman?) %>
 <div class="award-title">
     <p><%= link_to "Best Regional Chapter " , new_regionalchapteraward_path %> </p>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909142454) do
+ActiveRecord::Schema.define(version: 20170912103447) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -73,6 +73,18 @@ ActiveRecord::Schema.define(version: 20170909142454) do
     t.date     "defence_of_dissertation_date"
     t.integer  "user_id"
     t.string   "attachment"
+  end
+
+  create_table "chapters", force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "chapter_name"
+    t.string   "region"
+    t.string   "category"
+    t.string   "name"
+    t.string   "designation"
+    t.string   "email"
+    t.string   "mobile"
   end
 
   create_table "contributiontocsiindserviceawards", force: :cascade do |t|

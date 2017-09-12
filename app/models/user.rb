@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
   has_one :studentbranchactivist , dependent: :destroy 
   has_one :bestthesisaward , dependent: :destroy 
   has_one :regionalchapteraward , dependent: :destroy 
-  has_one :individualserviceaward , dependent: :destroy 
+  # ask and change it to has many
+  has_one :individualserviceaward , dependent: :destroy  
   has_one :newsletteraward , dependent: :destroy 
   
   
