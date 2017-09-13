@@ -22,7 +22,7 @@ csv.each do |row|
   t.mobile = row['Mobile']
 
   t.save
-  puts "#{t.email}, #{t.password} saved"
+  puts "#{t.chapter_name}, #{t.name} saved"
 end
 
 puts "There are now #{Chapter} rows in the transactions table"
