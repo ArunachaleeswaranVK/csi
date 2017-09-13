@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
+  devise :authenticatable, :timeoutable, :validatable, :timeout_in => 15.minutes
+         
   has_one :bestaccreditedstudentbranch , dependent: :destroy
   has_one :bestcsiinternationalstudentseventhost , dependent: :destroy 
   has_one :highestsponsorshipofcsievent , dependent: :destroy 
