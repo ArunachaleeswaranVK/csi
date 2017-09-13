@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170912103447) do
+ActiveRecord::Schema.define(version: 20170913163138) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -150,8 +150,6 @@ ActiveRecord::Schema.define(version: 20170912103447) do
 
   create_table "individualserviceawards", force: :cascade do |t|
     t.string   "applying_for"
-    t.string   "region"
-    t.string   "chapter"
     t.string   "applicant_name"
     t.string   "applicant_csi_mem_no"
     t.date     "applicant_csi_mem_since"
@@ -161,9 +159,6 @@ ActiveRecord::Schema.define(version: 20170912103447) do
     t.date     "applicant_dob"
     t.string   "applicant_educational_qualification"
     t.string   "applicant_experience"
-    t.string   "address"
-    t.string   "phone"
-    t.string   "email"
     t.text     "membership_in_other_societies"
     t.text     "publication_details"
     t.text     "other_info"
@@ -171,6 +166,7 @@ ActiveRecord::Schema.define(version: 20170912103447) do
     t.datetime "updated_at",                                  null: false
     t.integer  "user_id"
     t.string   "role_in_csi_membership_promotion_in_chapter"
+    t.string   "chapter"
   end
 
   create_table "institutes", force: :cascade do |t|
@@ -216,15 +212,11 @@ ActiveRecord::Schema.define(version: 20170912103447) do
   add_index "longestcontinuoussbcs", ["imno"], name: "index_longestcontinuoussbcs_on_imno"
 
   create_table "newsletterawards", force: :cascade do |t|
-    t.string   "region"
-    t.string   "chapter"
-    t.string   "address"
-    t.string   "phone"
-    t.string   "email"
     t.text     "other_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.string   "chapter"
   end
 
   create_table "newslettersforregionalchapterawards", force: :cascade do |t|
@@ -314,12 +306,6 @@ ActiveRecord::Schema.define(version: 20170912103447) do
   end
 
   create_table "regionalchapterawards", force: :cascade do |t|
-    t.string   "category"
-    t.string   "region"
-    t.string   "chapter"
-    t.string   "address"
-    t.string   "phone"
-    t.string   "email"
     t.integer  "members_number_till_previous_year"
     t.float    "members_percentage_till_previous_year"
     t.integer  "members_number_till_current_year"
@@ -331,6 +317,8 @@ ActiveRecord::Schema.define(version: 20170912103447) do
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.integer  "user_id"
+    t.string   "chapter"
+    t.string   "category"
   end
 
   create_table "roleincsieventindserviceawards", force: :cascade do |t|

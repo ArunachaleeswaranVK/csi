@@ -14,77 +14,11 @@
           ['Active Participation Award (Woman)','Active Participation Award (Woman)']]), {}, {class: "form-control", autofocus: true}) %>
     </div>
     
-    <div class="form-group col-md-4">
-      <%= f.label :chapter  %>
-     
-      <%= f.select(:chapter, options_for_select([
-        ['Ahmedabad ','Ahmedabad'],
-        ['Allahabad','Allahabad'],
-['Aurangabad','Aurangabad'],
-['Balasore','Balasore'],
-['Bangalore','Bangalore'],
-['Bhilai','Bhilai'],
-['Bhopal','Bhopal'],
-['Bhubaneswar','Bhubaneswar'],
-['Calicut','Calicut'],
-['Chandigarh','Chandigarh'],
-['Chennai','Chennai'],
-['Cochin','Cochin'],
-['Coimbatore','Coimbatore'],
-['Cuttack','Cuttack'],
-['Dehradun','Dehradun'],
-['Delhi','Delhi'],
-['Ghaziabad','Ghaziabad'],
-['Goa','Goa'],
-['Gurgaon','Gurgaon'],
-['Guwahati','Guwahati'],
-['Gwalior','Gwalior'],
-['Haridwar','Haridwar'],
-['Hosur','Hosur'],
-['Hyderabad','Hyderabad'],
-['Indore','Indore'],
-['Jabalpur','Jabalpur'],
-['Jaipur','Jaipur'],
-['Jammu & Kashmir','Jammu & Kashmir'],
-['Jhansi','Jhansi'],
-['Kanpur','Kanpur'],
-['Kanyakumari','Kanyakumari'],
-['Kolkata','Kolkata'],
-['Koneru','Koneru'],
-['Lucknow','Lucknow'],
-['Mathura','Mathura'],
-['Mhow','Mhow'],
-['Mumbai','Mumbai'],
-['Mysore','Mysore'],
-['Nagpur','Nagpur'],
-['Nashik','Nashik'],
-['New Guntur','New Guntur'],
-['Noida','Noida'],
-['Ongole','Ongole'],
-['Patna','Patna'],
-['Pondicherry','Pondicherry'],
-['Pune','Pune'],
-['Raipur','Raipur'],
-['Rajkot','Rajkot'],
-['Ranchi','Ranchi'],
-['Rourkela','Rourkela'],
-['Salem','Salem'],
-['Siliguri','Siliguri'],
-['Sivakasi','Sivakasi'],
-['Solapur','Solapur'],
-['Surat','Surat'],
-['Surat ','Surat '],
-['Thanjavur','Thanjavur'],
-['Tiruchirapalli','Tiruchirapalli'],
-['Trivandrum','Trivandrum'],
-['Udaipur','Udaipur'],
-['V.V.Nagar','V.V.Nagar'],
-['Vadodara','Vadodara'],
-['Varanasi','Varanasi'],
-['Vellore','Vellore'],
-['Vijayawada','Vijayawada'],
-['Visakhapatnam','Visakhapatnam'],
-['Visakhapatnam ','Visakhapatnam ']]), {}, {class: "form-control", autofocus: true}) %>
+      <div class="form-group col-md-4">
+      <%= f.label :imno , "Chapter" %>
+      <%= f.text_field :chapter , value:current_chairman_user_data.chapter_name,
+      required: true , readonly: true ,class: "form-control" , id:"imno"%>
+<br>
     </div>
     
     <!--applicant details-->
@@ -134,21 +68,7 @@
    </div>
    
    
-    <div class="row">
-    <p class="primary-form-subheading">Chapter Office Contact details  </p>
-    <div class="form-group col-md-4">
-      <%= f.label :address  %>
-      <%= f.text_field :address  , required: true , class: "form-control"%>
-    </div>
-    <div class="form-group col-md-4">
-      <%= f.label :phone  %>
-      <%= f.text_field :phone , required: true  , class: "form-control"%>
-    </div>
-    <div class="form-group col-md-4">
-      <%= f.label :email  %>
-      <%= f.email_field :email , required: true  , class: "form-control"%>
-    </div>
-    </div>
+   
    
    
     <!--sub form details-->
