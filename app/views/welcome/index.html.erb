@@ -52,10 +52,11 @@
 </div>
 
 <!--award 3-->
-
-<div class="col-md-5 award-area">  
-<h4  class="award-head servie-awards" align="center">SERVICE AWARDS</h4>
 <% if (user_signed_in? and is_chairman?) %>
+<div class="col-md-5 award-area">  
+
+
+<h4  class="award-head servie-awards" align="center">SERVICE AWARDS</h4>
 <div class="award-title">
     <p><%= link_to "Best Regional Chapter " , new_regionalchapteraward_path %> </p>
 </div>
@@ -67,8 +68,9 @@
 <div class="award-title">
     <p><%= link_to "Best Chapter Newsletter " , new_newsletteraward_path %> </p>
 </div>
-<% end %>
+
 
 </div>
+<% end %>
 </div>
 
