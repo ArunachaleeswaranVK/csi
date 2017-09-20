@@ -3,10 +3,7 @@ class PaperpresentersController < ApplicationController
     before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
     
-    def getname
-        
-        @paperpresenter = Institute.where("name like ?", "#{params[:name]}%").first
-    end
+    
     
     def index
         @paperpresenters = Paperpresenter.all
@@ -58,7 +55,7 @@ class PaperpresentersController < ApplicationController
     
     def paperpresenter_params
        params.require(:paperpresenter).permit(:faculty_name,
-       :faculty_email,:imno,:faculty_number,:faculty_csi_membership_no,:valid_till,:attachment,
+       :faculty_email,:faculty_number,:faculty_csi_membership_no,:valid_till,:attachment,
        paperpresenterdetails_attributes: [:name_of_conference,
        :date_of_conference,:organised_by,:name_place_of_conference,:india_or_outside,:_destroy])
     end

@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   get '/longestcontinuoussbcs/getname/:name' => 'longestcontinuoussbcs#getname'
   
   resources :facmaxpublishings , only: [:new, :create]
-  get '/facmaxpublishings/getname/:name' => 'facmaxpublishings#getname'
+  
   
   
   

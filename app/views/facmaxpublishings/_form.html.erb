@@ -4,94 +4,7 @@
 <p class="form-detail">(Awarded to CSI member Faculty who published maximum articles  - at least 3 - in CSI Publications 
 during 01/07/2016 to 30/06/2017) 
 </p>  
-    <!--institute details-->
-    <div class="row">
-      
-    <p class="primary-form-subheading">Institution Details</p> 
-    
-    <div class="form-group col-md-5">
-    <% unless is_sbc? %>
-     <%= f.fields_for :institute, @institute do |institute| %>
-      <label>Name</label>
-      <%= institute.autocomplete_field :name, autocomplete_institute_name_institutes_path ,id: "name" , 
-      placeholder: "Enter your institution name" ,title: "Enter your Institution name", autofocus: true,  required: true , class: "form-control" %>
-     <% end %> 
-    <% else %>
-    
-     <label>Institution Name</label>
-     <input type="text" class="form-control" id="name" value="<%= current_sbc_user_data.institute.name %>" disabled>     
-    
-    <% end %>
-    </div>
-    
-    <!--address-->
-    
-    
-    
-    
-    
-    <div class="form-group col-md-2">
-      <% unless is_sbc? %>
-      <%= f.label :imno , "Institution Number" %>
-      <%= f.text_field :imno , readonly: true , required: true, class: "form-control" , id:"imno"%>
-       <% else %>
-       <%= f.label :imno , "IMNO" %>
-      <%= f.text_field :imno , value: current_sbc_user_data.institute.imno,
-      required: true , readonly: true ,class: "form-control" , id:"imno"%>
-       <% end %>
-    </div>
-    
-   
-    
-    <!--city-->
-    
-    <div class="form-group col-md-2">
-      <% if is_sbc? %>
-      <label>City</label>
-      <input type="text" class="form-control" id="city" value="
-      <% unless current_sbc_user_data.institute.city.nil? %>
-      <%= current_sbc_user_data.institute.city %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled>  
-     <% else %>
-      <label>City</label>
-      <input type="text" class="form-control" id="city" disabled>
-      <% end %>
-    </div>
-    
-    
-    
-    <!--state-->
-    
-  
-    
-    <!--pin-->
-    
-   
-    
-    
-    <div class="form-group col-md-3">
-      
-      <% if is_sbc? %>
-      <label>Head of the Institution</label>
-      <input type="text" class="form-control" id="na" value="
-      <% unless current_sbc_user_data.institute.nominating_authority.nil? %>
-      <%= current_sbc_user_data.institute.nominating_authority %>
-      <% else %>
-      <%= "Not available" %>
-      <% end %>
-      " disabled> 
-       <% else %>
-       <label>Head of the Institution</label>
-      <input type="text" class="form-control" id="na" disabled> 
-      <% end %>
-    </div>
-    
-    
-   
-    </div>
+
     
     
     <!--form specific details-->
@@ -150,15 +63,15 @@ during 01/07/2016 to 30/06/2017)
     
      <p class="proof"><strong>Upload All the attachments in a <strong>single zip</strong> file in the link below</strong></p>
      <br>
-     
-     <div>
+      <div>
         
 <%= f.label :attachment %>
         
 <%= f.filepicker_field :attachment %> <!-- User#avatar_url is a regular string column -->
     
   </div>
-    
+     
+
     <div class="form-group">
         <div class="col-md-offset-5 col-md-2">
             <%= f.submit "Submit" , class: "btn btn-success btn-lg" %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913163138) do
+ActiveRecord::Schema.define(version: 20170920144855) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -130,12 +130,9 @@ ActiveRecord::Schema.define(version: 20170913163138) do
     t.datetime "updated_at",                  null: false
     t.string   "faculty_name"
     t.string   "faculty_email"
-    t.string   "imno"
     t.integer  "user_id"
     t.string   "attachment"
   end
-
-  add_index "facmaxpublishings", ["imno"], name: "index_facmaxpublishings_on_imno"
 
   create_table "highestsponsorshipofcsievents", force: :cascade do |t|
     t.integer  "volunteers_added"
@@ -269,12 +266,9 @@ ActiveRecord::Schema.define(version: 20170913163138) do
     t.date     "valid_till"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.string   "imno"
     t.integer  "user_id"
     t.string   "attachment"
   end
-
-  add_index "paperpresenters", ["imno"], name: "index_paperpresenters_on_imno"
 
   create_table "publishingdetailbyfaculties", force: :cascade do |t|
     t.string   "article_title"

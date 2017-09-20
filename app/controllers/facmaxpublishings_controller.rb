@@ -3,10 +3,7 @@ class FacmaxpublishingsController < ApplicationController
     before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
     
-    def getname
-        @name = params[:name]
-        @facmaxpublishing = Institute.where("name like ?", "%#{@name}%").first
-    end
+    
     
     def index
         @facmaxpublishings = Facmaxpublishing.all
@@ -58,7 +55,7 @@ class FacmaxpublishingsController < ApplicationController
     
     def facmaxpublishing_params
        params.require(:facmaxpublishing).permit(:candidate_csi_membership_no,
-       :valid_till,:imno,:has_student_branch,:faculty_name,:faculty_email,:attachment,
+       :valid_till,:has_student_branch,:faculty_name,:faculty_email,:attachment,
        publishingdetailbyfaculties_attributes: [:article_title,
        :published_in,:date_of_publishing,:_destroy])
     end
