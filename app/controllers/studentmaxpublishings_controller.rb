@@ -1,4 +1,5 @@
 class StudentmaxpublishingsController < ApplicationController
+    before_action :limit_award, only: [:new, :create]   
     before_action :set_award , only: [:edit,:update,:show,:destroy]
     before_action :authenticate , only: [:new]
     # before_action :authenticate_user!, except: [:index,:show]
@@ -65,5 +66,14 @@ class StudentmaxpublishingsController < ApplicationController
     
     def set_award
        @studentmaxpublishing = Studentmaxpublishing.find(params[:id])
+    end
+    
+    def limit_award
+      user_award = current_user.studentmaxpublishingaward_review(@bestaccreditedstudentbranch)
+
+      if user_award
+        redirect_to root_path
+        flash[:notice] = " You can submit only one award"
+      end 
     end
 end

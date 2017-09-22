@@ -57,7 +57,7 @@
         <td class="form-group col-md-2">
         
           <%= f.text_field :program_organised_expert_lecture_no_of_activities ,
-          required: true , type: "number",  min: "0" ,max: "100",  maxlength: "3", class: "form-control"%>
+          required: true , type: "number",  min: "0" ,max: "999",  maxlength: "3", class: "form-control"%>
         
         </td>
       </tr>
@@ -65,14 +65,14 @@
         <td>Seminars / Technical workshop</td>
         <td class="form-group col-md-2">
           <%= f.text_field :program_organised_seminars_workshops_no_of_activities ,required: true , type: "number",
-            min: "0" ,max: "100", maxlength: "3" ,  class: "form-control"%>
+            min: "0" ,max: "999", maxlength: "3" ,  class: "form-control"%>
         </td>
       </tr>
       <tr>
         <td>Short term training program</td>
         <td class="form-group col-md-2">
          <%= f.text_field :program_organised_short_term_training_program_no_of_activities ,required: true , type: "number",
-           min: "0" ,max: "100", maxlength: "3" ,  class: "form-control"%>
+           min: "0" ,max: "999", maxlength: "3" ,  class: "form-control"%>
        
         </td>
       </tr>
@@ -80,7 +80,7 @@
         <td>Inter college Symposium</td>
         <td class="form-group col-md-2">
             <%= f.text_field :program_organised_symposium_no_of_activities , required: true , type: "number",
-              min: "0" ,max: "100", maxlength: "3",  class: "form-control"%>
+              min: "0" ,max: "999", maxlength: "3",  class: "form-control"%>
         
         </td>
       </tr>
@@ -88,7 +88,7 @@
         <td>Motivational talks</td>
         <td class="form-group col-md-2">
             <%= f.text_field :program_organised_motivational_talks_no_of_activities ,required: true , type: "number",
-            min: "0" ,max: "100", maxlength: "3" ,  class: "form-control"%>
+            min: "0" ,max: "999", maxlength: "3" ,  class: "form-control"%>
        
         </td>
       </tr>
@@ -113,7 +113,7 @@
     <div class="form-group col-md-4">
       <%= f.label :student_branch_membership_no_of_volunteers , "# Volunteers" %>
       <%= f.text_field :student_branch_membership_no_of_volunteers  , required: true , type: "number",
-              min: "0" ,max: "100", maxlength: "3",  class: "form-control"%>
+              min: "0" ,max: "999", maxlength: "3",  class: "form-control"%>
     </div>
     
     <p class="primary-form-subheading">Competitions and Contests organised</p>
@@ -125,7 +125,7 @@
       </div>
     <div  class="col-md-4">
       <%= f.text_field :number_of_contests_organised_for_students  , required: true , type: "number",
-              min: "0" ,max: "100", maxlength: "3",  class: "form-control", id: "competitions-input"%>
+              min: "0" ,max: "999", maxlength: "3",  class: "form-control", id: "competitions-input"%>
     </div>   
     
     </div>
@@ -145,7 +145,7 @@
     <div class="form-group col-md-4">
       <%= f.label :convention_seminar_no_of_events_organised , "# Events" %>
       <%= f.text_field :convention_seminar_no_of_events_organised , required: true , type: "number",
-              min: "0" ,max: "100", maxlength: "3" ,  class: "form-control"%>
+              min: "0" ,max: "999", maxlength: "3" ,  class: "form-control"%>
     </div>
     
     
@@ -179,11 +179,11 @@
         </td>
         <td class="form-group col-md-3">
             <%= f.text_field :no_of_faculty_as_csi_members_life , required: true , type: "number",
-              min: "0" ,max: "100", maxlength: "3" ,  class: "form-control"%>
+              min: "0" ,max: "999", maxlength: "3" ,  class: "form-control"%>
         </td>
         <td class="form-group col-md-3">
             <%= f.text_field :no_of_faculty_as_csi_members_annual , required: true , type: "number",
-              min: "0" ,max: "100", maxlength: "3", class: "form-control"%>
+              min: "0" ,max: "999", maxlength: "3", class: "form-control"%>
         </td>
       </tr>
       
@@ -222,7 +222,7 @@
     <div class="form-group col-md-4">
       <%= f.label :no_of_issues_published_in_newsletter , "# Issues Published" %>
       <%= f.text_field :no_of_issues_published_in_newsletter  , required: true , type: "number",
-              min: "0" ,max: "100", maxlength: "3",  class: "form-control"%>
+              min: "0" ,max: "999", maxlength: "3",  class: "form-control"%>
     </div>
     </div>
     </div>
@@ -230,15 +230,17 @@
     <br>
     
      
-    <p class="proof"><strong>Upload All the attachments in a <strong>single zip</strong> file in the link below</strong></p>
+    <p class="proof"><strong>Upload All the attachments (including photo) in a <strong>single zip</strong> 
+    file in the link below , zip file size should be less than 20mb</strong></p>
     
-     <div>
+   <div>
         
 <%= f.label :attachment %>
         
 <%= f.filepicker_field :attachment %> <!-- User#avatar_url is a regular string column -->
     
   </div>
+    
     
     <div class="form-group">
         <div class="col-md-offset-5 col-md-2">

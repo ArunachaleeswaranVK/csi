@@ -17,8 +17,60 @@ class User < ActiveRecord::Base
   has_one :bestthesisaward , dependent: :destroy 
   has_one :regionalchapteraward , dependent: :destroy 
   # ask and change it to has many
-  has_one :individualserviceaward , dependent: :destroy  
-  has_one :newsletteraward , dependent: :destroy 
+  has_many :individualserviceawards , dependent: :destroy  
+  has_one :newsletteraward , dependent: :destroy
+  
+  def bestaccreditedstudentbranchaward_review(award)
+    Bestaccreditedstudentbranch.where(user_id: self).first.present?
+    
+  end
+  
+  def bestcsiinternationalstudentseventhostaward_review(award)
+    Bestcsiinternationalstudentseventhost.where(user_id: self).first.present?
+    
+  end
+  
+  def highestsponsorshipofcsieventaward_review(award)
+    Highestsponsorshipofcsievent.where(user_id: self).first.present?
+    
+  end
+  
+  def longestcontinuoussbcaward_review(award)
+    Longestcontinuoussbc.where(user_id: self).first.present?
+    
+  end
+  
+  def studentmaxpublishingaward_review(award)
+    Studentmaxpublishing.where(user_id: self).first.present?
+    
+  end
+  
+  def studentbranchactivistaward_review(award)
+    Studentbranchactivist.where(user_id: self).first.present?
+  end
+  
+  def facmaxpublishingaward_review(award)
+    Facmaxpublishing.where(user_id: self).first.present?
+    
+  end
+  
+  def paperpresenteraward_review(award)
+    Paperpresenter.where(user_id: self).first.present?
+    
+  end
+  
+  def bestthesisaward_review(award)
+    Bestthesisaward.where(user_id: self).first.present?
+  end
+  
+  def regionalchapteraward_review(award)
+    Regionalchapteraward.where(user_id: self).first.present?
+    
+  end
+  
+  def newsletteraward_review(award)
+    Newsletteraward.where(user_id: self).first.present?
+  end
   
   
          

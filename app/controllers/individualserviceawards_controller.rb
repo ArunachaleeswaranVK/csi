@@ -13,14 +13,14 @@ class IndividualserviceawardsController < ApplicationController
     end    
     
     def new
-        @individualserviceaward = current_user.build_individualserviceaward
+        @individualserviceaward = current_user.individualserviceawards.build
         1.times { @individualserviceaward.contributiontocsiindserviceawards.build}
         1.times { @individualserviceaward.roleincsieventindserviceawards.build}
        
     end
     
     def create
-        @individualserviceaward = current_user.build_individualserviceaward(individualserviceaward_params)
+        @individualserviceaward = current_user.individualserviceawards.build(individualserviceaward_params)
         
         if @individualserviceaward.save
             flash[:notice] = " Your response has been recorded"

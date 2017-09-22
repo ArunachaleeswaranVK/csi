@@ -10,7 +10,6 @@ class Bestcsiinternationalstudentseventhost < ActiveRecord::Base
                     #          reject_if: ->(attrs) { attrs['city'].blank? || attrs['street'].blank? }
                     
      
-    validates :volunteers_added,  numericality: { only_integer: true }
-    validates :imno, presence: true
+    
     
 end

@@ -6,8 +6,6 @@ class Highestsponsorshipofcsievent < ActiveRecord::Base
     accepts_nested_attributes_for :supportforcsievents , allow_destroy: true 
     
      
-    validates :volunteers_added,  numericality: { only_integer: true }
-    validates :imno, presence: true
-     
+    
     
 end
