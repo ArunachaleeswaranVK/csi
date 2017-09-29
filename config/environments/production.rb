@@ -86,7 +86,7 @@ Rails.application.configure do
     :port => "587",
     :domain => "heroku.com",
     :authentication => :plain,
-    :user_name => "arun100bolt@gmail.com",
-    :password => "arun=BCE0509"
+    :user_name => "csiawards2017@gmail.com",
+    :password => "csiawards"
   }
 end
