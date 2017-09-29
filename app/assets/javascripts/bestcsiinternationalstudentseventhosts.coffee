@@ -21,7 +21,7 @@ $ ->
       $(this).remove()
       return
     return
-  ), 500
+  ), 2500
   return 
   $(document).ready(ready)
   $(document).on('page:load', ready)    
