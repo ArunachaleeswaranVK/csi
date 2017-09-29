@@ -9,20 +9,16 @@
 
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'instinprod.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'users.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
-  t = Institute.new
-  t.imno = row['IM No']
-  t.name = row['Instititution Name']
-  t.address = row['Address']
-  t.city = row['City']
-  t.state = row['State']
-  t.nominating_authority = row['Authority']
+  t = Csimember.new
+  t.email = row['email']
+
  
 
   t.save
-  puts "#{t.imno}, #{t.name} saved"
+  puts "#{t.imno}  saved"
 end
 
-puts "There are now #{Institute.count} rows in the transactions table"
+puts "There are now #{Csimember.count} rows in the transactions table"
