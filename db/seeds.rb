@@ -18,7 +18,7 @@ csv.each do |row|
  
 
   t.save
-  puts "#{t.imno}  saved"
+  puts "#{t.email}  saved"
 end
 
-puts "There are now #{Csimember.count} rows in the transactions table"
+puts "There are now #{Csimember.count} rows in the Csimember table"
