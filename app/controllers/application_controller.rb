@@ -3,7 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-  helper_method  :is_sbc? ,:current_sbc_user_data , :is_chairman? , :current_chairman_user_data
+  helper_method  :is_sbc? ,:current_sbc_user_data , :is_chairman? , :current_chairman_user_data , :is_csimember?
+  
+  def is_csimember?
+    Csimember.where(email: current_user.email).first
+  end  
+  
   
   def is_sbc?
     Sbc.where(sbc_email: current_user.email).first
@@ -23,5 +28,7 @@ class ApplicationController < ActionController::Base
     
     @current_chairman_user_data = Chapter.find_by(email: current_user.email)
     
-  end  
+  end 
+  
+  
 end

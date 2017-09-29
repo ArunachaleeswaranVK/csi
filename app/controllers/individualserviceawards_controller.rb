@@ -1,6 +1,8 @@
 class IndividualserviceawardsController < ApplicationController
+    
+     before_action :authenticate , only: [:new] 
      before_action :set_award , only: [:edit,:update,:show,:destroy]
-     before_action :authenticate , only: [:new]
+    
     # before_action :authenticate_user!, except: [:index,:show]
    
     

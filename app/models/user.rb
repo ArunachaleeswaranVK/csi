@@ -4,6 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable , :confirmable
          
+  after_create :skip_conf!
+
+  def skip_conf!
+    self.confirm if Rails.env.development?
+  end   
+         
   devise :authenticatable, :timeoutable, :validatable, :timeout_in => 15.minutes
          
   has_one :bestaccreditedstudentbranch , dependent: :destroy

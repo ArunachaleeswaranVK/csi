@@ -1,3 +1,4 @@
+<% if is_csimember? %>
 <%= render "nav" %>
 
 <h1 align="center" id="award-banner"></h1>
@@ -73,4 +74,8 @@
 </div>
 <% end %>
 </div>
+<% else %>
 
+<p class="jumbotron"> You do not seem like a Registered CSI Member.Please Sign in with your Email Id registered with CSI</p>
+ <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% end %>

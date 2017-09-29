@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928072004) do
+ActiveRecord::Schema.define(version: 20170929072100) do
 
   create_table "bestaccreditedstudentbranches", force: :cascade do |t|
     t.datetime "created_at",                                                     null: false
@@ -95,6 +95,14 @@ ActiveRecord::Schema.define(version: 20170928072004) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  create_table "csimembers", force: :cascade do |t|
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "csimembers", ["email"], name: "index_csimembers_on_email"
 
   create_table "detailsfornewsletterawards", force: :cascade do |t|
     t.date     "date_of_publication"

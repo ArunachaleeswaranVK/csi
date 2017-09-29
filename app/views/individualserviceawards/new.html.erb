@@ -1,3 +1,4 @@
+<% if is_csimember? %>
 <h3 align="center">Nomination Form for CSI Best Service Awards (Individual)</h2>
 <br>
 <% if is_chairman? %>
@@ -5,4 +6,5 @@
 <% else %>
 <p class="jumbotron">Only Chapter Chariman can fill this award</p>
 <p><%= link_to "Fill Other Awards", root_path %></p>
+<% end %>
 <% end %>
