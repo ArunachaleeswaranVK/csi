@@ -102,7 +102,7 @@ software competition participated by a minimum of 10 students from abroad 01/07/
         
 <%= f.label :attachment %>
         
-<%= f.filepicker_field :attachment , {max_files: 1 , button_text: "Upload Zip File" } %> <!-- User#avatar_url is a regular string column -->
+<%= f.filepicker_field :attachment , {mimetypes: "application/zip, application/octet-stream" , button_text: "Upload One Zip File" } %> <!-- User#avatar_url is a regular string column -->
     
   </div>
     
