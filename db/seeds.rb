@@ -9,11 +9,11 @@
 
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'users.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'individual.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
   t = Csimember.new
-  t.email = row['email']
+  t.email = row['emailAddress']
 
  
 
