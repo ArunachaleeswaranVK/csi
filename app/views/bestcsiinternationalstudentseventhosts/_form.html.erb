@@ -1,7 +1,7 @@
 
 <%= render 'shared/errors', object: @bestcsiinternationalstudentseventhost %>
 
-<%= form_for @bestcsiinternationalstudentseventhost, :html => {:class => "form-horizontal"} do |f| %>
+<%= form_for @bestcsiinternationalstudentseventhost, :html => {:id => "my-form" ,:class => "form-horizontal", :onsubmit => "return confirm('Are you sure you want to submit the award? (Click Cancel to Review for changes before submitting)');" } do |f| %>
 <p class="form-detail">(Awarded to the institutional members which hosted maximum number of CSI sponsored students’ 
 software competition participated by a minimum of 10 students from abroad 01/07/2016 to 30/06/2017)</p>      
      

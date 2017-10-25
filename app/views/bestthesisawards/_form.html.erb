@@ -1,7 +1,7 @@
 
 <%= render 'shared/errors', object: @bestthesisaward %>
 
-<%= form_for @bestthesisaward, :html => {:class => "form-horizontal"} do |f| %>
+<%= form_for @bestthesisaward, :html => {:id => "my-form" ,:class => "form-horizontal", :onsubmit => "return confirm('Are you sure you want to submit the award? (Click Cancel to Review for changes before submitting)');" } do |f| %>
  <p class="form-detail"> (Awarded to CSI Members for a high-quality thesis leading to acceptance for 
  Ph D degree by a recognized Indian Institution / University / Employer during 1/7/2016 and 30/6/2017) </p>     
      
@@ -135,7 +135,7 @@
     file in the link below , zip file size should be less than 20mb</strong></p>
      <br>
     
-     <div>
+      <div>
         
 <%= f.label :attachment %>
         
@@ -147,7 +147,7 @@
     
     <div class="form-group">
         <div class="col-md-offset-5 col-md-2">
-            <%= f.submit "Submit" , class: "btn btn-success btn-lg" %>
+            <%= f.submit "Submit" , class: "btn btn-success btn-lg"  %>
         </div>
     </div>
     

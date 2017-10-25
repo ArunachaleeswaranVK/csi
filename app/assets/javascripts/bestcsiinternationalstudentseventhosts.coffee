@@ -25,3 +25,6 @@ $ ->
   return 
   $(document).ready(ready)
   $(document).on('page:load', ready)    
+  
+$('#my-form').submit ->
+  confirm 'Are you sure you want to submit the award? (Click Cancel to Review for changes before submitting)'  

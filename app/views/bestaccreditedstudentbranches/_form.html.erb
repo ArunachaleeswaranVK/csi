@@ -1,7 +1,7 @@
 
 <%= render 'shared/errors', object: @bestaccreditedstudentbranch %>
 
-<%= form_for @bestaccreditedstudentbranch, :html => {:class => "form-horizontal"} do |f| %>
+<%= form_for @bestaccreditedstudentbranch, :html => {:id => "my-form" ,:class => "form-horizontal", :onsubmit => "return confirm('Are you sure you want to submit the award? (Click Cancel to Review for changes before submitting)');" } do |f| %>
 <p class="form-detail">(Awarded to the branch for ‘Best Performance’  during 01/07/2016 to 30/06/2017)</p>    
      
     <div class="primary-form">
@@ -237,14 +237,15 @@
         
 <%= f.label :attachment %>
         
-<%= f.filepicker_field :attachment %> <!-- User#avatar_url is a regular string column -->
+<%= f.filepicker_field :attachment , {mimetypes: "application/zip, application/octet-stream" , button_text: "Upload One Zip File" } %> <!-- User#avatar_url is a regular string column -->
     
   </div>
     
     
     <div class="form-group">
         <div class="col-md-offset-5 col-md-2">
-            <%= f.submit "Submit" , class: "btn btn-success btn-lg" %>
+            <%= f.submit "Submit" , class: "btn btn-success btn-lg" , data: 
+            { confirm: 'Do you want to Submit the award ? (Review for changes before submitting)' } %>
         </div>
     </div>
     

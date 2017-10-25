@@ -1,7 +1,7 @@
 
 <%= render 'shared/errors', object: @paperpresenter %>
 
-<%= form_for @paperpresenter, :html => {:class => "form-horizontal"} do |f| %>
+<%= form_for @paperpresenter, :html => {:id => "my-form" ,:class => "form-horizontal", :onsubmit => "return confirm('Are you sure you want to submit the award? (Click Cancel to Review for changes before submitting)');" } do |f| %>
 <p class="form-detail">(Awarded to the CSI member Faculty who presented papers at prestigious International Conferences 
 during 01/07/2016 to 30/06/2017) 
 </p>      

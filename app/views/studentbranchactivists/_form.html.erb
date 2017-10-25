@@ -1,7 +1,7 @@
 
 <%= render 'shared/errors', object: @studentbranchactivist %>
 
-<%= form_for @studentbranchactivist, :html => {:class => "form-horizontal"} do |f| %>
+<%= form_for @studentbranchactivist, :html => {:id => "my-form" ,:class => "form-horizontal", :onsubmit => "return confirm('Are you sure you want to submit the award? (Click Cancel to Review for changes before submitting)');" } do |f| %>
  <p class="form-detail">(Awarded to the CSI Volunteer who was most active at
  CSI Student Branch during 01/07/2016 to 30/06/2017) </p>     
     <p class="primary-form-subheading">Institution Details</p> 

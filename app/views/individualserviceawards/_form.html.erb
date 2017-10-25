@@ -1,7 +1,7 @@
 
 <%= render 'shared/errors', object: @individualserviceaward %>
 
-<%= form_for @individualserviceaward, :html => {:class => "form-horizontal"} do |f| %>
+<%= form_for @individualserviceaward, :html => {:id => "my-form" ,:class => "form-horizontal", :onsubmit => "return confirm('Are you sure you want to submit the award? (Click Cancel to Review for changes before submitting)');" } do |f| %>
 
      
    <div class="row">

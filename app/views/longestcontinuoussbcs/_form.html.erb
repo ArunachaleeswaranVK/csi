@@ -1,7 +1,7 @@
 
 <%= render 'shared/errors', object: @longestcontinuoussbc %>
 
-<%= form_for @longestcontinuoussbc, :html => {:class => "form-horizontal"} do |f| %>
+<%= form_for @longestcontinuoussbc, :html => {:id => "my-form" ,:class => "form-horizontal", :onsubmit => "return confirm('Are you sure you want to submit the award? (Click Cancel to Review for changes before submitting)');" } do |f| %>
 <p class="form-detail">(Awarded to the Student Branch Counsellor with longest continuous tenure at one or more colleges as SBC
 over the past 3 years)
 </p>      
