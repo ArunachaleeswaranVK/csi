@@ -1,7 +1,7 @@
 class StudentbranchactivistsController < ApplicationController
     
     before_action :authenticate , only: [:new] 
-     before_action :limit_award, only: [:new, :create]   
+     
      before_action :set_award , only: [:edit,:update,:show,:destroy]
    
     # before_action :authenticate_user!, except: [:index,:show]
@@ -20,12 +20,12 @@ class StudentbranchactivistsController < ApplicationController
     end    
     
     def new
-        @studentbranchactivist = current_user.build_studentbranchactivist
+        @studentbranchactivist = current_user.studentbranchactivists.build
         2.times { @studentbranchactivist.eventdetailsbystudentactivists.build}
     end
     
     def create
-        @studentbranchactivist = current_user.build_studentbranchactivist(studentbranchactivist_params)
+        @studentbranchactivist = current_user.studentbranchactivists.build(studentbranchactivist_params)
         
         if @studentbranchactivist.save
             flash[:notice] = " Your response has been recorded"
@@ -70,12 +70,5 @@ class StudentbranchactivistsController < ApplicationController
        @studentbranchactivist = Studentbranchactivist.find(params[:id])
     end
     
-    def limit_award
-      user_award = current_user.studentbranchactivistaward_review(@bestaccreditedstudentbranch)
-
-      if user_award
-        redirect_to root_path
-        flash[:notice] = " You can submit only one award"
-      end 
-    end
+    
 end

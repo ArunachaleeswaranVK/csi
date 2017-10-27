@@ -194,5 +194,11 @@ div.form-group.sf{
     color: #8d9d9d;
     bottom: 0;
    
-    width: 82em;
+   .left{
+       padding-left: 1em;
+   }
+   .right{
+    padding-left: 16em;
+    padding-right: 1em;
+   }
 }

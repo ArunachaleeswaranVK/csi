@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   has_one :facmaxpublishing , dependent: :destroy 
   has_one :paperpresenter , dependent: :destroy 
   has_one :studentmaxpublishing , dependent: :destroy 
-  has_one :studentbranchactivist , dependent: :destroy 
+  has_many :studentbranchactivists , dependent: :destroy 
   has_one :bestthesisaward , dependent: :destroy 
   has_one :regionalchapteraward , dependent: :destroy 
   # ask and change it to has many
@@ -51,9 +51,7 @@ class User < ActiveRecord::Base
     
   end
   
-  def studentbranchactivistaward_review(award)
-    Studentbranchactivist.where(user_id: self).first.present?
-  end
+ 
   
   def facmaxpublishingaward_review(award)
     Facmaxpublishing.where(user_id: self).first.present?
