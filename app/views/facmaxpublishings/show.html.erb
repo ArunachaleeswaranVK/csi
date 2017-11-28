@@ -1,0 +1,80 @@
+  <div>
+       <h1 class="show-head">Faculty with maximum publishing in CSI Publications Award</h1>
+       <p class="show-submitted-by">Submitted by: <%= @facmaxpublishing.user.email %></p>
+    </div>
+    
+
+    
+    <div class="row">
+        <br></br>
+      <p class="primary-form-subheading">Faculty Details</p>  
+    <div class="form-group col-md-3">
+     <label>Faculty Name</label>
+     <input type="text" class="form-control" id="name" value="<%= @facmaxpublishing.faculty_name %>" >   
+    </div>
+    <div class="form-group col-md-2">
+      <label>Csi membership No</label>
+     <input type="text" class="form-control" id="name" value="<%= @facmaxpublishing.candidate_csi_membership_no %>" >   
+    </div>
+    <div class="form-group col-md-2">
+      <label>Valid Till</label>
+     <input type="text" class="form-control" id="name" value="<%= @facmaxpublishing.valid_till %>" >   
+    </div>
+    <div class="form-group col-md-3">
+      <label>Faculty Email</label>
+     <input type="text" class="form-control" id="name" value="<%= @facmaxpublishing.faculty_email %>" >   
+    </div>
+    
+    
+    <!--remove this field from db -->
+    
+    
+    <div class="form-group col-md-2">
+      <label>Has student Branch</label>
+     <input type="text" class="form-control" id="name" value="<%= @facmaxpublishing.has_student_branch %>" >   
+    </div>
+   
+    </div>
+     <div class="row">
+         <br></br>
+    <p class="primary-form-subheading">Details of publishing in CSIC by the nominated Faculty</p>
+    
+    <br>
+   
+      <div class="col-md-4"><p class="subform-head"><strong>Article Title</strong></p></div>
+      <div class="col-md-3"><p  class="subform-head"><strong>Published in (CSIC / Journal)</strong></p></div>
+      <div class="col-md-4"><p><strong>Month & year of publishing</strong></p></div>
+      <% @facmaxpublishing.publishingdetailbyfaculties.each do |i| %>
+         
+          
+
+
+
+
+
+<div class="nested-fields">
+
+<div class="form-group sf col-md-4">
+        
+        <p><%= i.article_title %></p>
+</div>
+
+<div class="form-group sf col-md-3">
+        
+      <p><%= i.published_in %></p>
+</div>
+
+<div class="form-group sf col-md-5">
+        
+        
+         <p><%= i.date_of_publishing %></p>
+</div>
+
+</div> 
+
+
+      <% end %>
+      </div>
+    
+    
+<br></br>

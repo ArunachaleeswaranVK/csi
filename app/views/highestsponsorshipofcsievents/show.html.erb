@@ -1,0 +1,124 @@
+   <div>
+       <h1 class="show-head">Highest Sponsorship of CSI Event Award</h1>
+       <p class="show-submitted-by">Submitted by: <%= @highestsponsorshipofcsievent.user.email %></p>
+    </div>  
+    <div class="primary-form">
+    <div class="row institution-details">
+      <!--institution details-->
+    <p class="primary-form-subheading">Institution Details</p>  
+    <div class="form-group col-md-6">
+     <label>Institution Name</label>
+     <input type="text" class="form-control" id="name" value="<%= @highestsponsorshipofcsievent.institute.name %>" >     
+    </div>
+   
+   <div class="form-group col-md-3">
+      <label>IMNO</label>
+     <input type="text" class="form-control" id="name" value="<%= @highestsponsorshipofcsievent.institute.imno %>" >  
+    </div>
+    
+    <div class="form-group col-md-3">
+      <label>Institution Name</label>
+     <input type="text" class="form-control" id="name" value="<%= @highestsponsorshipofcsievent.institute.city %>" >  
+    </div>
+    
+   
+    
+    
+    
+    <!--sbc details-->
+    <p class="primary-form-subheading">SBC Details</p>    
+    <div class="sbc-details">
+        <div class="form-group col-md-3">
+      <label>Name</label>
+      <input type="text" class="form-control" id="sbc-name" value="<%= @highestsponsorshipofcsievent.institute.sbcs.first.sbc_name %>" >
+    </div>
+    
+    
+    <div class="form-group col-md-3">
+      <label>Email</label>
+      <input type="email" class="form-control" id="sbc-email" value="<%=  @highestsponsorshipofcsievent.institute.sbcs.first.sbc_email %>" > 
+    </div>
+    
+   </div>
+    
+    <!--form specific feilds-->
+    
+    
+      
+    <div class="form-group col-md-3">
+      <label>Volunteers</label>
+      <input type="text" class="form-control" id="volunteers" title="Number of CSI Volunteers as on 30th  June  2017" 
+      value="<%=  @highestsponsorshipofcsievent.institute.sbcs.first.no_of_volunteers %>" > 
+    </div>
+    <div class="form-group col-md-3">
+         <label>Volunteers added</label>
+      <input type="text" class="form-control" id="volunteers" title="Number of CSI Volunteers Added" 
+      value="<%=  @highestsponsorshipofcsievent.volunteers_added %>" > 
+    </div>
+    </div>
+    </div>
+    
+    
+    <!--nested form-->
+    
+      <div class="row">
+      
+    <p class="primary-form-subheading">Details of support extended for CSI event
+    organised by CSI Chapters / Divisions / SIGs <small>(Do not include College organised events)</small>: </p>
+    
+    <br></br>
+  
+      
+      <div class="col-md-2"><p class="subform-head"><strong>Name of the Event</strong></p></div>
+      <div class="col-md-2"><p class="subform-head"><strong>Date of the Event</strong></p></div>
+      <div class="col-md-3"><p class="subform-head"><strong>Organised By</strong></p></div>
+      <div class="col-md-2"><p class="subform-head"><strong>Support Details</strong></p></div>
+      <div class="col-md-2"><p ><strong>Monetary Value (INR)</strong></p></div>
+      
+      
+      <% @highestsponsorshipofcsievent.supportforcsievents.each do |i| %>
+         
+          
+
+
+
+
+
+<div class="nested-fields">
+
+<div class="form-group sf col-md-2">
+        
+        <p><%= i.name_of_event %></p>
+</div>
+
+<div class="form-group sf col-md-2">
+        
+      <p><%= i.date_of_event %></p>
+</div>
+
+<div class="form-group sf col-md-3">
+        
+        
+         <p><%= i.organised_by %></p>
+</div>
+<div class="form-group sf col-md-2">
+        
+       <p><%= i.support_details %></p>
+       
+       
+</div>
+<div class="form-group sf col-md-3">
+        
+       <p><%= i.monetary_value %></p>
+       
+       
+</div>
+</div> 
+
+
+      <% end %>
+    </div>
+    
+
+    
+<br></br>

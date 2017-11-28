@@ -1,0 +1,241 @@
+<div>
+       <h1 class="show-head">Best Accredited Student Branch Award</h1>
+       <p class="show-submitted-by">Submitted by: <%= @bestaccreditedstudentbranch.user.email %></p>
+    </div>
+
+<div class="row institution-details">
+      <!--institution details-->
+    <p class="primary-form-subheading">Institution Details</p>
+    
+    <div class="col-md-5">
+     <h4>Institution Name</h4>
+     <p><%= @bestaccreditedstudentbranch.institute.name %></p>    
+    </div>
+    
+    <div class="col-md-2">
+      <h4>IMNO</h4>
+     <p><%= @bestaccreditedstudentbranch.institute.imno %></p>    
+    </div>
+    
+    
+    
+    
+    <div class="col-md-2">
+      <h4>City</h4>
+     <p><%= @bestaccreditedstudentbranch.institute.city %></p>     
+    </div>
+   
+    
+    
+   
+    <div class="col-md-3">
+      <h4>Volunteers Added</h4>
+     <p><%= @bestaccreditedstudentbranch.volunteers_added %></p>     
+    </div>
+    </div>
+     <!--form specific details-->
+    
+    <div class="row">
+        
+    <div class="col-md-6 accredited-subform">
+    <p class="primary-form-subheading">Details of different programs organised</p>
+    
+    <table class="table table-bordered table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>No.of activities organised</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Expert Lecture</td>
+        <td class="form-group col-md-2">
+        
+          <p><%= @bestaccreditedstudentbranch.program_organised_expert_lecture_no_of_activities %></p>
+        
+        </td>
+      </tr>
+      <tr>
+        <td>Seminars / Technical workshop</td>
+        <td class="form-group col-md-2">
+          <p><%= @bestaccreditedstudentbranch.program_organised_seminars_workshops_no_of_activities %></p>
+        </td>
+      </tr>
+      <tr>
+        <td>Short term training program</td>
+        <td class="form-group col-md-2">
+         <p><%= @bestaccreditedstudentbranch.program_organised_short_term_training_program_no_of_activities %></p>
+       
+        </td>
+      </tr>
+      <tr>
+        <td>Inter college Symposium</td>
+        <td class="form-group col-md-2">
+            <p><%= @bestaccreditedstudentbranch.program_organised_symposium_no_of_activities %></p>
+        
+        </td>
+      </tr>
+      <tr>
+        <td>Motivational talks</td>
+        <td class="form-group col-md-2">
+            <p><%= @bestaccreditedstudentbranch.program_organised_motivational_talks_no_of_activities %></p>
+       
+        </td>
+      </tr>
+    </tbody>
+  </table>
+    
+   
+    
+    </div>
+    <div class="col-md-6 accredited-subform">  
+    <p class="primary-form-subheading">Student Branch Membership</p>
+    
+    <div class="row">
+   <div class="col-md-12">          
+  <table class="table table-bordered">
+    
+    <tbody>
+      <tr>
+        <td><strong>Institution Category :</strong></td>
+        <td><%= @bestaccreditedstudentbranch.student_branch_membership_institution_category %></td>
+       
+      </tr>
+      <tr>
+        <td><strong>No. of Volunteers in Student branch :</strong></td>
+        <td><%= @bestaccreditedstudentbranch.student_branch_membership_no_of_volunteers %></td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+    </div> 
+    <p class="primary-form-subheading">Competitions and Contests organised</p>
+    
+    
+     
+    <div class="row">
+   <div class="col-md-12">          
+  <table class="table table-bordered">
+    
+    <tbody>
+      <tr>
+        <td><strong>No of competitions held for students :</strong></td>
+        <td><%= @bestaccreditedstudentbranch.number_of_contests_organised_for_students %></td>
+       
+      </tr>
+      
+      
+    </tbody>
+  </table>
+</div>
+    </div>
+    
+    
+    
+    
+    
+      
+    <p class="primary-form-subheading">Convention/Conference organised</p>
+    <div class="row">
+   <div class="col-md-12">          
+  <table class="table table-bordered">
+    
+    <tbody>
+      <tr>
+        <td><strong>Convention Type :</strong></td>
+        <td><%= @bestaccreditedstudentbranch.convention_seminar_type %></td>
+       
+      </tr>
+      <tr>
+        <td><strong>No. of Events :</strong></td>
+        <td><%= @bestaccreditedstudentbranch.convention_seminar_no_of_events_organised %></td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+    </div>
+    
+    
+   
+    </div>
+    </div>
+
+    
+    <div class="row">
+    <div class="col-md-12 accredited-subform">   
+    <p class="primary-form-subheading">No. of Faculties as CSI memebers</p>
+    
+    
+    <table class="table table-bordered table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Institution Category</th>
+        <th>Life memebers</th>
+        <th>Annual memebers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="form-group col-md-6"> 
+        <%= @bestaccreditedstudentbranch.no_of_faculty_as_csi_members_institution_category %>
+        </td>
+        <td class="form-group col-md-3">
+            <%= @bestaccreditedstudentbranch.no_of_faculty_as_csi_members_life %>
+        </td>
+        <td class="form-group col-md-3">
+           <%= @bestaccreditedstudentbranch.no_of_faculty_as_csi_members_annual %>
+        </td>
+      </tr>
+      
+    </tbody>
+    </table>
+    
+    
+    
+    </div>
+    </div>
+  
+<div class="row container">
+              
+  <table class="table table-bordered">
+    
+    <tbody>
+      <tr>
+        <td><%= @bestaccreditedstudentbranch.student_branch_website_url %></td>
+        
+      </tr>
+      <tr>
+        <td><strong>Managing Committee Elected during the year ? :</strong></td>
+        <td><%= @bestaccreditedstudentbranch.managing_committee_elected %></td>
+        
+      </tr>
+      <tr>
+        <td><strong>Technical Newsletter Type :</strong></td>
+        <td><%= @bestaccreditedstudentbranch.newsletter_type %></td>
+        
+      </tr>
+      <tr>
+        <td><strong>No of issues published :</strong></td>
+        <td><%= @bestaccreditedstudentbranch.no_of_issues_published_in_newsletter %></td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+ <br></br>    
+
+<div>
+  <%= filepicker_image_tag @bestaccreditedstudentbranch.attachment %>
+</div>
+    
+   
+    
+    
+ 
+    
+

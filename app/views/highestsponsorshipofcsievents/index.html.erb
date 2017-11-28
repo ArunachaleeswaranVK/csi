@@ -1,0 +1,11 @@
+
+<h1 class="to-underline">Highest Sponsorship of CSI Event Awards</h1>
+<h3>Total Number of Awards : <%= Highestsponsorshipofcsievent.count %></h3>
+<ol>
+<% @highestsponsorshipofcsievents.each do |i| %>
+    
+    <h3><li>User :<%= link_to i.user.email , i %> | Institute : <%= i.institute.name %>
+    </li></h3>
+ 
+<% end %>    
+</ol>

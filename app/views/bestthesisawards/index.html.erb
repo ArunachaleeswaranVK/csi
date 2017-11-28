@@ -1,0 +1,12 @@
+ 
+<h1 class="to-underline">Best Ph D Thesis Awards</h1>
+<h3>Total Number of Awards : <%= Bestthesisaward.count %></h3>
+<ol>
+<% @bestthesisawards.each do |i| %>
+    
+    <h3><li>User :<%= link_to i.user.email , i %> | Candidate Name : <%= i.name_of_candidate %> 
+    | CSI Mem. No: <%= i.candidate_csi_membership_no %>
+    </li></h3>
+ 
+<% end %>    
+</ol>

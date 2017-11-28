@@ -1,0 +1,137 @@
+<div>
+       <h1 class="show-head">Best Thesis Award</h1>
+       <p class="show-submitted-by">Submitted by: <%= @bestthesisaward.user.email %></p>
+</div>
+    <div class="primary-form">
+    <div class="row institution-details">
+      <!--institution details-->
+    
+    <div class="form-group col-md-6">
+      <label>Institution Name</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.name_of_nominating_institution %>" >
+    </div>
+    <div class="form-group col-md-6">
+      <label>Address</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.address %>" >
+    </div>
+    <div class="form-group col-md-4">
+      <label>Recognised By</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.recognized_by %>" >
+    </div>
+    <div class="form-group col-md-5">
+      <label>Reference number of recognition</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.reference_number_of_recognition %>" >
+    </div>
+    <div class="form-group col-md-3">
+     <label>Date of recognition</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.date_of_recognition %>" >
+    </div>
+     <p class="primary-form-subheading">Nominator Details</p>
+    <div class="form-group col-md-3">
+     <label>Name of nominator</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.name_of_nominator %>" >
+    </div>
+    <div class="form-group col-md-3">
+      <label>Designation of nominator</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.designation_of_nominator %>" >
+    </div>
+    <div class="form-group col-md-3">
+      <label>Nominator email</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.nominator_email %>" >
+    </div>
+    <div class="form-group col-md-3">
+      <label>Nominator phone</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.nominator_phone %>" >
+    </div>
+    <p class="primary-form-subheading">Candidate Details</p>
+    <div class="form-group col-md-3">
+      <label>Name of candidate</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.name_of_candidate %>" >
+    </div>
+    <div class="form-group col-md-3">
+      <label>Candidate Email</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.candidate_email %>" >
+    </div>
+    
+    <div class="form-group col-md-3">
+     <label>Candidate csi membership no</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.candidate_csi_membership_no %>" >
+    </div>
+    <div class="form-group col-md-3">
+     <label>Valid till</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.valid_till %>" >
+    </div>
+    <div class="form-group col-md-3">
+     <label>Candidate phone</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.candidate_phone %>" >
+    </div>
+    <div class="form-group col-md-6">
+     <label>Thesis title</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.thesis_title %>" >
+    </div>
+    <div class="form-group col-md-3">
+      <label>Defence of disserection</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestthesisaward.defence_of_dissertation_date %>" >
+    </div>
+  
+
+     
+    
+    </div>
+    </div>
+    <!--sub form details-->
+    
+    
+    <p class="primary-form-subheading">Record of Publications of the work:</p>
+    
+    
+    <br>
+    <div class="row">
+      <div class="col-md-3"><p class="subform-head"><strong>Publication in Conference or Journal</strong></p></div>
+      <div class="col-md-2"><p  class="subform-head"><strong>Name</strong></p></div>
+      <div class="col-md-2"><p><strong>Date</strong></p></div>
+      <div class="col-md-5"><p><strong>Citation</strong></p></div>
+      
+      <% @bestthesisaward.recordforthesisawards.each do |i| %>
+         
+          
+
+<div class="row">
+
+
+
+<div class="nested-fields">
+
+<div class="form-group sf col-md-3">
+        
+        <p><%= i.conference_or_journal %></p>
+</div>
+
+<div class="form-group sf col-md-2">
+        
+      <p><%= i.name %></p>
+</div>
+
+<div class="form-group sf col-md-2">
+        
+        
+         <p><%= i.date %></p>
+</div>
+<div class="form-group sf col-md-5">
+        
+       <p><%= i.citation %></p>
+       
+       
+</div>
+
+
+
+
+
+</div> 
+</div>
+
+      <% end %>
+    </div>
+   
+<br></br>

@@ -1,0 +1,218 @@
+<div>
+       <h1 class="show-head">Individual Service Award</h1>
+       <p class="show-submitted-by">Submitted by: <%= @individualserviceaward.user.email %></p>
+    </div>
+
+   <div class="row">
+    <div class="form-group col-md-8">
+       <label>Applying For</label>
+     <input type="text" class="form-control" id="name" value="<%= @individualserviceaward.applying_for %>" >   
+    </div>
+    
+   <div class="form-group col-md-4">
+      <label>Chapter</label>
+     <input type="text" class="form-control" id="name" value="<%= @individualserviceaward.chapter %>" >   
+<br>
+    </div>
+    
+    <!--applicant details-->
+
+      
+   
+           
+<br></br>
+     <p class="primary-form-subheading">Applicant Details</p>  
+    <div class="form-group col-md-4">
+      <label>Name</label>
+     <input type="text" class="form-control" id="name" value="<%= @individualserviceaward.applicant_name %>" >   
+    </div>
+    <div class="form-group col-md-3">
+      <label>CSI membership No</label>
+     <input type="text" class="form-control" id="name" value="<%= @individualserviceaward.applicant_csi_mem_no %>" >   
+    </div>
+    <div class="form-group col-md-2">
+      <label>Csi Member since</label>
+     <input type="text" class="form-control" id="name" value="<%= @individualserviceaward.applicant_csi_mem_since %>" >   
+    </div>
+    <div class="form-group col-md-3">
+      <label>Phone</label>
+     <input type="text" class="form-control" id="name" value="<%= @individualserviceaward.applicant_phone %>" >   
+    </div>
+    <div class="form-group col-md-3">
+      <label>Mobile</label>
+     <input type="text" class="form-control" id="name" value="<%= @individualserviceaward.applicant_mobile %>" >   
+    </div>
+    <div class="form-group col-md-3">
+      <label>Email</label>
+     <input type="text" class="form-control" id="name" value="<%= @individualserviceaward.applicant_email %>" >   
+    </div>
+    <div class="form-group col-md-2">
+      <label>D.O.B</label>
+     <input type="text" class="form-control" id="name" value="<%= @individualserviceaward.applicant_dob %>" >   
+    </div>
+    <div class="form-group col-md-2">
+      <label>Educational Qualification</label>
+     <input type="text" class="form-control" id="name" value="<%= @individualserviceaward.applicant_educational_qualification %>" >   
+    </div>
+    <div class="form-group col-md-2">
+      <label>Experience</label>
+     <input type="text" class="form-control" id="name" value="<%= @individualserviceaward.applicant_experience %>" >   
+    </div>
+    
+    
+    
+   </div>
+   
+   
+   
+   
+   
+    <!--sub form details-->
+    <div>
+            
+<br></br>
+    <p class="primary-form-subheading">Holding any position in CSI present or past ( in chronological order)</p>
+    
+    
+    <br>
+    <div class="row">
+      <div class="col-md-2"><p class="subform-head"><strong>Year</strong></p></div>
+      <div class="col-md-5"><p  class="subform-head"><strong>Name of the position</strong></p></div>
+      <div class="col-md-5"><p  class="subform-head"><strong>Achievement</strong></p></div>
+      <% @individualserviceaward.contributiontocsiindserviceawards.each do |i| %>
+         
+          
+
+<div class="row">
+
+
+
+<div class="nested-fields">
+
+<div class="form-group sf col-md-2">
+        
+        <p><%= i.year %></p>
+</div>
+
+<div class="form-group sf col-md-5">
+        
+      <p><%= i.name_of_position %></p>
+</div>
+<div class="form-group sf col-md-5">
+       
+      <p><%= i.achievement %></p>
+      
+</div>
+
+
+
+</div> 
+</div>
+
+      <% end %>
+    </div>
+    
+
+    </div>
+    
+    <div>
+            
+<br></br>
+    <p class="primary-form-subheading">Role in conducting CSI Events
+    (Conference, Seminar, Workshop, Symposium and any other technical events)</p>
+    
+   			
+    
+    <br>
+    <div class="row">
+      <div class="col-md-2"><p class="subform-head"><strong>Date</strong></p></div>
+      <div class="col-md-2"><p  class="subform-head"><strong>Name of the Event</strong></p></div>
+      <div class="col-md-2"><p class="subform-head"><strong>Type</strong></p></div>
+      <div class="col-md-2"><p  class="subform-head"><strong>Surplus Amount</strong></p></div>
+      <div class="col-md-2"><p class="subform-head"><strong>Role played by Applicant</strong></p></div>
+      <div class="col-md-2"><p  class="subform-head"><strong># quality papers received</strong></p></div>
+     <% @individualserviceaward.roleincsieventindserviceawards.each do |i| %>
+         
+          
+
+<div class="row">
+
+
+
+<div class="nested-fields">
+
+<div class="form-group sf col-md-2">
+        
+        <p><%= i.date_of_event %></p>
+</div>
+
+<div class="form-group sf col-md-2">
+        
+      <p><%= i.name_of_event %></p>
+</div>
+<div class="form-group sf col-md-2">
+        
+      <p><%= i.type_of_event %></p>
+</div>
+<div class="form-group sf col-md-2">
+        
+      <p><%= i.surplus_amount %></p>
+</div>
+<div class="form-group sf col-md-2">
+        
+      <p><%= i.role %></p>
+</div>
+<div class="form-group sf col-md-2">
+        
+      <p><%= i.no_of_paper_received %></p>
+</div>
+
+
+</div> 
+</div>
+
+      <% end %>
+    </div>
+    
+
+    
+    
+    
+   
+    <!--end of sub forms-->
+    
+        
+       
+    <div class="row">
+       <br></br>
+      <div class="form-group col-md-6">
+      <h4 class="to-underline">Role in CSI membership promotion</h4>
+     
+     
+     <p><%= @individualserviceaward.role_in_csi_membership_promotion_in_chapter %></p>
+     
+    </div>
+    <div class="form-group col-md-6">
+     
+      <h4  class="to-underline">Mebership in other socities</h4>
+     
+    
+     <p><%= @individualserviceaward.membership_in_other_societies %></p>
+     
+    </div>
+    <div class="form-group col-md-6">
+     
+     <h4  class="to-underline">Publicaiton details</h4>
+     <p> <%= @individualserviceaward.publication_details %></p>
+     
+    </div>
+    <div class="form-group col-md-6">
+   
+      <h4  class="to-underline">Other info</h4>
+      <p><%= @individualserviceaward.other_info %></p>
+   
+    </div>
+    
+    </div>
+    
+<br></br>

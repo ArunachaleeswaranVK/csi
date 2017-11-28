@@ -1,0 +1,129 @@
+  <div>
+       <h1 class="show-head">Highest Committed Student Branch Activist Award</h1>
+       <p class="show-submitted-by">Submitted by: <%= @studentbranchactivist.user.email %></p>
+    </div>
+    
+   
+     
+    <div class="primary-form">
+    <div class="row institution-details">
+      <!--institution details-->
+    <p class="primary-form-subheading">Institution Details</p>  
+    <div class="form-group col-md-6">
+     <label>Institution Name</label>
+     <input type="text" class="form-control" id="name" value="<%= @studentbranchactivist.institute.name %>" >     
+    </div>
+   
+   <div class="form-group col-md-3">
+      <label>IMNO</label>
+     <input type="text" class="form-control" id="name" value="<%= @studentbranchactivist.institute.imno %>" >  
+    </div>
+    
+    <div class="form-group col-md-3">
+      <label>City</label>
+     <input type="text" class="form-control" id="name" value="<%= @studentbranchactivist.institute.city %>" >  
+    </div>
+    
+   
+    
+    
+    
+    <!--sbc details-->
+    <p class="primary-form-subheading">SBC Details</p>    
+    <div class="sbc-details">
+        <div class="form-group col-md-3">
+      <label>Name</label>
+      <input type="text" class="form-control" id="sbc-name" value="<%= @studentbranchactivist.institute.sbcs.first.sbc_name %>" >
+    </div>
+    
+    
+    <div class="form-group col-md-3">
+      <label>Email</label>
+      <input type="email" class="form-control" id="sbc-email" value="<%=  @studentbranchactivist.institute.sbcs.first.sbc_email %>" > 
+    </div>
+    
+   </div>
+    
+    <!--form specific feilds-->
+    
+    
+      
+    <div class="form-group col-md-3">
+      <label>Volunteers</label>
+      <input type="text" class="form-control" id="volunteers" title="Number of CSI Volunteers as on 30th  June  2017" 
+      value="<%=  @studentbranchactivist.institute.sbcs.first.no_of_volunteers %>" > 
+    </div>
+    <div class="form-group col-md-3">
+         <label>Volunteers added</label>
+      <input type="text" class="form-control" id="volunteers" title="Number of CSI Volunteers Added" 
+      value="<%=  @studentbranchactivist.volunteers_added %>" > 
+    </div>
+    
+    
+    
+     <!--form specific details-->
+    
+    <p class="primary-form-subheading">Volunteer Details</p>  
+      
+    <div class="form-group col-md-3">
+     <label>Csi volunteer Name</label>
+     <input type="text" class="form-control" id="name" value="<%= @studentbranchactivist.csi_volunteer_name %>" >  
+    </div>
+    <div class="form-group col-md-3">
+      <label>Volunteer email</label>
+     <input type="text" class="form-control" id="name" value="<%= @studentbranchactivist.csi_volunteer_email %>" >  
+    </div>
+    <div class="form-group col-md-3">
+      <label>Csi volunteer id</label>
+     <input type="text" class="form-control" id="name" value="<%= @studentbranchactivist.csi_volunteer_id %>" >  
+    </div>
+    
+    <div class="form-group col-md-3">
+      <label>Valid till</label>
+     <input type="text" class="form-control" id="name" value="<%= @studentbranchactivist.valid_till %>" >  
+    </div>
+   
+    </div>
+    </div>
+    
+     <div class="row">
+   <p class="primary-form-subheading">Event Details:</p>  
+    
+    <br>
+   
+      <div class="col-md-3"><p class="subform-head"><strong>Event name</strong></p></div>
+      <div class="col-md-3"><p  class="subform-head"><strong>Event held at which Place</strong></p></div>
+      <div class="col-md-6"><p><strong>Role played</strong></p></div>
+       <% @studentbranchactivist.eventdetailsbystudentactivists.each do |i| %>
+         
+          
+
+
+
+
+
+<div class="nested-fields">
+
+<div class="form-group sf col-md-3">
+        
+        <p><%= i.event_name %></p>
+</div>
+
+<div class="form-group sf col-md-3">
+        
+      <p><%= i.event_place %></p>
+</div>
+
+<div class="form-group sf col-md-6">
+        
+        
+         <p><%= i.role_played %></p>
+</div>
+
+</div> 
+
+
+      <% end %>
+    </div>
+
+<br></br>

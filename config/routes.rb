@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
  
 
+  get 'allawards/index'
+
   devise_for :users
   
   resources :users, only: [:show]
@@ -23,36 +25,36 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   
-  resources :bestaccreditedstudentbranches , only: [:new, :create]
+  resources :bestaccreditedstudentbranches 
   
-  resources :bestcsiinternationalstudentseventhosts , only: [:new, :create]
+  resources :bestcsiinternationalstudentseventhosts
   get '/bestcsiinternationalstudentseventhosts/getname/:name' => 'bestcsiinternationalstudentseventhosts#getname' , 
   :constraints => { :name => /[^\/]+/ }
   
-  resources :highestsponsorshipofcsievents , only: [:new, :create]
+  resources :highestsponsorshipofcsievents 
   get '/highestsponsorshipofcsievents/getname/:name' => 'highestsponsorshipofcsievents#getname'
   
-  resources :longestcontinuoussbcs , only: [:new, :create]
+  resources :longestcontinuoussbcs 
   get '/longestcontinuoussbcs/getname/:name' => 'longestcontinuoussbcs#getname'
   
-  resources :facmaxpublishings , only: [:new, :create]
+  resources :facmaxpublishings 
   
   
   
   
-  resources :paperpresenters , only: [:new, :create]
+  resources :paperpresenters 
   
-  resources :studentmaxpublishings , only: [:new, :create]
+  resources :studentmaxpublishings 
   
-  resources :studentbranchactivists , only: [:new, :create]
+  resources :studentbranchactivists 
   
-  resources :bestthesisawards , only: [:new, :create]
+  resources :bestthesisawards 
   
-  resources :regionalchapterawards , only: [:new, :create]
+  resources :regionalchapterawards 
   
-  resources :individualserviceawards , only: [:new, :create]
+  resources :individualserviceawards 
   
-  resources :newsletterawards , only: [:new, :create]
+  resources :newsletterawards 
   
   resources :institutes , param: :imno do
     get :autocomplete_institute_name, :on => :collection

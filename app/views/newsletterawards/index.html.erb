@@ -1,0 +1,12 @@
+
+<h1 class="to-underline">Best Chapter Newsletter Awards</h1>
+<h3>Total Number of Awards : <%= Newsletteraward.count %></h3>
+<ol>
+<% @newsletterawards.each do |i| %>
+    
+    <h3><li>User :<%= link_to i.user.email , i %> | Chapter Name : <%= i.chapter %> 
+    
+    </li></h3>
+ 
+<% end %>    
+</ol>

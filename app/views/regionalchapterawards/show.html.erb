@@ -1,0 +1,208 @@
+<div>
+       <h1 class="show-head">Regional Chapter Award</h1>
+       <p class="show-submitted-by">Submitted by: <%= @regionalchapteraward.user.email %></p>
+    </div>
+     
+   <div class="row">
+    <div class="form-group col-md-8">
+     <label>Category</label>
+     <input type="text" class="form-control" id="name" value="<%= @regionalchapteraward.category %>" >   
+    </div>
+    
+    <div class="form-group col-md-4">
+      <label>Chapter</label>
+     <input type="text" class="form-control" id="name" value="<%= @regionalchapteraward.chapter %>" >   
+<br>
+    </div>
+    
+    
+    <div class="row">
+    
+    <div class="col-md-8">
+      <div class="col-md-6">
+       <p class="primary-form-subheading">Membership Count Till March 2016</p>
+    <div class="form-group col-md-6">
+       <label>Annual Members</label>
+     <input type="text" class="form-control" id="name" value="<%= @regionalchapteraward.members_number_till_previous_year %>" >   
+    </div>
+    <div class="form-group col-md-6">
+      <label>Life Members</label>
+     <input type="text" class="form-control" id="name" value="<%= @regionalchapteraward.members_percentage_till_previous_year %>" >  
+    </div>
+    </div>
+    <div class="col-md-6">
+      <p class="primary-form-subheading">Membership Count Till March 2017</p>
+    <div class="form-group col-md-6">
+      <label>Annual Members</label>
+     <input type="text" class="form-control" id="name" value="<%= @regionalchapteraward.members_number_till_current_year %>" >  
+    </div>
+    <div class="form-group col-md-6">
+     <label>Life Members</label>
+     <input type="text" class="form-control" id="name" value="<%= @regionalchapteraward.members_percentage_till_current_year %>" >  
+    </div>
+    </div>
+    </div>
+    
+    
+     <div class="col-md-4">
+        <p class="primary-form-subheading">Student Branches Count</p>
+    <div class="form-group col-md-6">
+      <label>As on 31.3.2016</label>
+     <input type="text" class="form-control" id="name" value="<%= @regionalchapteraward.student_branch_number_previous_year %>" >  
+    </div>
+    <div class="form-group col-md-6">
+      <label>As on 31.3.2017</label>
+     <input type="text" class="form-control" id="name" value="<%= @regionalchapteraward.student_branch_number_current_year %>" >  
+    </div>
+    </div>
+   </div>
+   </div>
+   
+
+   
+        <br></br>
+    <p class="primary-form-subheading">Monthly Technical Activities </p>
+    
+    
+    <br>
+    <div class="row">
+      <div class="col-md-6"><p class="subform-head"><strong>Name of the Activities</strong></p></div>
+      <div class="col-md-6"><p  class="subform-head"><strong>Remarks</strong></p></div>
+      <% @regionalchapteraward.techactivitiesregionalchapterawards.each do |i| %>
+         
+
+
+
+
+<div class="nested-fields">
+
+<div class="form-group sf col-md-6">
+        
+        <p><%= i.activity_name %></p>
+</div>
+
+<div class="form-group sf col-md-6">
+        
+      <p><%= i.remarks %></p>
+</div>
+
+
+</div> 
+</div>
+
+      <% end %>
+   
+    
+
+      
+ 
+    
+    
+    
+    
+ 
+    
+    <div>
+        <br></br>
+    <p class="primary-form-subheading">National/ International / Regional/ Division Event</p>
+    
+    
+    <br>
+    <div class="row">
+      <div class="col-md-6"><p class="subform-head"><strong>Name of the Activities</strong></p></div>
+      <div class="col-md-6"><p  class="subform-head"><strong>Remarks</strong></p></div>
+  </div>
+  <div class="row">
+    <% @regionalchapteraward.eventsforregionalchapterawards.each do |i| %>
+         
+          
+
+
+
+<div class="nested-fields">
+
+<div class="form-group sf col-md-6">
+        
+        <p><%= i.activity_name %></p>
+</div>
+
+<div class="form-group sf col-md-6">
+        
+      <p><%= i.remarks %></p>
+</div>
+
+
+
+</div> 
+</div>
+
+      <% end %>
+    </div>
+    
+
+    
+  
+  
+    
+    <div>
+        <br></br>
+    <p class="primary-form-subheading">Chapter News Letter</p>
+    
+    
+    <br>
+    <div class="row">
+        
+      <div class="col-md-6"><p class="subform-head"><strong>Date of Publication</strong></p></div>
+      <div class="col-md-6"><p  class="subform-head"><strong>Title / Theme of the Newsletter</strong></p></div>
+     
+      <% @regionalchapteraward.newslettersforregionalchapterawards.each do |i| %>
+         
+          </div>
+
+<div class="row">
+
+
+
+<div class="nested-fields">
+
+<div class="form-group sf col-md-6">
+        
+        <p><%= i.date_of_publication %></p>
+</div>
+
+<div class="form-group sf col-md-6">
+        
+      <p><%= i.title %></p>
+</div>
+
+
+</div> 
+</div>
+
+      <% end %>
+    </div>
+    
+
+
+    <!--end of sub forms-->
+    
+    <div class="row">
+        <br></br>
+      <div class="col-md-6">
+    <p class="primary-form-subheading">Details of Deputed member for National Council & AGM </p>
+    <p><%= @regionalchapteraward.details_deputed_memeber %></p>
+     
+    </div>
+    <div class="col-md-6">
+    <p class="primary-form-subheading">Other Relevant Information </p>
+    <div class="form-group col-md-12">
+  
+      <p><%= @regionalchapteraward.other_info %></p>
+    </div>
+    </div>
+    </div>
+    
+  
+<br></br>
+  
+<br></br>

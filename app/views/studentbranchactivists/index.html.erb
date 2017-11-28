@@ -1,0 +1,11 @@
+
+<h1 class="to-underline">Student branch activist Awards</h1>
+<h3>Total Number of Awards : <%= Studentbranchactivist.count %></h3>
+<ol>
+<% @studentbranchactivists.each do |i| %>
+    
+    <h3><li>User :<%= link_to i.user.email , i %> | Institute : <%= i.institute.name %>
+    </li></h3>
+ 
+<% end %>    
+</ol>

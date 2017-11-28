@@ -1,0 +1,131 @@
+  <div>
+       <h1 class="show-head">Students with maximum publishing – CSI publications Award</h1>
+       <p class="show-submitted-by">Submitted by: <%= @studentmaxpublishing.user.email %></p>
+    </div>  
+    
+    <div class="primary-form">
+    <div class="row institution-details">
+      <!--institution details-->
+    <p class="primary-form-subheading">Institution Details</p>  
+    <div class="form-group col-md-6">
+     <label>Institution Name</label>
+     <input type="text" class="form-control" id="name" value="<%= @studentmaxpublishing.institute.name %>" >     
+    </div>
+   
+   <div class="form-group col-md-3">
+      <label>IMNO</label>
+     <input type="text" class="form-control" id="name" value="<%= @studentmaxpublishing.institute.imno %>" >  
+    </div>
+    
+    <div class="form-group col-md-3">
+      <label>City</label>
+     <input type="text" class="form-control" id="name" value="<%= @studentmaxpublishing.institute.city %>" >  
+    </div>
+    
+ 
+   
+   
+
+    
+    
+    <!--sbc details-->
+    <p class="primary-form-subheading">SBC Details</p>    
+    <div class="sbc-details">
+        <div class="form-group col-md-6">
+      <label>Name</label>
+      <input type="text" class="form-control" id="sbc-name" value="<%= @studentmaxpublishing.institute.sbcs.first.sbc_name %>" >
+    </div>
+    
+    
+    <div class="form-group col-md-6">
+      <label>Email</label>
+      <input type="email" class="form-control" id="sbc-email" value="<%=  @studentmaxpublishing.institute.sbcs.first.sbc_email %>" > 
+    </div>
+    
+   </div>
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+     <!--form specific details-->
+    
+    
+    
+   
+    <p class="primary-form-subheading">Volunteer Details</p>
+    <div class="form-group col-md-3">
+      <label>csi_volunteer_name</label>
+      <input type="text" class="form-control" value="<%= @studentmaxpublishing.csi_volunteer_name %>" >
+    </div>
+    <div class="form-group col-md-3">
+     <label>csi_volunteer_email</label>
+      <input type="text" class="form-control" value="<%= @studentmaxpublishing.csi_volunteer_email %>" >
+    </div>
+    <div class="form-group col-md-3">
+      <label>csi_volunteer_id</label>
+      <input type="text" class="form-control" value="<%= @studentmaxpublishing.csi_volunteer_id %>" >
+    </div>
+    
+    <div class="form-group col-md-3">
+      <label>valid_till</label>
+      <input type="text" class="form-control" value="<%= @studentmaxpublishing.valid_till %>" >
+    </div>
+    
+</div>
+     <div class="row">
+         <br></br>
+    <p class="primary-form-subheading">Details of publishing in CSIC by nominated student:</p>  
+    
+    
+    
+   
+      <div class="col-md-2"><p class="subform-head"><strong>No. of articles published</strong></p></div>
+      <div class="col-md-3"><p  class="subform-head"><strong>Article title</strong></p></div>
+      <div class="col-md-4"><p><strong>Published in</strong></p></div>
+      <div class="col-md-2"><p><strong>Month of publishing</strong></p></div>
+      
+       <% @studentmaxpublishing.publishingdetailbystudents.each do |i| %>
+         
+          
+
+
+
+
+
+<div class="nested-fields">
+
+<div class="form-group sf col-md-2">
+        
+        <p><%= i.no_of_articles_published %></p>
+</div>
+
+<div class="form-group sf col-md-3">
+        
+      <p><%= i.article_title %></p>
+</div>
+
+<div class="form-group sf col-md-4">
+        
+        
+         <p><%= i.published_in %></p>
+</div>
+<div class="form-group sf col-md-3">
+        
+       <p><%= i.date_of_publishing %></p>
+       
+       
+</div>
+</div> 
+
+
+      <% end %>
+    </div>
+
+<br></br>

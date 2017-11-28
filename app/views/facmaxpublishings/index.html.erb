@@ -1,0 +1,10 @@
+<h1 class="to-underline">Faculty with maximum publishing in CSI Publications Awards</h1>
+<h3>Total Number of Awards : <%= Facmaxpublishing.count %></h3>
+<ol>
+<% @facmaxpublishings.each do |i| %>
+    
+    <h3><li>User :<%= link_to i.user.email , i %> | Faculty Name : <%= i.faculty_name %> | CSI Mem. No: <%= i.candidate_csi_membership_no %>
+    </li></h3>
+ 
+<% end %>    
+</ol>

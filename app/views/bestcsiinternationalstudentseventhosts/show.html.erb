@@ -1,0 +1,117 @@
+<div>
+       <h1 class="show-head">Best CSI International Students Event Host Award</h1>
+       <p class="show-submitted-by">Submitted by: <%= @bestcsiinternationalstudentseventhost.user.email %></p>
+    </div>        
+     
+    <div class="primary-form">
+    <div class="row institution-details">
+      <!--institution details-->
+    <p class="primary-form-subheading">Institution Details</p>  
+    <div class="form-group col-md-6">
+     <label>Institution Name</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestcsiinternationalstudentseventhost.institute.name %>" >     
+    </div>
+   
+   <div class="form-group col-md-3">
+      <label>IMNO</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestcsiinternationalstudentseventhost.institute.imno %>" >  
+    </div>
+    
+    <div class="form-group col-md-3">
+      <label>Institution Name</label>
+     <input type="text" class="form-control" id="name" value="<%= @bestcsiinternationalstudentseventhost.institute.city %>" >  
+    </div>
+    
+   
+    
+    
+    
+    <!--sbc details-->
+    <p class="primary-form-subheading">SBC Details</p>    
+    <div class="sbc-details">
+        <div class="form-group col-md-3">
+      <label>Name</label>
+      <input type="text" class="form-control" id="sbc-name" value="<%= @bestcsiinternationalstudentseventhost.institute.sbcs.first.sbc_name %>" >
+    </div>
+    
+    
+    <div class="form-group col-md-3">
+      <label>Email</label>
+      <input type="email" class="form-control" id="sbc-email" value="<%=  @bestcsiinternationalstudentseventhost.institute.sbcs.first.sbc_email %>" > 
+    </div>
+    
+   </div>
+    
+    <!--form specific feilds-->
+    
+    
+      
+    <div class="form-group col-md-3">
+      <label>Volunteers</label>
+      <input type="text" class="form-control" id="volunteers" title="Number of CSI Volunteers as on 30th  June  2017" 
+      value="<%=  @bestcsiinternationalstudentseventhost.institute.sbcs.first.no_of_volunteers %>" > 
+    </div>
+    <div class="form-group col-md-3">
+         <label>Volunteers added</label>
+      <input type="text" class="form-control" id="volunteers" title="Number of CSI Volunteers Added" 
+      value="<%=  @bestcsiinternationalstudentseventhost.volunteers_added %>" > 
+    </div>
+    </div>
+    </div>
+    <!--sub form details-->
+    
+    <div class="row">
+    <p class="primary-form-subheading">International Event/Competitions:</p>
+    
+    
+    <br>
+    
+      <div class="col-md-3"><p class="subform-head"><strong>CSI organised Event / Competition name</strong></p></div>
+      <div class="col-md-3"><p  class="subform-head"><strong>Date of event</strong></p></div>
+      <div class="col-md-3"><p><strong>Students participated from abroad</strong></p></div>
+      <div class="col-md-3"><p><strong>Country Name</strong></p></div>
+      
+      <% @bestcsiinternationalstudentseventhost.internationalevents.each do |i| %>
+         
+          
+
+
+
+
+<div class="nested-fields">
+
+<div class="form-group sf col-md-3">
+        
+        <p><%= i.competetion_name %></p>
+</div>
+
+<div class="form-group sf col-md-3">
+        
+      <p><%= i.date_of_event %></p>
+</div>
+
+<div class="form-group sf col-md-3">
+        
+        
+         <p><%= i.no_of_students_from_abroad %></p>
+</div>
+<div class="form-group sf col-md-3">
+        
+       <p><%= i.country_name %></p>
+       
+       
+</div>
+
+
+
+
+
+</div> 
+
+      <% end %>
+    </div>
+    
+<br></br>
+   
+    
+

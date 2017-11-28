@@ -1,0 +1,11 @@
+
+<h1 class="to-underline">Paper Presenter at International Conference for Faculty Awards</h1>
+<h3>Total Number of Awards : <%= Paperpresenter.count %></h3>
+<ol>
+<% @paperpresenters.each do |i| %>
+    
+    <h3><li>User :<%= link_to i.user.email , i %> | Faculty Name : <%= i.faculty_name %> | CSI Mem. No: <%= i.faculty_csi_membership_no %>
+    </li></h3>
+ 
+<% end %>    
+</ol>
