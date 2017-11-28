@@ -76,7 +76,7 @@ class RegionalchapterawardsController < ApplicationController
        :remarks,:_destroy],
        
        newslettersforregionalchapterawards_attributes: [:date_of_publication,
-       :title_theme,:_destroy])
+       :title,:_destroy])
     end
     
     def set_award
