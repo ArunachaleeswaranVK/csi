@@ -231,7 +231,8 @@
  <br></br>    
 
 <div>
-  <%= filepicker_image_tag @bestaccreditedstudentbranch.attachment %>
+  
+  <%= filepicker_save_button "Save", @bestaccreditedstudentbranch.attachment , "application/zip, application/octet-stream" %>
 </div>
     
    
