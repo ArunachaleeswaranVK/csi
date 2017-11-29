@@ -6,11 +6,14 @@
       <a class="navbar-brand" href="#">COMPUTER SOCIETY OF INDIA - Awards Committee (2017)</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      
+      <% if current_user.admin? %>
+        <li><%= link_to "Go to Submitted Awards" , allawards_index_path %></li>
+      <% end %>  
       <% if user_signed_in? %>
          <li><a href="#"><strong>User - </strong><%= current_user.email %></a></li>
         <li><%= link_to "Sign out" , destroy_user_session_path , method: :delete %></li>
       <% end %>
+      
     </ul>
   </div>
 </nav>
