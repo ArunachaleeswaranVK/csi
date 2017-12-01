@@ -13,6 +13,11 @@ class StudentbranchactivistsController < ApplicationController
     
     def index
         @studentbranchactivists = Studentbranchactivist.all
+        respond_to do |format|
+            format.html
+            format.csv { send_data @studentbranchactivists.to_csv, 
+            filename: "studentbranchactivists-#{Date.today}.csv" }
+        end
     end
     
     def show

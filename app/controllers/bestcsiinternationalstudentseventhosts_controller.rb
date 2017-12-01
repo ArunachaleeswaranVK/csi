@@ -14,6 +14,11 @@ class BestcsiinternationalstudentseventhostsController < ApplicationController
     
     def index
         @bestcsiinternationalstudentseventhosts = Bestcsiinternationalstudentseventhost.all
+        respond_to do |format|
+            format.html
+            format.csv { send_data @bestcsiinternationalstudentseventhosts.to_csv, 
+            filename: "bestcsiinternationalstudentseventhosts-#{Date.today}.csv" }
+        end
     end
     
     def show

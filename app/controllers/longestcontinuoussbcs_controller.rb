@@ -13,6 +13,11 @@ class LongestcontinuoussbcsController < ApplicationController
     
     def index
         @longestcontinuoussbcs = Longestcontinuoussbc.all
+        respond_to do |format|
+            format.html
+            format.csv { send_data @longestcontinuoussbcs.to_csv, 
+            filename: "longestcontinuoussbcs-#{Date.today}.csv" }
+        end
     end
     
     def show

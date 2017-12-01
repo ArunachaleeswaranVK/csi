@@ -12,6 +12,11 @@ class StudentmaxpublishingsController < ApplicationController
     
     def index
         @studentmaxpublishings = Studentmaxpublishing.all
+        respond_to do |format|
+            format.html
+            format.csv { send_data @studentmaxpublishings.to_csv, 
+            filename: "studentmaxpublishings-#{Date.today}.csv" }
+        end
     end
     
     def show

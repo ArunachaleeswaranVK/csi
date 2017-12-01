@@ -11,6 +11,11 @@ class BestthesisawardsController < ApplicationController
     
     def index
         @bestthesisawards = Bestthesisaward.all
+        respond_to do |format|
+            format.html
+            format.csv { send_data @bestthesisawards.to_csv, 
+            filename: "bestthesisawards-#{Date.today}.csv" }
+        end
     end
     
     def show

@@ -10,6 +10,11 @@ class FacmaxpublishingsController < ApplicationController
     
     def index
         @facmaxpublishings = Facmaxpublishing.all
+        respond_to do |format|
+            format.html
+            format.csv { send_data @facmaxpublishings.to_csv, 
+            filename: "facmaxpublishings-#{Date.today}.csv" }
+        end
     end
     
     def show

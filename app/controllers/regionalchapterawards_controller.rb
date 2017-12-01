@@ -9,6 +9,11 @@ class RegionalchapterawardsController < ApplicationController
     
     def index
         @regionalchapterawards = Regionalchapteraward.all
+        respond_to do |format|
+            format.html
+            format.csv { send_data @regionalchapterawards.to_csv, 
+            filename: "regionalchapterawards-#{Date.today}.csv" }
+        end
     end
     
     def show

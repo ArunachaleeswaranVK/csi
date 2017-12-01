@@ -9,6 +9,11 @@ class NewsletterawardsController < ApplicationController
     
     def index
         @newsletterawards = Newsletteraward.all
+        respond_to do |format|
+            format.html
+            format.csv { send_data @newsletterawards.to_csv, 
+            filename: "newsletterawards-#{Date.today}.csv" }
+        end
     end
     
     def show

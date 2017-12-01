@@ -8,6 +8,11 @@ class IndividualserviceawardsController < ApplicationController
     
     def index
         @individualserviceawards = Individualserviceaward.all
+        respond_to do |format|
+            format.html
+            format.csv { send_data @individualserviceawards.to_csv, 
+            filename: "individualserviceawards-#{Date.today}.csv" }
+        end
     end
     
     def show

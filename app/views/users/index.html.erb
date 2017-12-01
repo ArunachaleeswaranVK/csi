@@ -1,0 +1,10 @@
+<h1 class="to-underline">Users</h1>
+<h3>Total Number of Awards : <%= User.count %></h3>
+<ol>
+<% @users.each do |i| %>
+    
+    <h3><li><%= i.email %>
+    </li></h3>
+ 
+<% end %>    
+</ol>

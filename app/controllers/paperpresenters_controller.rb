@@ -10,6 +10,11 @@ class PaperpresentersController < ApplicationController
     
     def index
         @paperpresenters = Paperpresenter.all
+        respond_to do |format|
+            format.html
+            format.csv { send_data @paperpresenters.to_csv, 
+            filename: "paperpresenters-#{Date.today}.csv" }
+        end
     end
     
     def show

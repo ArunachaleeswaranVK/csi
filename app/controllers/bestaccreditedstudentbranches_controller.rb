@@ -14,6 +14,11 @@ class BestaccreditedstudentbranchesController < ApplicationController
     
     def index
         @bestaccreditedstudentbranches = Bestaccreditedstudentbranch.all
+        respond_to do |format|
+            format.html
+            format.csv { send_data @bestaccreditedstudentbranches.to_csv, 
+            filename: "bestaccreditedstudentbranches-#{Date.today}.csv" }
+        end
     end
     
     def show

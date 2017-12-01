@@ -13,6 +13,11 @@ class HighestsponsorshipofcsieventsController < ApplicationController
     
     def index
         @highestsponsorshipofcsievents = Highestsponsorshipofcsievent.all
+        respond_to do |format|
+            format.html
+            format.csv { send_data @highestsponsorshipofcsievents.to_csv, 
+            filename: "highestsponsorshipofcsievents-#{Date.today}.csv" }
+        end
     end
     
     def show
