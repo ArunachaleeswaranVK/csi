@@ -14,8 +14,10 @@ class Individualserviceaward < ActiveRecord::Base
     publication_details other_info
     role_in_csi_membership_promotion_in_chapter chapter user_id
     
-    contributiontocsiindserviceawards_id year name_of_position achievement
     
+    
+    roleincsieventindserviceawards_id date_of_event name_of_event type_of_event surplus_amount role no_of_paper_received
+    individualserviceaward_id
    
         
     }
@@ -24,7 +26,7 @@ class Individualserviceaward < ActiveRecord::Base
       csv << attributes
 
       all.each do |individualserviceaward|
-               individualserviceaward.contributiontocsiindserviceawards.each do |contributiontocsiindserviceaward|
+               individualserviceaward.roleincsieventindserviceawards.each do |roleincsieventindserviceaward|
                 #   csv << bestcsiinternationalstudentseventhost.attributes.merge(internationalevent.competetion_name.to_s).values_at(*attributes)
                   csv <<  [individualserviceaward.id, individualserviceaward.applying_for , 
                   
@@ -45,11 +47,13 @@ class Individualserviceaward < ActiveRecord::Base
                   
                   individualserviceaward.chapter , individualserviceaward.user_id,
                   
-                  contributiontocsiindserviceaward.id,
-                  contributiontocsiindserviceaward.year , contributiontocsiindserviceaward.name_of_position , 
-                  contributiontocsiindserviceaward.achievement]
+                  roleincsieventindserviceaward.id , roleincsieventindserviceaward.date_of_event ,
+                  roleincsieventindserviceaward.name_of_event, roleincsieventindserviceaward.type_of_event ,
+                  roleincsieventindserviceaward.surplus_amount, roleincsieventindserviceaward.role ,
+                  roleincsieventindserviceaward.no_of_paper_received ,
+                  roleincsieventindserviceaward.individualserviceaward_id]
                end
-            
+               
                
       end
     end  

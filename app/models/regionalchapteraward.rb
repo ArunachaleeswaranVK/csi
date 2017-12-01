@@ -17,9 +17,11 @@ class Regionalchapteraward < ActiveRecord::Base
     student_branch_number_previous_year student_branch_number_current_year
     details_deputed_memeber other_info user_id chapter category
     
-    eventsforregionalchapterawards_id activity_name remarks 
     
     
+    techactivitiesregionalchapterawards_id activity_name remarks regionalchapteraward_id
+    
+    newslettersforregionalchapterawards_id date_of_publication 
         
     }
 
@@ -27,7 +29,7 @@ class Regionalchapteraward < ActiveRecord::Base
       csv << attributes
 
       all.each do |regionalchapteraward|
-               regionalchapteraward.eventsforregionalchapterawards.each do |eventsforregionalchapteraward|
+               regionalchapteraward.techactivitiesregionalchapterawards.each do |techactivitiesregionalchapteraward|
                 #   csv << bestcsiinternationalstudentseventhost.attributes.merge(internationalevent.competetion_name.to_s).values_at(*attributes)
                   csv <<  [regionalchapteraward.id, regionalchapteraward.members_number_till_previous_year , 
                   regionalchapteraward.members_percentage_till_previous_year , regionalchapteraward.members_number_till_current_year ,
@@ -37,10 +39,20 @@ class Regionalchapteraward < ActiveRecord::Base
                   regionalchapteraward.user_id , 
                   regionalchapteraward.chapter , regionalchapteraward.category ,
                   
-                  eventsforregionalchapteraward.id,
-                  eventsforregionalchapteraward.activity_name , eventsforregionalchapteraward.remarks]
+                  techactivitiesregionalchapteraward.id , techactivitiesregionalchapteraward.activity_name ,
+                  techactivitiesregionalchapteraward.remarks , techactivitiesregionalchapteraward.regionalchapteraward_id
+                  ]
                end
-            
+              
+                regionalchapteraward.newslettersforregionalchapterawards.each do |newslettersforregionalchapteraward|
+                #   csv << bestcsiinternationalstudentseventhost.attributes.merge(internationalevent.competetion_name.to_s).values_at(*attributes)
+                  csv <<  [
+                  
+                  
+                  
+                  newslettersforregionalchapteraward.id,
+                  newslettersforregionalchapteraward.date_of_publication]
+              end
       end
     end  
    
